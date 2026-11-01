@@ -1,174 +1,172 @@
 /* ================================================================
-   ✏️  CONFIG.JS — FILE KONFIGURASI PORTOFOLIO
+   ✏️  CONFIG.JS — FILE KONFIGURASI PORTOFOLIO TOY STORY THEME
    ================================================================
-   Halo! File ini adalah SATU-SATUNYA file yang perlu kamu ubah.
-   Ikuti petunjuk di setiap bagian, lalu simpan dan refresh browser.
-   Jangan ubah file lain kecuali kamu sudah paham JavaScript.
+   Portofolio Anandita Galuh Sekar Kinanti
+   Tema: Toy Story (Andy's Room, Woody & Buzz Space Ranger)
+   Tanpa Efek Neon & Tanpa Efek Glowing
    ================================================================ */
-
 
 /* ----------------------------------------------------------------
    👤 PROFIL UTAMA
-   Ubah nama, tagline, deskripsi, dan info pribadimu di sini.
    ---------------------------------------------------------------- */
 const CONFIG_PROFILE = {
-  name:       "Anandita Galuh Sekar Kinanti",   // Nama lengkap kamu
-  initials:   "AGSK",                  // 2 huruf inisial (untuk logo & avatar)
-  tagline:    "Frontend & UI/UX Designer", // Kalimat singkat di bawah nama
-  greeting:   "Halo, saya",          // Kata sapaan sebelum nama besar
+  name: "Anandita Galuh Sekar Kinanti",
+  nickname: "Galuh",
+  initials: "AGSK",
+  tagline: "Frontend Developer & UI/UX Designer",
+  toyTitle: "Sheriff of Web & Space Ranger of Design",
+  greeting: "Halo, Partner! Saya",
   bio: [
-    // Paragraf pertama tentang kamu (boleh diedit bebas)
-    `Saya adalah seorang siswi SMK jurusan <strong>Rekayasa Perangkat Lunak</strong> yang memiliki minat dalam
-    pengembangan web dan UI/UX Design. Saya senang mempelajari hal-hal baru, mengembangkan kemampuan pemrograman,
-    cara merancang antarmuka yang sederhana, menarik, dan mudah digunakan, serta membuat proyek yang dapat memberikan pengalaman belajar yang bermanfaat.`,
-    // Paragraf kedua (teknologi yang kamu pakai)
-    `Dalam mengembangkan proyek, saya menggunakan <strong>HTML, CSS, JavaScript, PHP</strong> sebagai teknologi utama untuk membangun antarmuka website serta menggabungkan prinsip UI/UX Design dan <strong> Python </strong> untuk membangun gim sederhana. Saya juga memanfaatkan <strong>Github</strong> sebagai media penyimpanan proyek dan <strong>Google Drive</strong> untuk berbagi hasil pekerjaan.`,
+    `Saya adalah seorang siswi SMK jurusan <strong>Rekayasa Perangkat Lunak</strong> di SMKS Brantas Karangkates yang memiliki antusiasme tinggi dalam pengembangan web dan perancangan UI/UX. Seperti mainan terbaik di kamar Andy, saya siap berpetualang menciptakan karya digital yang fungsional, menyenangkan, dan berkesan.`,
+    `Dalam mengembangkan proyek, saya menguasai <strong>HTML5, CSS3, JavaScript, PHP</strong> untuk membangun antarmuka web yang rapi dan responsif, serta <strong>Figma</strong> untuk mendesain prototipe antarmuka yang user-friendly. Saya juga mempelajari <strong>Python</strong> untuk logika pemrograman dan gim sederhana, serta memanfaatkan <strong>GitHub</strong> untuk kolaborasi dan manajemen kode.`,
   ],
 
-  // Info detail di kartu about
-  location:   "Malang, Jawa Timur",
-  education:  "SMKS Brantas Karangkates — RPL",
-  focus:      "Proggrammer",
-  languages:  "Indonesia, English",
+  // Info detail di kartu spesifikasi mainan
+  location: "Malang, Jawa Timur",
+  education: "SMKS Brantas Karangkates — RPL",
+  focus: "Frontend & UI/UX Design",
+  languages: "Indonesia, English",
 
-  // Status badge di hero & about (ganti teks sesuai kondisimu)
-  status:     "Murid SMKS Brantas Karangkates — 2026",   // contoh: "Sedang Sekolah" / "Open to Projects"
-  statusOpen: true,    // true = titik hijau (aktif), false = titik merah
+  // Status ketersediaan
+  status: "Siswa Aktif RPL SMKS Brantas — Siap Berpetualang (2026)",
+  statusOpen: true,
 
-  // Link tombol "Unduh CV" — ganti dengan path file CV kamu
-  cvLink:     "files/CV_Anandita Galuh Sekar Kinanti",     // contoh: "file/cv-rizky.pdf"
+  // Link CV
+  cvLink: "files/CV_Anandita Galuh Sekar Kinanti.pdf",
 };
 
-
 /* ----------------------------------------------------------------
-   📊 STATISTIK HERO
-   Angka yang muncul di bagian bawah hero dengan animasi counter.
+   📊 STATISTIK (BLOK MAINAN)
    ---------------------------------------------------------------- */
 const CONFIG_STATS = [
-  { number: 6,   label: "Proyek"    },
-  { number: 0,    label: "Tahun pengalaman" },
-  { number: 0,   label: "Klien"     },
+  { number: 6, label: "Proyek Selesai", icon: "fa-solid fa-box-open", blockColor: "yellow" },
+  { number: 2026, label: "Angkatan SMK", icon: "fa-solid fa-graduation-cap", blockColor: "blue" },
+  { number: 100, label: "% Semangat & Dedikasi", icon: "fa-solid fa-rocket", blockColor: "red" },
 ];
 
-
 /* ----------------------------------------------------------------
-   🔗 SOSIAL MEDIA & KONTAK
-   Ganti nilai "url" dengan link profilmu. Kosongkan ("") untuk sembunyi.
+   🔗 SOSIAL MEDIA & KONTAK (KOMUNIKATOR PIZZA PLANET)
    ---------------------------------------------------------------- */
 const CONFIG_SOCIAL = {
-  email:     "ananditaaa2010@gmail.com",
-  instagram: "https://www.instagram.com/ananditagaluh?igsh=MWJrYzZyZmdkZHZldg==",   // kosongkan "" untuk sembunyikan
-  github:    "https://github.com/ananditaaa2010-a11y",
-  linkedin:  "https://www.linkedin.com/in/anandita-galuh-sekar-kinanti-6063b2384?trk=contact-info",
-  twitter:   "",   // kosongkan "" untuk sembunyikan
+  email: "ananditaaa2010@gmail.com",
+  instagram: "https://www.instagram.com/ananditagaluh?igsh=MWJrYzZyZmdkZHZldg==",
+  github: "https://github.com/ananditaaa2010-a11y",
+  linkedin: "https://www.linkedin.com/in/anandita-galuh-sekar-kinanti-6063b2384?trk=contact-info",
+  twitter: "",
 };
 
-
 /* ----------------------------------------------------------------
-   🛠️  KEAHLIAN (SKILLS)
-   Tambah / hapus skill sesuai kemampuanmu.
-   Skill bar: nilai 0–100 (persentase kemampuan).
+   🛠️ KEAHLIAN (KOTAK PERKAKAS MAINAN)
    ---------------------------------------------------------------- */
 const CONFIG_SKILLS = {
   categories: [
     {
-      icon:   "fa-solid fa-desktop",
-      title:  "Frontend",
-      tags:   ["HTML5", "CSS3", "JavaScript", "PHP"],
+      theme: "woody",
+      icon: "fa-solid fa-hat-cowboy",
+      badge: "Woody's Toolkit",
+      title: "Frontend Web Craft",
+      desc: "Teknologi inti dalam merakit antarmuka web yang kokoh.",
+      tags: ["HTML5", "CSS3", "JavaScript", "PHP", "Responsive Design"],
     },
     {
-      icon:   "fa-solid fa-wrench",
-      title:  "Tools & Others",
-      tags:   ["GitHub", "Figma", "VS Code"],
+      theme: "buzz",
+      icon: "fa-solid fa-rocket",
+      badge: "Buzz's Gear",
+      title: "Design & Tools",
+      desc: "Perlengkapan navigasi desain visual dan manajemen versi.",
+      tags: ["Figma", "UI/UX Prototyping", "GitHub", "VS Code", "Python"],
     },
   ],
 
   bars: [
-    { name: "Frontend Development", pct: 88},
-    { name: "UI / UX Design",       pct: 90 },
+    { name: "Frontend Development", pct: 88, color: "#E53935", label: "High Precision" },
+    { name: "UI / UX Design (Figma)", pct: 90, color: "#6EC828", label: "Pixel Perfect" },
+    { name: "Problem Solving & Logic", pct: 82, color: "#FDC02F", label: "Ready to Explore" },
   ],
 };
 
-
 /* ----------------------------------------------------------------
-   💼 PROYEK
-   Tambah proyek baru dengan menambah blok { ... } di bawah.
-   category harus salah satu dari: "Web App" / "Mobile" / "Game" / "Web"
+   💼 KOLEKSI PROYEK (TOY BOX COLLECTION)
    ---------------------------------------------------------------- */
 const CONFIG_PROJECTS = [
   {
     title: "Sistem Informasi Universitas",
-    desc: "Website sederhana yang berisi informasi Universitas Atma Jaya Yogyakarta.",
-    tags: ["HTML", "CSS"],
+    desc: "Website portal informasi komprehensif untuk Universitas Atma Jaya Yogyakarta dengan tata letak bersih dan navigasi informatif.",
+    tags: ["HTML", "CSS", "Web Design"],
     category: "Web",
-    img: "../img/univ.jpg",
-    scale: "0.85",
-    fit: "contain",
+    img: "img/univ.jpg",
+    edition: "Campus Edition",
+    scale: "1",
+    fit: "cover",
     link: "https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link",
   },
-
   {
-    title: "Website Produk JCO Donuts",
-    desc: "Website sederhana yang berisi tentang sebuah penjualan produk yaitu JCO Donuts.",
-    tags: ["HTML", "CSS"],
+    title: "Website E-Commerce JCO Donuts",
+    desc: "Desain dan implementasi antarmuka landing page katalog produk donat premium J.CO yang lezat dan interaktif.",
+    tags: ["HTML", "CSS", "E-Commerce"],
     category: "Web App",
-    img: "../img/logo baru.png",
+    img: "img/logo baru.png",
+    edition: "Sweet Edition",
     scale: "0.85",
     fit: "contain",
     link: "https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link",
   },
-
   {
-    title: "Python",
-    desc: "Bahasa Python digunakan untuk pengembangan perangkat lunak dan game sederhana.",
-    tags: ["Python"],
-    category: "Game",
-    img: "../img/python.jpg",
-    scale: "0.85",
-    fit: "contain",
+    title: "Game & Software Python",
+    desc: "Eksplorasi bahasa pemrograman Python untuk merancang logika interaktif dan pengembangan gim sederhana yang seru.",
+    tags: ["Python", "Logic", "Game Dev"],
+    category: "Python",
+    img: "img/python.jpg",
+    edition: "Arcade Edition",
+    scale: "1",
+    fit: "cover",
     link: "https://drive.google.com/drive/folders/1OJ7EV6d5vqvGEp53Jp9b5gFa-r3DJKuk?usp=sharing",
   },
-
   {
     title: "Design Landing Page Figma",
-    desc: "Desain landing page menggunakan Figma.",
-    tags: ["Figma"],
+    desc: "Perancangan UI/UX landing page modern di Figma dengan fokus pada hierarki visual, tipografi, dan pengalaman pengguna optimal.",
+    tags: ["Figma", "UI/UX", "Prototype"],
     category: "Design Web",
-    img: "../img/landing.jpg",
-    scale: "0.85",
-    fit: "contain",
+    img: "img/landing.jpg",
+    edition: "Concept Edition",
+    scale: "1",
+    fit: "cover",
     link: "https://www.figma.com/design/hwiHotD2EtEFiHTnz7G6wJ/E-Commerce-Design?node-id=0-1&t=tHgj5ebnapz78nLI-1",
   },
-
   {
-    title: "Design Web Batik Khas Yogyakarta Figma",
-    desc: "Desain website toko atau E-Commerce melalui Figma.",
-    tags: ["Figma"],
+    title: "Design Web Batik Khas Yogyakarta",
+    desc: "Perancangan desain toko daring warisan budaya batik khas Yogyakarta yang memadukan nuansa tradisional dengan gaya modern.",
+    tags: ["Figma", "Culture", "E-Commerce"],
     category: "Design Web",
-    img: "../img/batikbaru.jpg",
-    scale: "0.85",
-    fit: "contain",
+    img: "img/batikbaru.jpg",
+    edition: "Heritage Edition",
+    scale: "1",
+    fit: "cover",
     link: "https://docs.google.com/document/d/1IXtKdZZeUXmvzTJlvwLknqLplPBPV6nUzIAECFkfMEw/edit?usp=sharing",
   },
-
   {
-    title: "Website E-Commerce",
-    desc: "Website sederhana yang berisi produk penjualan.",
-    tags: ["Figma"],
+    title: "Website E-Commerce Qinanthi",
+    desc: "Konsep platform belanja digital dengan sistem katalog produk yang terstruktur rapi, elegan, dan mudah dinavigasi oleh pengguna.",
+    tags: ["Figma", "E-Commerce", "UI/UX"],
     category: "Web",
-    img: "../img/qinanthi.png",
-    scale: "0.85",
-    fit: "contain",
+    img: "img/qinanthi.png",
+    edition: "Store Edition",
+    scale: "1",
+    fit: "cover",
     link: "https://www.figma.com/design/hwiHotD2EtEFiHTnz7G6wJ/E-Commerce-Design?node-id=0-1&t=AgTP4Hqli09JAkjF-1",
   },
 ];
 
-
 /* ----------------------------------------------------------------
-   🎨 WARNA TEMA  (opsional — skip jika tidak mau ubah)
-   Ganti kode warna hex sesuai selera.
+   🎨 WARNA TEMA TOY STORY (SOLID & CRISP — TANPA NEON & GLOW)
    ---------------------------------------------------------------- */
 const CONFIG_THEME = {
-  accent:  "#9800c2",   // warna utama (ungu)
-  accent2: "rgba(63, 132, 250, 0.35)",   // warna kedua (pink)
+  skyBlue: "#48A6E9", // Andy's wallpaper sky
+  cloudWhite: "#FFFFFF", // Fluffy Andy clouds
+  woodyYellow: "#FDC02F", // Toy Story yellow
+  woodyRed: "#E53935", // Bandana red
+  buzzGreen: "#6EC828", // Space Ranger lime green
+  buzzPurple: "#7E3BB0", // Space Ranger purple
+  toyBorder: "#2B2D42", // Bold cartoon toy outline
+  woodFloor: "#C68642", // Andy's wooden floor
 };
