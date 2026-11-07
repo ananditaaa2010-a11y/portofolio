@@ -5586,8 +5586,104 @@ button {
 .skills-burst-stage.is-open .category-branch-folder {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(var(--target-x), var(--target-y)) scale(1);
+  transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1);
   transition-delay: 120ms;
+}
+
+/* ==================== GATHERING ANIMATION (Scroll Approach: Folders converge to center) ==================== */
+.skills-burst-stage.gathering-active .category-branch-folder {
+  opacity: 1;
+  pointer-events: none;
+  animation: folderGatherIn 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="frontend"] {
+  --gather-start-x: -460px;
+  --gather-start-y: -360px;
+  --gather-rot: -22deg;
+  animation-delay: 0.05s;
+}
+
+.skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="backend"] {
+  --gather-start-x: 460px;
+  --gather-start-y: -340px;
+  --gather-rot: 18deg;
+  animation-delay: 0.12s;
+}
+
+.skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="framework"] {
+  --gather-start-x: -440px;
+  --gather-start-y: 350px;
+  --gather-rot: 20deg;
+  animation-delay: 0.18s;
+}
+
+.skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="editing"] {
+  --gather-start-x: 440px;
+  --gather-start-y: 340px;
+  --gather-rot: -16deg;
+  animation-delay: 0.24s;
+}
+
+@keyframes folderGatherIn {
+  0% {
+    opacity: 0.9;
+    transform: translate(var(--gather-start-x), var(--gather-start-y)) rotate(var(--gather-rot)) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(calc(var(--gather-start-x) * 0.22), calc(var(--gather-start-y) * 0.22)) rotate(calc(var(--gather-rot) * 0.3)) scale(0.55);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg) scale(0.12);
+  }
+}
+
+/* Central folder catch bounce when folders gather inside */
+.skills-burst-stage.folder-catch .central-folder-button {
+  animation: centralFolderCatchBounce 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes centralFolderCatchBounce {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.22, 0.88); }
+  65% { transform: scale(0.92, 1.12); }
+  85% { transform: scale(1.05, 0.96); }
+  100% { transform: scale(1); }
+}
+
+/* Pulsing inviting hint pill when waiting to be clicked */
+.skills-burst-stage:not(.is-open) .folder-hint-pill {
+  animation: hintPillInvitePulse 2s infinite ease-in-out;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+@keyframes hintPillInvitePulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 0 #2e1065;
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 7px 0 #2e1065;
+    background: #facc15;
+    color: #2e1065;
+  }
+}
+
+.branch-shuffle-chip {
+  background: #fef08a !important;
+  color: #854d0e !important;
+  border-color: #2e1065 !important;
+  box-shadow: 0 4px 0 #2e1065 !important;
+}
+
+.branch-shuffle-chip:hover {
+  background: #fde047 !important;
+  transform: translateY(-2px) rotate(-1.5deg) !important;
+  box-shadow: 0 6px 0 #2e1065 !important;
 }
 
 .category-folder-btn {
@@ -5737,7 +5833,12 @@ button {
 .skills-burst-stage.is-open .skill-burst-node.parent-is-open {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(var(--target-x), var(--target-y)) scale(1);
+  transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1);
+}
+
+.skills-burst-stage.is-open .skill-burst-node.parent-is-open:hover {
+  transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1.15);
+  z-index: 30;
 }
 
 /* When parent folder is closed: fly back inside parent folder! */
@@ -5865,7 +5966,7 @@ button {
 .skills-burst-stage.filter-framework .category-branch-folder[data-folder-id="framework"],
 .skills-burst-stage.filter-editing .category-branch-folder[data-folder-id="editing"] {
   z-index: 25;
-  transform: translate(var(--target-x), var(--target-y)) scale(1.08);
+  transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1.08);
 }
 
 /* Responsive Scaling for Burst Constellation */

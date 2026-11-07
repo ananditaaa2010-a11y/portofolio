@@ -522,6 +522,161 @@ document.addEventListener('DOMContentLoaded', () => {
     editing: true
   };
 
+  // --- BASE COORDINATES & RANDOM SCATTER LAYOUT SYSTEM ("acak terus") ---
+  const BASE_CATEGORY_COORDS = {
+    frontend:  { x: -240, y: -160 },
+    backend:   { x:  240, y: -160 },
+    framework: { x: -240, y:  160 },
+    editing:   { x:  240, y:  160 }
+  };
+
+  const BASE_SKILL_OFFSETS = {
+    // Frontend children (relative to frontend folder)
+    css:        { parent: 'frontend',  angle: -95,  dist: 120 },
+    html:       { parent: 'frontend',  angle: -155, dist: 130 },
+    js:         { parent: 'frontend',  angle: 175,  dist: 125 },
+    // Backend children (relative to backend folder)
+    mysql:      { parent: 'backend',   angle: -85,  dist: 120 },
+    php:        { parent: 'backend',   angle: -25,  dist: 130 },
+    python:     { parent: 'backend',   angle: 20,   dist: 125 },
+    // Framework children (relative to framework folder)
+    laravel:    { parent: 'framework', angle: 170,  dist: 125 },
+    vscode:     { parent: 'framework', angle: -155, dist: 130 },
+    github:     { parent: 'framework', angle: 125,  dist: 130 },
+    antigravity:{ parent: 'framework', angle: 85,   dist: 135 },
+    // Editing children (relative to editing folder)
+    figma:      { parent: 'editing',   angle: 10,   dist: 125 },
+    capcut:     { parent: 'editing',   angle: -25,  dist: 130 },
+    claude:     { parent: 'editing',   angle: 55,   dist: 130 },
+    alight:     { parent: 'editing',   angle: 90,   dist: 135 },
+    openai:     { parent: 'editing',   angle: 130,  dist: 130 }
+  };
+
+  function randomizeScatterLayout() {
+    if (!skillsBurstStage) return;
+
+    const currentFolderCoords = {};
+
+    // 1. Randomize 4 Category Folders with playful organic offset & tilt
+    categoryFolders.forEach(folder => {
+      const fid = folder.dataset.folderId;
+      const base = BASE_CATEGORY_COORDS[fid] || { x: 0, y: 0 };
+
+      // Organic random jitter: ±32px horizontal, ±26px vertical, ±10deg rotation
+      const jx = (Math.random() - 0.5) * 64;
+      const jy = (Math.random() - 0.5) * 52;
+      const rot = Number(((Math.random() - 0.5) * 20).toFixed(1));
+
+      const targetX = Math.round(base.x + jx);
+      const targetY = Math.round(base.y + jy);
+
+      currentFolderCoords[fid] = { x: targetX, y: targetY };
+
+      folder.style.setProperty('--target-x', `${targetX}px`);
+      folder.style.setProperty('--target-y', `${targetY}px`);
+      folder.style.setProperty('--scatter-rot', `${rot}deg`);
+
+      // Update SVG lvl1 line connecting central root (480, 370)
+      treeLines.forEach(line => {
+        if (line.classList.contains('tree-line-lvl1') && line.dataset.folderId === fid) {
+          const x2 = 480 + targetX;
+          const y2 = 370 + targetY;
+          line.setAttribute('x1', '480');
+          line.setAttribute('y1', '370');
+          line.setAttribute('x2', x2.toString());
+          line.setAttribute('y2', y2.toString());
+          const len = Math.hypot(targetX, targetY);
+          line.style.setProperty('--line-len', `${len.toFixed(1)}px`);
+        }
+      });
+    });
+
+    // 2. Randomize 15 Skill Nodes relative to their parent
+    skillNodes.forEach(node => {
+      const sid = node.dataset.skillId;
+      const spec = BASE_SKILL_OFFSETS[sid];
+      if (!spec) return;
+
+      const parentCoord = currentFolderCoords[spec.parent] || { x: 0, y: 0 };
+
+      // Organic angle jitter: ±15deg, distance jitter: ±18px, tilt: ±14deg
+      const angleJitter = (Math.random() - 0.5) * 30;
+      const distJitter = (Math.random() - 0.5) * 36;
+      const nodeRot = Number(((Math.random() - 0.5) * 28).toFixed(1));
+
+      const finalAngleRad = (spec.angle + angleJitter) * (Math.PI / 180);
+      const finalDist = spec.dist + distJitter;
+
+      const skillX = Math.round(parentCoord.x + Math.cos(finalAngleRad) * finalDist);
+      const skillY = Math.round(parentCoord.y + Math.sin(finalAngleRad) * finalDist);
+
+      node.style.setProperty('--target-x', `${skillX}px`);
+      node.style.setProperty('--target-y', `${skillY}px`);
+      node.style.setProperty('--parent-x', `${parentCoord.x}px`);
+      node.style.setProperty('--parent-y', `${parentCoord.y}px`);
+      node.style.setProperty('--scatter-rot', `${nodeRot}deg`);
+
+      // Update SVG lvl2 line from parent folder to skill leaf
+      treeLines.forEach(line => {
+        if (line.classList.contains('tree-line-lvl2') && line.dataset.skillId === sid) {
+          const x1 = 480 + parentCoord.x;
+          const y1 = 370 + parentCoord.y;
+          const x2 = 480 + skillX;
+          const y2 = 370 + skillY;
+          line.setAttribute('x1', x1.toString());
+          line.setAttribute('y1', y1.toString());
+          line.setAttribute('x2', x2.toString());
+          line.setAttribute('y2', y2.toString());
+          const len = Math.hypot(skillX - parentCoord.x, skillY - parentCoord.y);
+          line.style.setProperty('--line-len', `${len.toFixed(1)}px`);
+        }
+      });
+    });
+  }
+
+  // --- SCROLL GATHERING TRIGGER (Folders converge into center as section approaches) ---
+  let hasTriggeredGather = false;
+
+  function triggerFolderGatherAnimation() {
+    if (hasTriggeredGather || !skillsBurstStage) return;
+    hasTriggeredGather = true;
+
+    // Start with gathered/closed state
+    skillsBurstStage.classList.remove('is-open');
+    skillsBurstStage.classList.add('gathering-active');
+
+    if (typeof AdventureAudio !== 'undefined' && AdventureAudio.playSelect) {
+      AdventureAudio.playSelect();
+    }
+
+    // After swoosh completes (~850ms), central folder catches and bounces
+    setTimeout(() => {
+      skillsBurstStage.classList.add('folder-catch');
+
+      setTimeout(() => {
+        skillsBurstStage.classList.remove('gathering-active');
+        skillsBurstStage.classList.remove('folder-catch');
+        updateHintUI(false);
+      }, 700);
+    }, 850);
+  }
+
+  const castSection = document.getElementById('cast');
+  if (castSection && 'IntersectionObserver' in window) {
+    const gatherObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasTriggeredGather) {
+          triggerFolderGatherAnimation();
+        }
+      });
+    }, {
+      rootMargin: '120px 0px -15% 0px',
+      threshold: 0.12
+    });
+
+    gatherObserver.observe(castSection);
+  }
+
   function updateCategoryFolderDisplay(folderId) {
     const isOpen = folderStates[folderId];
     
@@ -588,6 +743,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!skillsBurstStage) return;
 
     if (filterName === 'all') {
+      if (!skillsBurstStage.classList.contains('is-open')) {
+        randomizeScatterLayout();
+        skillsBurstStage.classList.add('is-open');
+        if (skillsCentralFolder) skillsCentralFolder.setAttribute('aria-expanded', 'true');
+        updateHintUI(true);
+      }
       setAllFoldersState(true);
       return;
     }
@@ -607,8 +768,9 @@ document.addEventListener('DOMContentLoaded', () => {
     skillsBurstStage.classList.remove('filter-all', 'filter-frontend', 'filter-backend', 'filter-framework', 'filter-editing');
     skillsBurstStage.classList.add(`filter-${filterName}`);
 
-    // Ensure stage is open
+    // Ensure stage is open with randomized scatter
     if (!skillsBurstStage.classList.contains('is-open')) {
+      randomizeScatterLayout();
       skillsBurstStage.classList.add('is-open');
       if (skillsCentralFolder) skillsCentralFolder.setAttribute('aria-expanded', 'true');
       updateHintUI(true);
@@ -620,27 +782,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const hintText = skillsFolderHint.querySelector('.hint-text');
     const hintIcon = skillsFolderHint.querySelector('.hint-icon');
     if (isOpen) {
-      if (hintText) hintText.textContent = 'KLIK SUBFOLDER UNTUK BUKA/TUTUP • KLIK IKON UNTUK DETAIL';
+      if (hintText) hintText.textContent = 'KLIK SUBFOLDER UNTUK BUKA/TUTUP - KLIK IKON UNTUK DETAIL';
       if (hintIcon) hintIcon.className = 'fa-solid fa-folder-open hint-icon';
     } else {
-      if (hintText) hintText.textContent = 'KLIK FOLDER UNTUK MEMBUKA CABANG';
+      if (hintText) hintText.textContent = 'KLIK FOLDER UNTUK MEMBUKA ARSIP KEAHLIAN';
       if (hintIcon) hintIcon.className = 'fa-solid fa-hand-pointer hint-icon';
     }
   }
 
   if (skillsCentralFolder && skillsBurstStage) {
-    // Root folder click: toggles whole tree open/close
+    // Root folder click: toggles whole tree open/close with fresh random scatter
     skillsCentralFolder.addEventListener('click', () => {
-      const isOpen = skillsBurstStage.classList.toggle('is-open');
-      skillsCentralFolder.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-
-      if (isOpen) {
+      if (!skillsBurstStage.classList.contains('is-open')) {
+        // BURST OUT: Generate fresh organic random arrangement ("acak terus")!
+        randomizeScatterLayout();
+        skillsBurstStage.classList.add('is-open');
+        skillsCentralFolder.setAttribute('aria-expanded', 'true');
         AdventureAudio.playPlace(1.2);
         setAllFoldersState(true);
+        updateHintUI(true);
       } else {
+        // CLOSE / TUCK BACK IN
+        skillsBurstStage.classList.remove('is-open');
+        skillsCentralFolder.setAttribute('aria-expanded', 'false');
         AdventureAudio.playSelect();
+        updateHintUI(false);
       }
-      updateHintUI(isOpen);
     });
 
     skillsCentralFolder.addEventListener('keydown', (e) => {
@@ -650,8 +817,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    if (skillsFolderHint) {
+      skillsFolderHint.addEventListener('click', () => {
+        skillsCentralFolder.click();
+      });
+    }
+
+    // Shuffle Button Click ("Acak Posisi")
+    const btnShuffleSkills = document.getElementById('btnShuffleSkills');
+    if (btnShuffleSkills) {
+      btnShuffleSkills.addEventListener('click', () => {
+        AdventureAudio.playPlace(1.3);
+        randomizeScatterLayout();
+        if (!skillsBurstStage.classList.contains('is-open')) {
+          skillsBurstStage.classList.add('is-open');
+          skillsCentralFolder.setAttribute('aria-expanded', 'true');
+          setAllFoldersState(true);
+          updateHintUI(true);
+        }
+      });
+    }
+
     // Filter Chips Click
     filterChips.forEach(chip => {
+      if (chip.id === 'btnShuffleSkills') return;
       chip.addEventListener('click', () => {
         const targetFilter = chip.dataset.filter;
         AdventureAudio.playSelect();
@@ -666,8 +855,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (folderBtn) {
         folderBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          // Ensure root is open
+          // Ensure root is open with randomized scatter
           if (!skillsBurstStage.classList.contains('is-open')) {
+            randomizeScatterLayout();
             skillsBurstStage.classList.add('is-open');
             if (skillsCentralFolder) skillsCentralFolder.setAttribute('aria-expanded', 'true');
             updateHintUI(true);
