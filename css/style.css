@@ -5586,53 +5586,86 @@ button {
 .skills-burst-stage.is-open .category-branch-folder {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1);
-  transition-delay: 120ms;
+  animation: folderBurstOut 0.72s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes folderBurstOut {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg) scale(0.2);
+  }
+  60% {
+    /* MEMBESAR DULU saat meletup keluar! */
+    opacity: 1;
+    transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1.36);
+    filter: drop-shadow(0 16px 32px rgba(46, 16, 101, 0.35));
+  }
+  82% {
+    transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1);
+    filter: drop-shadow(0 6px 12px rgba(46, 16, 101, 0.18));
+  }
 }
 
 /* ==================== GATHERING ANIMATION (Scroll Approach: Folders converge to center) ==================== */
 .skills-burst-stage.gathering-active .category-branch-folder {
   opacity: 1;
   pointer-events: none;
-  animation: folderGatherIn 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: folderGatherIn 1.25s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="frontend"] {
-  --gather-start-x: -460px;
-  --gather-start-y: -360px;
-  --gather-rot: -22deg;
-  animation-delay: 0.05s;
+  --gather-start-x: -360px;
+  --gather-start-y: -240px;
+  --gather-rot: -14deg;
+  animation-delay: 0.04s;
 }
 
 .skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="backend"] {
-  --gather-start-x: 460px;
-  --gather-start-y: -340px;
-  --gather-rot: 18deg;
-  animation-delay: 0.12s;
+  --gather-start-x: 360px;
+  --gather-start-y: -240px;
+  --gather-rot: 12deg;
+  animation-delay: 0.09s;
 }
 
 .skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="framework"] {
-  --gather-start-x: -440px;
-  --gather-start-y: 350px;
-  --gather-rot: 20deg;
-  animation-delay: 0.18s;
+  --gather-start-x: -360px;
+  --gather-start-y: 240px;
+  --gather-rot: 14deg;
+  animation-delay: 0.14s;
 }
 
 .skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="editing"] {
-  --gather-start-x: 440px;
-  --gather-start-y: 340px;
-  --gather-rot: -16deg;
-  animation-delay: 0.24s;
+  --gather-start-x: 360px;
+  --gather-start-y: 240px;
+  --gather-rot: -12deg;
+  animation-delay: 0.19s;
 }
 
 @keyframes folderGatherIn {
   0% {
-    opacity: 0.9;
-    transform: translate(var(--gather-start-x), var(--gather-start-y)) rotate(var(--gather-rot)) scale(0.9);
+    opacity: 0;
+    transform: translate(var(--gather-start-x), var(--gather-start-y)) rotate(var(--gather-rot)) scale(0.35);
   }
-  60% {
+  28% {
+    /* MEMBESAR DULU BIAR KELIHATAN! Pop up big with full vibrant color */
     opacity: 1;
-    transform: translate(calc(var(--gather-start-x) * 0.22), calc(var(--gather-start-y) * 0.22)) rotate(calc(var(--gather-rot) * 0.3)) scale(0.55);
+    transform: translate(calc(var(--gather-start-x) * 0.96), calc(var(--gather-start-y) * 0.96)) rotate(var(--gather-rot)) scale(1.42);
+    filter: drop-shadow(0 14px 28px rgba(46, 16, 101, 0.35));
+  }
+  48% {
+    /* Hover big in view */
+    opacity: 1;
+    transform: translate(calc(var(--gather-start-x) * 0.88), calc(var(--gather-start-y) * 0.88)) rotate(calc(var(--gather-rot) * 0.8)) scale(1.28);
+    filter: drop-shadow(0 10px 20px rgba(46, 16, 101, 0.25));
+  }
+  75% {
+    /* Swooping fast towards the center */
+    opacity: 0.95;
+    transform: translate(calc(var(--gather-start-x) * 0.25), calc(var(--gather-start-y) * 0.25)) rotate(calc(var(--gather-rot) * 0.3)) scale(0.75);
   }
   100% {
     opacity: 0;
@@ -5640,16 +5673,20 @@ button {
   }
 }
 
-/* Central folder catch bounce when folders gather inside */
+/* Central folder catch bounce: MEMBESAR DULU saat menangkap semua folder */
 .skills-burst-stage.folder-catch .central-folder-button {
-  animation: centralFolderCatchBounce 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: centralFolderCatchBounce 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @keyframes centralFolderCatchBounce {
   0% { transform: scale(1); }
-  35% { transform: scale(1.22, 0.88); }
-  65% { transform: scale(0.92, 1.12); }
-  85% { transform: scale(1.05, 0.96); }
+  32% {
+    /* Membesar dulu secara dramatis! */
+    transform: scale(1.38, 1.3);
+    filter: drop-shadow(0 18px 36px rgba(124, 58, 237, 0.45));
+  }
+  55% { transform: scale(0.9, 1.14); }
+  78% { transform: scale(1.12, 0.96); }
   100% { transform: scale(1); }
 }
 
@@ -5829,15 +5866,35 @@ button {
   outline: none;
 }
 
-/* When root is open AND parent category folder is open: fly out! */
+/* When root is open AND parent category folder is open: fly out and MEMBESAR DULU! */
 .skills-burst-stage.is-open .skill-burst-node.parent-is-open {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1);
+  animation: skillNodeBurstOut 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes skillNodeBurstOut {
+  0% {
+    opacity: 0;
+    transform: translate(var(--parent-x, 0), var(--parent-y, 0)) rotate(0deg) scale(0);
+  }
+  65% {
+    /* MEMBESAR DULU saat keluar dari subfolder! */
+    opacity: 1;
+    transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1.28);
+    filter: drop-shadow(0 10px 20px rgba(124, 58, 237, 0.35));
+  }
+  85% {
+    transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1);
+  }
 }
 
 .skills-burst-stage.is-open .skill-burst-node.parent-is-open:hover {
-  transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1.15);
+  transform: translate(var(--target-x), var(--target-y)) rotate(var(--scatter-rot, 0deg)) scale(1.18);
   z-index: 30;
 }
 

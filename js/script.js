@@ -649,7 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
       AdventureAudio.playSelect();
     }
 
-    // After swoosh completes (~850ms), central folder catches and bounces
+    // After swoosh completes (1250ms), central folder catches and bounces big
     setTimeout(() => {
       skillsBurstStage.classList.add('folder-catch');
 
@@ -657,8 +657,8 @@ document.addEventListener('DOMContentLoaded', () => {
         skillsBurstStage.classList.remove('gathering-active');
         skillsBurstStage.classList.remove('folder-catch');
         updateHintUI(false);
-      }, 700);
-    }, 850);
+      }, 750);
+    }, 1250);
   }
 
   const castSection = document.getElementById('cast');
