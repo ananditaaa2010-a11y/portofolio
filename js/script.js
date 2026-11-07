@@ -1095,6 +1095,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const editionIcon = p.editionIcon || 'fa-solid fa-star';
       const editionText = p.edition || 'Special Edition';
       const statusText = p.status || 'ACTIVE';
+      const heroTitle = p.heroTitle || (p.title ? p.title.toUpperCase() : 'PROYEK');
 
       let techBadgesHtml = '';
       if (Array.isArray(p.tech)) {
@@ -1109,30 +1110,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
       }
 
+      const repoBtnHtml = p.repoUrl ? `
+                    <a href="${p.repoUrl}" target="_blank" rel="noopener noreferrer" class="coverflow-github-btn" aria-label="GitHub Repository ${p.title}" title="Buka GitHub Repository">
+                      <i class="fa-brands fa-github"></i>
+                    </a>` : '';
+
       return `
             <article class="coverflow-card" data-index="${index}" data-project-id="${p.id}" role="button" tabindex="0" aria-label="Lihat Proyek ${p.title}">
               <div class="coverflow-card-inner">
                 <div class="washi-tape-strip ${tapeClass}" title="${tapeTitle}"></div>
+                
+                <!-- 3D Volumetric Thumbnail Frame -->
                 <div class="coverflow-thumb-frame">
-                  <img src="${p.image}" alt="${p.title}" class="${imgClass}" loading="lazy" />
-                  <span class="project-category-tag"><i class="${catIcon}"></i> ${catText}</span>
-                  <span class="project-index-number">${numStr}</span>
-                  <div class="coverflow-overlay-hint">
-                    <span class="coverflow-action-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> LIHAT DETAIL</span>
+                  <!-- Deep Image Layer -->
+                  <div class="parallax-img-container">
+                    <img src="${p.image}" alt="${p.title}" class="${imgClass}" loading="lazy" />
+                  </div>
+                  
+                  <!-- Contrast Scrim Gradient -->
+                  <div class="parallax-scrim-gradient"></div>
+
+                  <!-- Top Bar: Category Pill & EduMatch Style Circular Action Button -->
+                  <div class="parallax-top-bar">
+                    <span class="project-category-tag"><i class="${catIcon}"></i> ${catText}</span>
+                    <a href="${p.demoUrl || '#'}" target="_blank" rel="noopener noreferrer" class="hero-corner-launch-btn" aria-label="Buka Proyek ${p.title}" title="Buka Proyek Langsung">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+
+                  <!-- Volumetric Front Overlay (Tech Pills + Floating Big Title) -->
+                  <div class="parallax-volumetric-overlay">
+                    <div class="project-tech-badges">
+                      ${techBadgesHtml}
+                    </div>
+                    <h3 class="coverflow-hero-title">${heroTitle}</h3>
                   </div>
                 </div>
+
+                <!-- Clean Bottom Info Bar -->
                 <div class="coverflow-info-bar">
                   <div class="project-meta-top">
                     <span class="project-edition-label"><i class="${editionIcon}"></i> ${editionText}</span>
                     <span class="project-status-dot"><span class="status-pulse-circle"></span> ${statusText}</span>
                   </div>
-                  <h3 class="coverflow-title">${p.title}</h3>
                   <p class="coverflow-desc">${p.description}</p>
                   
-                  <div class="project-tech-badges">
-                    ${techBadgesHtml}
-                  </div>
-
                   <div class="project-footer-actions">
                     <a href="${p.demoUrl || '#'}" target="_blank" rel="noopener noreferrer" class="btn-view-project" aria-label="Lihat Proyek ${p.title}">
                       <span>LIHAT PROYEK</span>
@@ -1141,6 +1166,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="coverflow-detail-btn" type="button" aria-label="Detail ${p.title}">
                       <span>DETAIL</span> <i class="fa-solid fa-circle-info"></i>
                     </button>
+                    ${repoBtnHtml}
                   </div>
                 </div>
               </div>
@@ -1166,6 +1192,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCoverflow(newIndex, playSound = true) {
     if (totalCoverflowCards === 0) return;
+
+    if (typeof resetActiveCardParallax === 'function') {
+      resetActiveCardParallax();
+    }
 
     // Wrap around smoothly (modular arithmetic)
     currentCoverflowIndex = ((newIndex % totalCoverflowCards) + totalCoverflowCards) % totalCoverflowCards;
@@ -1234,8 +1264,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Card click handlers: Active card opens modal; Side cards rotate to front!
   coverflowCards.forEach((card, idx) => {
     card.addEventListener('click', (e) => {
-      // If clicking direct external project link, let it open naturally without modal intercept
-      if (e.target.closest('.btn-view-project')) {
+      // If clicking direct external project link, corner launch button, or GitHub button, let it open naturally without modal intercept
+      if (e.target.closest('.btn-view-project') || e.target.closest('.hero-corner-launch-btn') || e.target.closest('.coverflow-github-btn')) {
         return;
       }
 
@@ -1263,7 +1293,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Keyboard Enter / Space support on cards
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
-        if (e.target.closest('.btn-view-project')) {
+        if (e.target.closest('.btn-view-project') || e.target.closest('.hero-corner-launch-btn') || e.target.closest('.coverflow-github-btn')) {
           return;
         }
         e.preventDefault();
@@ -1350,6 +1380,92 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     }, { passive: true });
+  }
+
+  // ================================================================
+  // 3D VOLUMETRIC PARALLAX CONTROLLER (EDUMATCH STYLE POP-OUT DEPTH)
+  // ================================================================
+  let parallaxTargetX = 0;
+  let parallaxTargetY = 0;
+  let parallaxCurrentX = 0;
+  let parallaxCurrentY = 0;
+  let parallaxRafId = null;
+  let isParallaxHovered = false;
+
+  function applyParallaxFrame() {
+    const ease = 0.12;
+    parallaxCurrentX += (parallaxTargetX - parallaxCurrentX) * ease;
+    parallaxCurrentY += (parallaxTargetY - parallaxCurrentY) * ease;
+
+    const activeCard = document.querySelector('.coverflow-card.is-active');
+    if (activeCard) {
+      const maxTilt = 8.5; // degrees tilt
+      const tiltX = parallaxCurrentX * maxTilt;
+      const tiltY = -parallaxCurrentY * maxTilt;
+
+      activeCard.style.setProperty('--px', parallaxCurrentX.toFixed(4));
+      activeCard.style.setProperty('--py', parallaxCurrentY.toFixed(4));
+      activeCard.style.setProperty('--tilt-x', `${tiltX.toFixed(2)}deg`);
+      activeCard.style.setProperty('--tilt-y', `${tiltY.toFixed(2)}deg`);
+    }
+
+    if (isParallaxHovered || Math.abs(parallaxTargetX - parallaxCurrentX) > 0.001 || Math.abs(parallaxTargetY - parallaxCurrentY) > 0.001) {
+      parallaxRafId = requestAnimationFrame(applyParallaxFrame);
+    } else {
+      parallaxRafId = null;
+    }
+  }
+
+  function startParallaxLoop() {
+    if (!parallaxRafId) {
+      parallaxRafId = requestAnimationFrame(applyParallaxFrame);
+    }
+  }
+
+  function resetActiveCardParallax() {
+    parallaxTargetX = 0;
+    parallaxTargetY = 0;
+    parallaxCurrentX = 0;
+    parallaxCurrentY = 0;
+    const activeCard = document.querySelector('.coverflow-card.is-active');
+    if (activeCard) {
+      activeCard.style.setProperty('--px', '0');
+      activeCard.style.setProperty('--py', '0');
+      activeCard.style.setProperty('--tilt-x', '0deg');
+      activeCard.style.setProperty('--tilt-y', '0deg');
+    }
+  }
+
+  if (coverflowStage) {
+    coverflowStage.addEventListener('mousemove', (e) => {
+      const activeCard = document.querySelector('.coverflow-card.is-active');
+      if (!activeCard) return;
+
+      const rect = activeCard.getBoundingClientRect();
+      // Track within active card bounds + 25px tolerance
+      if (e.clientX >= rect.left - 25 && e.clientX <= rect.right + 25 &&
+          e.clientY >= rect.top - 25 && e.clientY <= rect.bottom + 25) {
+        isParallaxHovered = true;
+        const cardCenterX = rect.left + rect.width / 2;
+        const cardCenterY = rect.top + rect.height / 2;
+
+        parallaxTargetX = Math.max(-1, Math.min(1, (e.clientX - cardCenterX) / (rect.width / 2)));
+        parallaxTargetY = Math.max(-1, Math.min(1, (e.clientY - cardCenterY) / (rect.height / 2)));
+        startParallaxLoop();
+      } else if (isParallaxHovered) {
+        isParallaxHovered = false;
+        parallaxTargetX = 0;
+        parallaxTargetY = 0;
+        startParallaxLoop();
+      }
+    });
+
+    coverflowStage.addEventListener('mouseleave', () => {
+      isParallaxHovered = false;
+      parallaxTargetX = 0;
+      parallaxTargetY = 0;
+      startParallaxLoop();
+    });
   }
 
   // Initialize coverflow at slide 0 without sound
