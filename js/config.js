@@ -1,172 +1,155 @@
 /* ================================================================
-   ✏️  CONFIG.JS — FILE KONFIGURASI PORTOFOLIO TOY STORY THEME
+   CONFIG.JS - KONFIGURASI DAFTAR PROYEK PORTOFOLIO
    ================================================================
    Portofolio Anandita Galuh Sekar Kinanti
-   Tema: Toy Story (Andy's Room, Woody & Buzz Space Ranger)
-   Tanpa Efek Neon & Tanpa Efek Glowing
+   Ubah judul, gambar, deskripsi, teknologi, dan link proyek di sini!
+   Semua perubahan di file ini akan otomatis diperbarui di web.
+   Strictly Zero Emojis.
    ================================================================ */
 
-/* ----------------------------------------------------------------
-   👤 PROFIL UTAMA
-   ---------------------------------------------------------------- */
-const CONFIG_PROFILE = {
-  name: "Anandita Galuh Sekar Kinanti",
-  nickname: "Galuh",
-  initials: "AGSK",
-  tagline: "Frontend Developer & UI/UX Designer",
-  toyTitle: "Sheriff of Web & Space Ranger of Design",
-  greeting: "Halo, Partner! Saya",
-  bio: [
-    `Saya adalah seorang siswi SMK jurusan <strong>Rekayasa Perangkat Lunak</strong> di SMKS Brantas Karangkates yang memiliki antusiasme tinggi dalam pengembangan web dan perancangan UI/UX. Seperti mainan terbaik di kamar Andy, saya siap berpetualang menciptakan karya digital yang fungsional, menyenangkan, dan berkesan.`,
-    `Dalam mengembangkan proyek, saya menguasai <strong>HTML5, CSS3, JavaScript, PHP</strong> untuk membangun antarmuka web yang rapi dan responsif, serta <strong>Figma</strong> untuk mendesain prototipe antarmuka yang user-friendly. Saya juga mempelajari <strong>Python</strong> untuk logika pemrograman dan gim sederhana, serta memanfaatkan <strong>GitHub</strong> untuk kolaborasi dan manajemen kode.`,
-  ],
-
-  // Info detail di kartu spesifikasi mainan
-  location: "Malang, Jawa Timur",
-  education: "SMKS Brantas Karangkates — RPL",
-  focus: "Frontend & UI/UX Design",
-  languages: "Indonesia, English",
-
-  // Status ketersediaan
-  status: "Siswa Aktif RPL SMKS Brantas — Siap Berpetualang (2026)",
-  statusOpen: true,
-
-  // Link CV
-  cvLink: "files/CV_Anandita Galuh Sekar Kinanti.pdf",
-};
-
-/* ----------------------------------------------------------------
-   📊 STATISTIK (BLOK MAINAN)
-   ---------------------------------------------------------------- */
-const CONFIG_STATS = [
-  { number: 6, label: "Proyek Selesai", icon: "fa-solid fa-box-open", blockColor: "yellow" },
-  { number: 2026, label: "Angkatan SMK", icon: "fa-solid fa-graduation-cap", blockColor: "blue" },
-  { number: 100, label: "% Semangat & Dedikasi", icon: "fa-solid fa-rocket", blockColor: "red" },
-];
-
-/* ----------------------------------------------------------------
-   🔗 SOSIAL MEDIA & KONTAK (KOMUNIKATOR PIZZA PLANET)
-   ---------------------------------------------------------------- */
-const CONFIG_SOCIAL = {
-  email: "ananditaaa2010@gmail.com",
-  instagram: "https://www.instagram.com/ananditagaluh?igsh=MWJrYzZyZmdkZHZldg==",
-  github: "https://github.com/ananditaaa2010-a11y",
-  linkedin: "https://www.linkedin.com/in/anandita-galuh-sekar-kinanti-6063b2384?trk=contact-info",
-  twitter: "",
-};
-
-/* ----------------------------------------------------------------
-   🛠️ KEAHLIAN (KOTAK PERKAKAS MAINAN)
-   ---------------------------------------------------------------- */
-const CONFIG_SKILLS = {
-  categories: [
-    {
-      theme: "woody",
-      icon: "fa-solid fa-hat-cowboy",
-      badge: "Woody's Toolkit",
-      title: "Frontend Web Craft",
-      desc: "Teknologi inti dalam merakit antarmuka web yang kokoh.",
-      tags: ["HTML5", "CSS3", "JavaScript", "PHP", "Responsive Design"],
-    },
-    {
-      theme: "buzz",
-      icon: "fa-solid fa-rocket",
-      badge: "Buzz's Gear",
-      title: "Design & Tools",
-      desc: "Perlengkapan navigasi desain visual dan manajemen versi.",
-      tags: ["Figma", "UI/UX Prototyping", "GitHub", "VS Code", "Python"],
-    },
-  ],
-
-  bars: [
-    { name: "Frontend Development", pct: 88, color: "#E53935", label: "High Precision" },
-    { name: "UI / UX Design (Figma)", pct: 90, color: "#6EC828", label: "Pixel Perfect" },
-    { name: "Problem Solving & Logic", pct: 82, color: "#FDC02F", label: "Ready to Explore" },
-  ],
-};
-
-/* ----------------------------------------------------------------
-   💼 KOLEKSI PROYEK (TOY BOX COLLECTION)
-   ---------------------------------------------------------------- */
 const CONFIG_PROJECTS = [
   {
+    id: "p1",
+    number: "#01",
     title: "Sistem Informasi Universitas",
-    desc: "Website portal informasi komprehensif untuk Universitas Atma Jaya Yogyakarta dengan tata letak bersih dan navigasi informatif.",
-    tags: ["HTML", "CSS", "Web Design"],
-    category: "Web",
-    img: "img/univ.jpg",
+    category: "Web Portal",
+    categoryIcon: "fa-solid fa-globe",
     edition: "Campus Edition",
-    scale: "1",
-    fit: "cover",
-    link: "https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link",
+    editionIcon: "fa-solid fa-graduation-cap",
+    status: "ACTIVE",
+    tapeClass: "tape-cowhide",
+    tapeTitle: "Cowhide Tape",
+    image: "img/univ.jpg",
+    imageFit: "cover",
+    description: "Website portal informasi komprehensif untuk Universitas Atma Jaya Yogyakarta dengan tata letak bersih, navigasi terstruktur, dan performa responsif.",
+    tech: [
+      { name: "HTML5", icon: "fa-brands fa-html5", pillClass: "tech-pill-html" },
+      { name: "CSS3", icon: "fa-brands fa-css3-alt", pillClass: "tech-pill-css" },
+      { name: "JavaScript", icon: "fa-brands fa-js", pillClass: "tech-pill-js" }
+    ],
+    demoUrl: "https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link",
+    repoUrl: "https://github.com/ananditaaa2010-a11y"
   },
   {
+    id: "p2",
+    number: "#02",
     title: "Website E-Commerce JCO Donuts",
-    desc: "Desain dan implementasi antarmuka landing page katalog produk donat premium J.CO yang lezat dan interaktif.",
-    tags: ["HTML", "CSS", "E-Commerce"],
-    category: "Web App",
-    img: "img/logo baru.png",
-    edition: "Sweet Edition",
-    scale: "0.85",
-    fit: "contain",
-    link: "https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link",
+    category: "E-Commerce",
+    categoryIcon: "fa-solid fa-cookie-bite",
+    edition: "Culinary Edition",
+    editionIcon: "fa-solid fa-store",
+    status: "ACTIVE",
+    tapeClass: "tape-flannel",
+    tapeTitle: "Woody Flannel Tape",
+    image: "img/logo baru.png",
+    imageFit: "contain",
+    description: "Desain dan implementasi antarmuka landing page katalog produk donat premium J.CO yang lezat, interaktif, dan ramah pengguna.",
+    tech: [
+      { name: "HTML5", icon: "fa-brands fa-html5", pillClass: "tech-pill-html" },
+      { name: "CSS3", icon: "fa-brands fa-css3-alt", pillClass: "tech-pill-css" },
+      { name: "E-Commerce UI", icon: "fa-solid fa-basket-shopping", pillClass: "tech-pill-design" }
+    ],
+    demoUrl: "https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link",
+    repoUrl: "https://github.com/ananditaaa2010-a11y"
   },
   {
+    id: "p3",
+    number: "#03",
     title: "Game & Software Python",
-    desc: "Eksplorasi bahasa pemrograman Python untuk merancang logika interaktif dan pengembangan gim sederhana yang seru.",
-    tags: ["Python", "Logic", "Game Dev"],
-    category: "Python",
-    img: "img/python.jpg",
+    category: "Python Dev",
+    categoryIcon: "fa-brands fa-python",
     edition: "Arcade Edition",
-    scale: "1",
-    fit: "cover",
-    link: "https://drive.google.com/drive/folders/1OJ7EV6d5vqvGEp53Jp9b5gFa-r3DJKuk?usp=sharing",
+    editionIcon: "fa-solid fa-gamepad",
+    status: "ACTIVE",
+    tapeClass: "tape-buzz",
+    tapeTitle: "Buzz Space Ranger Tape",
+    image: "img/python.jpg",
+    imageFit: "cover",
+    description: "Eksplorasi bahasa pemrograman Python untuk merancang logika interaktif, pengolahan data sederhana, dan pengembangan modul gim klasik.",
+    tech: [
+      { name: "Python 3", icon: "fa-brands fa-python", pillClass: "tech-pill-python" },
+      { name: "Algorithms", icon: "fa-solid fa-microchip", pillClass: "tech-pill-algo" },
+      { name: "Game Dev", icon: "fa-solid fa-ghost", pillClass: "tech-pill-game" }
+    ],
+    demoUrl: "https://drive.google.com/drive/folders/1OJ7EV6d5vqvGEp53Jp9b5gFa-r3DJKuk?usp=sharing",
+    repoUrl: "https://github.com/ananditaaa2010-a11y"
   },
   {
+    id: "p4",
+    number: "#04",
     title: "Design Landing Page Figma",
-    desc: "Perancangan UI/UX landing page modern di Figma dengan fokus pada hierarki visual, tipografi, dan pengalaman pengguna optimal.",
-    tags: ["Figma", "UI/UX", "Prototype"],
-    category: "Design Web",
-    img: "img/landing.jpg",
+    category: "UI/UX Figma",
+    categoryIcon: "fa-brands fa-figma",
     edition: "Concept Edition",
-    scale: "1",
-    fit: "cover",
-    link: "https://www.figma.com/design/hwiHotD2EtEFiHTnz7G6wJ/E-Commerce-Design?node-id=0-1&t=tHgj5ebnapz78nLI-1",
+    editionIcon: "fa-solid fa-pen-ruler",
+    status: "ACTIVE",
+    tapeClass: "tape-pizza",
+    tapeTitle: "Pizza Planet Tape",
+    image: "img/landing.jpg",
+    imageFit: "cover",
+    description: "Perancangan UI/UX landing page modern di Figma dengan fokus pada hierarki visual, kontras warna yang nyaman, tipografi terstruktur, dan alur prototipe mulus.",
+    tech: [
+      { name: "Figma", icon: "fa-brands fa-figma", pillClass: "tech-pill-figma" },
+      { name: "UI/UX", icon: "fa-solid fa-layer-group", pillClass: "tech-pill-ui" },
+      { name: "Prototyping", icon: "fa-solid fa-bezier-curve", pillClass: "tech-pill-proto" }
+    ],
+    demoUrl: "https://www.figma.com/design/hwiHotD2EtEFiHTnz7G6wJ/E-Commerce-Design?node-id=0-1&t=tHgj5ebnapz78nLI-1",
+    repoUrl: "https://github.com/ananditaaa2010-a11y"
   },
   {
+    id: "p5",
+    number: "#05",
     title: "Design Web Batik Khas Yogyakarta",
-    desc: "Perancangan desain toko daring warisan budaya batik khas Yogyakarta yang memadukan nuansa tradisional dengan gaya modern.",
-    tags: ["Figma", "Culture", "E-Commerce"],
-    category: "Design Web",
-    img: "img/batikbaru.jpg",
+    category: "Heritage Web",
+    categoryIcon: "fa-solid fa-palette",
     edition: "Heritage Edition",
-    scale: "1",
-    fit: "cover",
-    link: "https://docs.google.com/document/d/1IXtKdZZeUXmvzTJlvwLknqLplPBPV6nUzIAECFkfMEw/edit?usp=sharing",
+    editionIcon: "fa-solid fa-gem",
+    status: "ACTIVE",
+    tapeClass: "tape-cowhide",
+    tapeTitle: "Cowhide Tape",
+    image: "img/batikbaru.jpg",
+    imageFit: "cover",
+    description: "Perancangan desain toko daring warisan budaya batik khas Yogyakarta yang memadukan nuansa tradisional Nusantara dengan pengalaman belanja digital modern.",
+    tech: [
+      { name: "Figma", icon: "fa-brands fa-figma", pillClass: "tech-pill-figma" },
+      { name: "E-Commerce", icon: "fa-solid fa-bag-shopping", pillClass: "tech-pill-design" },
+      { name: "Culture", icon: "fa-solid fa-feather", pillClass: "tech-pill-culture" }
+    ],
+    demoUrl: "https://docs.google.com/document/d/1IXtKdZZeUXmvzTJlvwLknqLplPBPV6nUzIAECFkfMEw/edit?usp=sharing",
+    repoUrl: "https://github.com/ananditaaa2010-a11y"
   },
   {
+    id: "p6",
+    number: "#06",
     title: "Website E-Commerce Qinanthi",
-    desc: "Konsep platform belanja digital dengan sistem katalog produk yang terstruktur rapi, elegan, dan mudah dinavigasi oleh pengguna.",
-    tags: ["Figma", "E-Commerce", "UI/UX"],
-    category: "Web",
-    img: "img/qinanthi.png",
-    edition: "Store Edition",
-    scale: "1",
-    fit: "cover",
-    link: "https://www.figma.com/design/hwiHotD2EtEFiHTnz7G6wJ/E-Commerce-Design?node-id=0-1&t=AgTP4Hqli09JAkjF-1",
-  },
+    category: "Fashion Store",
+    categoryIcon: "fa-solid fa-shirt",
+    edition: "Fashion Edition",
+    editionIcon: "fa-solid fa-vest-patches",
+    status: "ACTIVE",
+    tapeClass: "tape-flannel",
+    tapeTitle: "Woody Flannel Tape",
+    image: "img/qinanthi.png",
+    imageFit: "cover",
+    description: "Konsep platform belanja digital busana dengan katalog produk terstruktur rapi, navigasi pencarian instan, dan antarmuka checkout yang intuitif.",
+    tech: [
+      { name: "Figma", icon: "fa-brands fa-figma", pillClass: "tech-pill-figma" },
+      { name: "UI/UX", icon: "fa-solid fa-crop-simple", pillClass: "tech-pill-ui" },
+      { name: "Design System", icon: "fa-solid fa-swatchbook", pillClass: "tech-pill-proto" }
+    ],
+    demoUrl: "https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link",
+    repoUrl: "https://github.com/ananditaaa2010-a11y"
+  }
 ];
 
-/* ----------------------------------------------------------------
-   🎨 WARNA TEMA TOY STORY (SOLID & CRISP — TANPA NEON & GLOW)
-   ---------------------------------------------------------------- */
-const CONFIG_THEME = {
-  skyBlue: "#48A6E9", // Andy's wallpaper sky
-  cloudWhite: "#FFFFFF", // Fluffy Andy clouds
-  woodyYellow: "#FDC02F", // Toy Story yellow
-  woodyRed: "#E53935", // Bandana red
-  buzzGreen: "#6EC828", // Space Ranger lime green
-  buzzPurple: "#7E3BB0", // Space Ranger purple
-  toyBorder: "#2B2D42", // Bold cartoon toy outline
-  woodFloor: "#C68642", // Andy's wooden floor
-};
+// Pastikan konfigurasi dapat diakses secara global di browser & script.js
+if (typeof window !== 'undefined') {
+  window.CONFIG_PROJECTS = CONFIG_PROJECTS;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.CONFIG_PROJECTS = CONFIG_PROJECTS;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { CONFIG_PROJECTS };
+}
+

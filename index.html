@@ -5,1436 +5,1765 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Portofolio Anandita Galuh Sekar Kinanti — Frontend Developer & UI/UX Designer. Tema Retro 90s Gaming, Torn Paper & Mainan Klasik!" />
-  <title>Anandita Galuh Sekar Kinanti — Retro 90s Portfolio</title>
+    content="Portofolio Anandita Galuh Sekar Kinanti — Siswi Rekayasa Perangkat Lunak (RPL) SMKS Brantas Karangkates. Petualangan kreasi web modern, UI/UX, dan koding interaktif." />
+  <title>Anandita Galuh</title>
 
-  <!-- Google Fonts: Pixelify Sans & Press Start 2P (8-bit Pixel Titles), Silkscreen (Tags), Fredoka & Quicksand (Clean Body) -->
+  <!-- Google Fonts: Lilita One (Movie Adventure Headings), Fredoka (Rounded Punchy Subheadings), Outfit (Clean Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600;700&family=Lilita+One&family=Outfit:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Font Awesome 6 (Strictly zero emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Main Stylesheet (Torn Paper Retro 90s Style) -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body id="top">
 
-  <!-- ===================== CINEMATIC TOY STORY WELCOME SCREEN ===================== -->
-  <div class="welcome-screen-overlay" id="welcomeScreen" role="dialog" aria-modal="true"
-    aria-label="Welcome to Anandita's Toy Room">
-
-    <!-- Andy's Clouds Pattern (Zero Emoji) -->
-    <div class="welcome-clouds-bg" aria-hidden="true">
-      <div class="andy-cloud cloud-1"></div>
-      <div class="andy-cloud cloud-2"></div>
-      <div class="andy-cloud cloud-3"></div>
-      <div class="andy-cloud cloud-4"></div>
-      <div class="andy-cloud cloud-5"></div>
+  <!-- ===================== 0. MATHEMATICS & ALGEBRA LOADING SCREEN ===================== -->
+  <div class="math-loading-screen" id="mathLoadingScreen" role="dialog" aria-modal="true" aria-label="Memuat Portofolio">
+    <!-- Floating Math Formulas Parallax Field in Background -->
+    <div class="math-formulas-backdrop" aria-hidden="true">
+      <span class="math-formula-tag tag-f1">x = (-b &plusmn; &radic;(b&sup2; - 4ac)) / 2a</span>
+      <span class="math-formula-tag tag-f2">e<sup>i&pi;</sup> + 1 = 0</span>
+      <span class="math-formula-tag tag-f3">&int;<sub>0</sub><sup>&infin;</sup> e<sup>-x&sup2;</sup> dx = &radic;&pi; / 2</span>
+      <span class="math-formula-tag tag-f4">&sin;&sup2;&theta; + &cos;&sup2;&theta; = 1</span>
+      <span class="math-formula-tag tag-f5">&nabla; &times; E = -&part;B / &part;t</span>
+      <span class="math-formula-tag tag-f6">det(A) = ad - bc</span>
+      <span class="math-formula-tag tag-f7">E = mc&sup2;</span>
+      <span class="math-formula-tag tag-f8">&sum;<sub>i=1</sub><sup>n</sup> i = n(n+1) / 2</span>
+      <span class="math-formula-tag tag-f9">&phi; = (1 + &radic;5) / 2</span>
+      <span class="math-formula-tag tag-f10">lim<sub>x&rarr;0</sub> (sin x / x) = 1</span>
+      <span class="math-formula-tag tag-f11">a&sup2; + b&sup2; = c&sup2;</span>
+      <span class="math-formula-tag tag-f12">f'(x) = lim<sub>h&rarr;0</sub> [f(x+h) - f(x)] / h</span>
+      <span class="math-formula-tag tag-f13">(a + b)&sup2; = a&sup2; + 2ab + b&sup2;</span>
+      <span class="math-formula-tag tag-f14">&lambda; = h / p</span>
+      <span class="math-formula-tag tag-f15">&Delta;y / &Delta;x = f'(x)</span>
+      <span class="math-formula-tag tag-f16">&int; x<sup>n</sup> dx = x<sup>n+1</sup> / (n+1)</span>
+      <span class="math-formula-tag tag-f17">A<sup>-1</sup> = adj(A) / det(A)</span>
+      <span class="math-formula-tag tag-f18">&alpha;&sup2; + &beta;&sup2; = (b&sup2; - 2ac) / a&sup2;</span>
+      <span class="math-formula-tag tag-f19">log(xy) = log x + log y</span>
+      <span class="math-formula-tag tag-f20">&sigma; = &radic;(&sum;(x - &mu;)&sup2; / N)</span>
     </div>
 
-    <!-- Central Toy Chest Trunk -->
-    <div class="toybox-chest-card">
+    <!-- Direct Center Math Display (Tanpa Kotak di Tengah - Langsung di Kanvas Putih) -->
+    <div class="math-direct-stage">
+      <div class="math-direct-pill">
+        <span class="math-icon-pill"><i class="fa-solid fa-square-root-variable"></i></span>
+        <span class="math-direct-title">SISTEM ALJABAR &amp; KALKULASI</span>
+        <span class="math-calc-chip"><i class="fa-solid fa-calculator"></i> CALC_ENGINE v2.6</span>
+      </div>
 
-      <!-- Toy Box Lid Ribbon -->
-      <div class="toybox-header-ribbon">
-        <div class="sheriff-badge-gold" title="Sheriff Star">
-          <svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true">
-            <polygon points="20,2 25,14 38,14 28,22 32,35 20,27 8,35 12,22 2,14 15,14" fill="#fdc02f" stroke="#1a1a1a"
-              stroke-width="2" />
-            <circle cx="20" cy="20" r="5" fill="#d32828" stroke="#1a1a1a" stroke-width="1.2" />
-          </svg>
+      <div class="math-equation-step" id="mathActiveStep">PERSAMAAN KUADRATIK &amp; ALJABAR LINIER</div>
+      
+      <div class="math-equation-render" id="mathActiveFormula">
+        <span class="formula-var">x</span> = 
+        <span class="formula-frac">
+          <span class="formula-num">-b &plusmn; &radic;(b&sup2; - 4ac)</span>
+          <span class="formula-den">2a</span>
+        </span>
+      </div>
+
+      <div class="math-derivation-bar" id="mathDerivationText">
+        <span class="derivation-pulse"></span>
+        <span id="mathStatusMsg">Menguraikan variabel &amp; matriks aljabar...</span>
+      </div>
+
+      <!-- Direct Minimal Progress Bar -->
+      <div class="math-direct-progress-wrapper">
+        <div class="math-progress-bar-bg">
+          <div class="math-progress-bar-fill" id="mathProgressFill"></div>
         </div>
-        <span class="toybox-brand-tag">ANDY'S ROOM // STAR COMMAND</span>
-        <div class="buzz-wings-mini" title="Space Ranger Wings">
-          <span class="wing-green"></span>
-          <span class="wing-purple"></span>
+        <div class="math-progress-numbers">
+          <span class="math-progress-step" id="mathStepCounter">LANGKAH 1 / 4: FAKTORISASI</span>
+          <span class="math-progress-pct"><strong id="mathProgressNum">0</strong>%</span>
         </div>
       </div>
 
-      <!-- Alphabet Toy Building Blocks: A • N • A • N • D • I • T • A -->
-      <div class="toy-blocks-rack" aria-label="Anandita Toy Blocks">
-        <div class="toy-block block-red" title="A"><span>A</span></div>
-        <div class="toy-block block-blue" title="N"><span>N</span></div>
-        <div class="toy-block block-yellow" title="A"><span>A</span></div>
-        <div class="toy-block block-green" title="N"><span>N</span></div>
-        <div class="toy-block block-orange" title="D"><span>D</span></div>
-        <div class="toy-block block-purple" title="I"><span>I</span></div>
-        <div class="toy-block block-cyan" title="T"><span>T</span></div>
-        <div class="toy-block block-red" title="A"><span>A</span></div>
-      </div>
-
-      <div class="toybox-content-box">
-        <h1 class="toybox-main-title">KOTAK MAINAN DIGITAL</h1>
-        <p class="toybox-subtitle">Portofolio Siswi RPL SMKS Brantas Karangkates 2026 &bull; Anandita Galuh Sekar
-          Kinanti</p>
-
-        <div class="toybox-decor-row">
-          <span class="toy-tag-pill"><i class="fa-solid fa-rocket"></i> Space Ranger</span>
-          <span class="toy-tag-pill"><i class="fa-solid fa-gamepad"></i> Retro 90s Gaming</span>
-          <span class="toy-tag-pill"><i class="fa-solid fa-hat-cowboy"></i> Sheriff of Web</span>
-        </div>
-
-        <!-- Enter Button with Cartoon Spring Animation -->
-        <button class="btn-open-toybox" id="btnOpenToybox">
-          <i class="fa-solid fa-box-open"></i> BUKA KOTAK MAINAN ▶
-        </button>
-
-        <button class="btn-skip-intro" id="btnSkipIntro">
-          Lewati Intro &raquo;
-        </button>
-      </div>
-
-      <!-- Green Army Man Silhouette at Corner -->
-      <div class="green-soldier-corner soldier-salute" title="Green Army Soldier Recon" aria-hidden="true"></div>
+      <!-- Direct Skip Button -->
+      <button type="button" class="math-skip-btn" id="mathSkipBtn" aria-label="Lewati Loading">
+        <span>LEWATI PROSES</span>
+        <i class="fa-solid fa-forward-step"></i>
+      </button>
     </div>
   </div>
 
-  <!-- ===================== RETRO SCROLL PROGRESS & FLYING ROCKET ===================== -->
-  <div class="retro-scroll-progress" id="scrollProgress" aria-hidden="true">
-    <!-- Flying Pizza Planet Rocket Tracking Exact Scroll Progress -->
-    <div class="scroll-rocket-runner" id="scrollRocket" title="Pizza Planet Rocket Tracker">
-      <div class="mini-thruster-fire"></div>
-      <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true">
-        <path d="M 2 10 Q 14 3 26 10 Q 14 17 2 10 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.8" />
-        <polygon points="26,10 32,10 26,6" fill="#d32828" stroke="#1a1a1a" stroke-width="1.2" />
-        <polygon points="2,5 8,7 6,10" fill="#d32828" stroke="#1a1a1a" stroke-width="1" />
-        <polygon points="2,15 8,13 6,10" fill="#d32828" stroke="#1a1a1a" stroke-width="1" />
-        <circle cx="16" cy="10" r="2.5" fill="#38bdf8" stroke="#1a1a1a" stroke-width="1" />
-      </svg>
+  <!-- ===================== LIVELY ADVENTURE SCROLL ANIMATION ATMOSPHERE ===================== -->
+  <div class="lively-scroll-atmosphere" id="livelyScrollAtmosphere" aria-hidden="true">
+    <!-- Floating Parallax Stream (Scattered Left & Right) -->
+    <div class="scroll-parallax-stream" id="scrollParallaxStream">
+      <!-- Left Margin Floating Items -->
+      <div class="parallax-item p-item-1" data-speed="0.22">
+        <span class="p-shape shape-star star-yellow"><i class="fa-solid fa-star"></i></span>
+      </div>
+      <div class="parallax-item p-item-2" data-speed="-0.32">
+        <span class="p-shape shape-token token-purple"><span>&lt;/&gt;</span></span>
+      </div>
+      <div class="parallax-item p-item-3" data-speed="0.42">
+        <span class="p-shape shape-block block-cube"></span>
+      </div>
+      <div class="parallax-item p-item-4" data-speed="-0.18">
+        <span class="p-shape shape-badge badge-figma"><i class="fa-brands fa-figma"></i></span>
+      </div>
+      <div class="parallax-item p-item-5" data-speed="0.35">
+        <span class="p-shape shape-spring"><i class="fa-solid fa-atom"></i></span>
+      </div>
+      <div class="parallax-item p-item-6" data-speed="-0.38">
+        <span class="p-shape shape-token token-yellow"><span>{...}</span></span>
+      </div>
+      <div class="parallax-item p-item-7" data-speed="0.28">
+        <span class="p-shape shape-star star-blue"><i class="fa-solid fa-shapes"></i></span>
+      </div>
+
+      <!-- Right Margin Floating Items -->
+      <div class="parallax-item p-item-8" data-speed="-0.28">
+        <span class="p-shape shape-star star-coral"><i class="fa-solid fa-certificate"></i></span>
+      </div>
+      <div class="parallax-item p-item-9" data-speed="0.38">
+        <span class="p-shape shape-block block-triangle"></span>
+      </div>
+      <div class="parallax-item p-item-10" data-speed="-0.22">
+        <span class="p-shape shape-token token-green"><span>CSS</span></span>
+      </div>
+      <div class="parallax-item p-item-11" data-speed="0.32">
+        <span class="p-shape shape-badge badge-js"><i class="fa-brands fa-js"></i></span>
+      </div>
+      <div class="parallax-item p-item-12" data-speed="-0.42">
+        <span class="p-shape shape-donut"></span>
+      </div>
+      <div class="parallax-item p-item-13" data-speed="0.25">
+        <span class="p-shape shape-star star-purple"><i class="fa-solid fa-cubes"></i></span>
+      </div>
+      <div class="parallax-item p-item-14" data-speed="-0.35">
+        <span class="p-shape shape-token token-blue"><span>PHP</span></span>
+      </div>
     </div>
-  </div>
 
-  <div class="scroll-zone-indicator" id="scrollZone" aria-label="Level Indicator">
-    <i class="fa-solid fa-gamepad"></i> <span id="zoneLabel">ZONE: BERANDA</span>
-  </div>
+    <!-- Interactive Rocket Glider Scroll Companion (Right Margin) -->
+    <div class="scroll-rocket-companion" id="scrollRocketCompanion" role="button" tabindex="0" aria-label="Kembali ke Atas" title="Klik untuk Kembali ke Atas">
+      <!-- Section Speech Bubble / Status Tag -->
+      <div class="rocket-speech-bubble" id="rocketSpeechBubble">
+        <span class="rocket-pct" id="rocketPctText">0%</span>
+        <span class="rocket-status-msg" id="rocketStatusMsg">Mulai Petualangan!</span>
+      </div>
 
-  <!-- Parachuting Green Army Man Gliding on Scroll -->
-  <div class="scroll-paratrooper-actor" id="scrollParatrooper" aria-hidden="true" title="Green Army Paratrooper Recon">
-    <div class="paratrooper-dome"></div>
-    <div class="paratrooper-strings"></div>
-    <div class="paratrooper-soldier"></div>
-  </div>
-
-  <!-- ===================== TOP FLOATING PILL NAVBAR ===================== -->
-  <nav class="retro-navbar" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-pills-container">
-      <a href="#home" class="retro-nav-pill active" data-section="home">Beranda</a>
-      <a href="#about" class="retro-nav-pill" data-section="about">Tentang</a>
-
-      <!-- Center Iconic Heart Speech Bubble (Vector Pixel Heart - Zero Emoji) -->
-      <a href="#home" class="nav-center-heart-pill" aria-label="Home Heart" title="Anandita Galuh">
-        <svg class="pixel-heart-svg" viewBox="0 0 24 24" width="22" height="22" aria-label="Heart Icon">
-          <path fill="#8b5cf6" stroke="#1a1a1a" stroke-width="1.2"
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      <!-- Animated Cartoon Rocket -->
+      <div class="rocket-body-rig" id="rocketBodyRig">
+        <svg class="rocket-svg" viewBox="0 0 64 64" width="48" height="48" fill="none">
+          <!-- Thruster Fire & Exhaust -->
+          <g class="rocket-thruster-group" id="rocketThruster">
+            <path d="M 26,48 L 32,60 L 38,48 Z" fill="#f97316" stroke="#2e1065" stroke-width="2" />
+            <path d="M 28,48 L 32,56 L 36,48 Z" fill="#facc15" />
+          </g>
+          <!-- Wings -->
+          <path d="M 16,36 L 6,46 L 20,46 Z" fill="#7e22ce" stroke="#2e1065" stroke-width="2.5" stroke-linejoin="round" />
+          <path d="M 48,36 L 58,46 L 44,46 Z" fill="#7e22ce" stroke="#2e1065" stroke-width="2.5" stroke-linejoin="round" />
+          <!-- Fuselage -->
+          <path d="M 32,4 C 20,16 18,34 20,48 L 44,48 C 46,34 44,16 32,4 Z" fill="#ffffff" stroke="#2e1065" stroke-width="2.5" stroke-linejoin="round" />
+          <!-- Nose Cone -->
+          <path d="M 32,4 C 26,12 24,18 24,20 L 40,20 C 40,18 38,12 32,4 Z" fill="#ef4444" stroke="#2e1065" stroke-width="2" stroke-linejoin="round" />
+          <!-- Porch Window -->
+          <circle cx="32" cy="28" r="7" fill="#38bdf8" stroke="#2e1065" stroke-width="2.5" />
+          <circle cx="30" cy="26" r="2.5" fill="#ffffff" />
+          <!-- Detail Stripe -->
+          <rect x="22" y="42" width="20" height="4" fill="#facc15" stroke="#2e1065" stroke-width="1.5" />
         </svg>
+
+        <!-- Dynamic Smoke Puffs Behind Rocket -->
+        <div class="rocket-smoke-trail" id="rocketSmokeTrail">
+          <span class="smoke-puff p1"></span>
+          <span class="smoke-puff p2"></span>
+          <span class="smoke-puff p3"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== TOP NAVIGATION BAR ===================== -->
+  <header class="adventure-nav" id="mainNavbar">
+    <div class="nav-container">
+
+      <!-- Brand Logo in Signature Adventure Typography -->
+      <a href="#top" class="brand-logo" aria-label="Anandita Galuh Portfolio">
+        <span class="brand-crest">
+          <svg viewBox="0 0 36 36" width="30" height="30" aria-hidden="true">
+            <path d="M 18 2 C 10 2 4 8 4 16 C 4 24 10 32 18 34 C 26 32 32 24 32 16 C 32 8 26 2 18 2 Z" fill="#eab308"
+              stroke="#713f12" stroke-width="2.5" />
+            <polygon points="18,6 22,14 31,15 24,21 26,30 18,25 10,30 12,21 5,15 14,14" fill="#ffffff" />
+          </svg>
+        </span>
+        <div class="brand-text-block">
+          <span class="brand-title">ANANDITA GALUH</span>
+          <span class="brand-sub">RPL - BRANTAS</span>
+        </div>
       </a>
 
-      <a href="#skills" class="retro-nav-pill" data-section="skills">Keahlian</a>
-      <a href="#projects" class="retro-nav-pill" data-section="projects">Galeri Proyek</a>
-      <a href="#contact" class="retro-nav-pill" data-section="contact">Kontak</a>
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-links" id="navLinks" aria-label="Menu Utama">
+        <a href="#hero" class="nav-item active-nav">HOME</a>
+        <a href="#story" class="nav-item">THE STORY</a>
+        <a href="#cast" class="nav-item">THE CAST</a>
+        <a href="#gallery" class="nav-item">GALLERY</a>
+        <a href="#signpost" class="nav-item">CONTACT</a>
+      </nav>
 
-      <!-- Sound Toggle Pill -->
-      <button class="retro-nav-pill sfx-pill" id="soundToggle" aria-label="Toggle retro sound">
-        <i class="fa-solid fa-volume-high" id="soundIcon"></i>
-        <span id="soundText">SFX</span>
-      </button>
-
-      <!-- Toy Story 8-Bit Theme Music Pill -->
-      <button class="retro-nav-pill song-pill" id="btnToyStorySong" aria-label="Putar Melodi Toy Story"
-        title="Putar Lagu 'You've Got a Friend in Me' (8-Bit Retro Chiptune)">
-        <i class="fa-solid fa-music"></i>
-        <span id="songText">LAGU TOY STORY</span>
-      </button>
-
-      <a href="files/CV_Anandita Galuh Sekar Kinanti.pdf" download class="pixo-nav-cta">Unduh CV &rarr;</a>
-      <!-- Mobile Hamburger -->
-      <button class="retro-nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ===================== HERO SECTION: PIXO RETRO PIXEL ART (MATCHING REFERENCE) ===================== -->
-  <section class="retro-hero-section pixo-hero-section" id="home" aria-label="Hero Section">
-
-    <!-- Background Grid Paper Atmosphere -->
-    <div class="pixo-grid-bg" aria-hidden="true"></div>
-
-    <div class="hero-paper-inner">
-      <div class="container pixo-hero-container">
-
-        <!-- Top Headline: Small pixels. Big brain. -->
-        <div class="pixo-hero-header reveal">
-          <h1 class="pixo-hero-headline">
-            <span class="pixo-title-line">Anandita Galuh</span>
-            <span class="pixo-title-line">Sekar Kinanti</span>
-          </h1>
-          <p class="pixo-hero-subtitle">
-            Pixo adalah portofolio karya Anandita Galuh S.K. — Siswi RPL SMKS Brantas Karangkates.<br>
-            Merancang antarmuka web cerdas, gim retro nostalgia, dan sistem perangkat lunak modern.
-          </p>
+      <!-- Action Group & Socials -->
+      <div class="nav-actions">
+        <div class="nav-socials" aria-label="Media Sosial">
+          <a href="https://github.com/ananditaaa2010-a11y" target="_blank" rel="noopener noreferrer"
+            class="social-circle" title="GitHub" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/anandita-galuh-sekar-kinanti-6063b2384?trk=contact-info" target="_blank"
+            rel="noopener noreferrer" class="social-circle" title="LinkedIn" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.instagram.com/ananditagaluh?igsh=MWJrYzZyZmdkZHZldg==" target="_blank"
+            rel="noopener noreferrer" class="social-circle" title="Instagram" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </div>
 
-        <!-- Centerpiece Illustration Stage: Pixel Landscape & Cute Character -->
-        <div class="pixo-illustration-stage reveal reveal-delay-1">
+        <a href="files/CV_Anandita Galuh Sekar Kinanti.pdf" download class="nav-cv-btn" title="Unduh CV Anandita Galuh">
+          <i class="fa-solid fa-cloud-arrow-down"></i>
+          <span>UNDUH CV</span>
+        </a>
 
-          <!-- Left Floating Pixel Island -->
-          <div class="pixo-island island-left" aria-hidden="true">
-            <div class="pixo-pixel-cloud cloud-left"></div>
-            <!-- Floating Polaroid Badge -->
-            <div class="pixo-photo-badge" title="Anandita Galuh S.K.">
-              <img src="img/5. ANANDITA GALUH SEKAR KINANTI.jpg" alt="Foto Anandita" class="pixo-avatar-img" />
-              <span class="pixo-photo-caption">AGSK '26</span>
-            </div>
-            <!-- Island Terrain SVG -->
-            <svg class="island-svg" viewBox="0 0 220 120" preserveAspectRatio="none">
-              <!-- Pixel Trees -->
-              <rect x="25" y="15" width="22" height="30" fill="#8b5cf6" rx="4" />
-              <rect x="52" y="30" width="18" height="25" fill="#a78bfa" rx="3" />
-              <!-- Stepped Terrain -->
-              <path
-                d="M 0 65 L 15 65 L 15 60 L 35 60 L 35 55 L 75 55 L 75 60 L 115 60 L 115 65 L 150 65 L 150 70 L 180 70 L 180 75 L 210 75 L 210 82 L 185 82 L 185 88 L 155 88 L 155 94 L 120 94 L 120 100 L 80 100 L 80 106 L 40 106 L 40 112 L 10 112 L 0 95 Z"
-                fill="#8b5cf6" />
-              <path
-                d="M 0 72 L 20 72 L 20 78 L 60 78 L 60 84 L 100 84 L 100 90 L 140 90 L 140 96 L 175 96 L 175 104 L 120 104 L 120 110 L 60 110 L 20 116 L 0 102 Z"
-                fill="#7c3aed" />
-            </svg>
-          </div>
+        <!-- Mobile Toggle Hamburger Button -->
+        <button class="mobile-menu-toggle" id="mobileNavToggle" aria-label="Buka Menu Navigasi" aria-expanded="false"
+          type="button">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+      </div>
 
-          <!-- Center Interactive Eye-Tracking Pixel Character -->
-          <div class="pixo-character-wrap">
+    </div>
+  </header>
 
-            <!-- Radiating Sparkle Mood Lines -->
-            <div class="ghost-spark-marks" aria-hidden="true">
-              <span class="spark-tick tick-tl"></span>
-              <span class="spark-tick tick-tr"></span>
-              <span class="spark-tick tick-bl"></span>
-              <span class="spark-tick tick-br"></span>
-            </div>
+  <!-- ===================== SECTION 1: LUSH TROPICAL HERO (STAYSCROLL TRACK) ===================== -->
+  <div class="hero-stayscroll-track" id="heroStayScrollTrack">
+    <section class="adventure-hero-section" id="hero">
 
-            <!-- Floating Pixel Heart Speech Bubble -->
-            <div class="ghost-speech-bubble" id="ghostSpeechBubble" title="Klik karakter untuk menyapa!">
-              <svg viewBox="0 0 24 24" width="18" height="18" class="bubble-heart-svg" aria-label="Heart Icon">
-                <path fill="#8b5cf6"
-                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-            </div>
+      <!-- Blueprint / Grid Canvas Texture Overlay -->
+      <div class="hero-canvas-grid-pattern" aria-hidden="true"></div>
 
-            <!-- The Pixel Ghost Character Actor (Eyes Track Cursor Everywhere!) -->
-            <div class="pixo-ghost-actor" id="lcdCharacterActor">
-              <div class="ghost-body-frame">
-                <!-- Ghost Pixel Silhouette -->
-                <div class="ghost-pixel-skin">
-                  <!-- Eye Sockets with Tracking Pupils -->
-                  <div class="ghost-eyes-row">
-                    <div class="ghost-eye-socket eye-left">
-                      <div class="char-pupil ghost-pupil" id="heroPupilLeft"></div>
-                      <div class="eye-shine-pixel shine-top"></div>
-                      <div class="eye-shine-pixel shine-bot"></div>
-                    </div>
-                    <div class="ghost-eye-socket eye-right">
-                      <div class="char-pupil ghost-pupil" id="heroPupilRight"></div>
-                      <div class="eye-shine-pixel shine-top"></div>
-                      <div class="eye-shine-pixel shine-bot"></div>
-                    </div>
-                  </div>
-                  <!-- Blushing Cheeks -->
-                  <div class="ghost-blush-row">
-                    <span class="ghost-blush blush-left"></span>
-                    <span class="ghost-blush blush-right"></span>
-                  </div>
-                  <!-- Little Pixel Ghost Ruffle Feet -->
-                  <div class="ghost-ruffles-row">
-                    <span class="ruffle-col"></span>
-                    <span class="ruffle-col"></span>
-                    <span class="ruffle-col"></span>
-                    <span class="ruffle-col"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <!-- Top Hanging Foliage Vines (Matching Angry Birds Movie Header) -->
+      <div class="hero-canopy-top" aria-hidden="true">
+        <div class="canopy-leaves canopy-layer-1"></div>
+        <div class="canopy-leaves canopy-layer-2"></div>
+      </div>
 
-            <!-- Water Reflection Ripples Below Ghost -->
-            <div class="pixel-water-ripples" aria-hidden="true">
-              <span class="ripple-bar bar-1"></span>
-              <span class="ripple-bar bar-2"></span>
-              <span class="ripple-bar bar-3"></span>
-            </div>
+      <!-- Foliage Characters Peeking from Canopy (Matching the reference movie banner) -->
+      <div class="hero-peeking-mascots" aria-hidden="true">
+        <!-- Peeking Piglet on Top Left Foliage -->
+        <div class="peeking-character peek-left" title="Dev Piglet Peeking">
+          <svg viewBox="0 0 80 80" width="75" height="75">
+            <ellipse cx="40" cy="45" rx="32" ry="28" fill="#22c55e" stroke="#14532d" stroke-width="3.5" />
+            <circle cx="28" cy="38" r="6" fill="#ffffff" />
+            <circle cx="52" cy="38" r="6" fill="#ffffff" />
+            <circle cx="29" cy="38" r="3" fill="#14532d" />
+            <circle cx="51" cy="38" r="3" fill="#14532d" />
+            <ellipse cx="40" cy="50" rx="12" ry="8" fill="#86efac" stroke="#166534" stroke-width="2" />
+            <circle cx="35" cy="50" r="3" fill="#14532d" />
+            <circle cx="45" cy="50" r="3" fill="#14532d" />
+            <path d="M 36 18 Q 40 4 52 10 Q 44 22 36 18 Z" fill="#4ade80" stroke="#14532d" stroke-width="2" />
+          </svg>
+        </div>
 
-          </div>
-
-          <!-- Right Floating Pixel Island with Flag & Stars -->
-          <div class="pixo-island island-right" aria-hidden="true">
-            <!-- Floating Sparkle Stars -->
-            <div class="pixo-sparkle-star star-1">&#10022;</div>
-            <div class="pixo-sparkle-star star-2">&#10022;</div>
-            <div class="pixo-pixel-cloud cloud-right"></div>
-            <!-- Mini Project Badge -->
-            <div class="pixo-photo-badge badge-right" title="Karya Anandita">
-              <img src="img/landing.jpg" alt="Proyek Web" class="pixo-avatar-img" />
-              <span class="pixo-photo-caption">UI/UX</span>
-            </div>
-            <!-- Island Terrain SVG with Flag -->
-            <svg class="island-svg" viewBox="0 0 220 120" preserveAspectRatio="none">
-              <!-- Flagpole & Red Flag -->
-              <line x1="165" y1="20" x2="165" y2="45" stroke="#111111" stroke-width="2.5" />
-              <polygon points="165,22 188,30 165,38" fill="#6d28d9" />
-              <!-- Trees & Hill -->
-              <rect x="40" y="32" width="20" height="28" fill="#a78bfa" rx="3" />
-              <rect x="135" y="28" width="24" height="32" fill="#8b5cf6" rx="4" />
-              <!-- Stepped Terrain -->
-              <path
-                d="M 10 75 L 35 75 L 35 70 L 70 70 L 70 65 L 110 65 L 110 60 L 150 60 L 150 55 L 190 55 L 190 60 L 220 60 L 220 90 L 195 90 L 195 98 L 160 98 L 160 105 L 120 105 L 120 112 L 75 112 L 75 118 L 25 118 L 0 95 Z"
-                fill="#8b5cf6" />
-              <path
-                d="M 25 80 L 60 80 L 60 86 L 105 86 L 105 92 L 145 92 L 145 98 L 180 98 L 180 106 L 130 106 L 130 114 L 80 114 L 40 120 L 10 102 Z"
-                fill="#7c3aed" />
-            </svg>
-          </div>
-
+        <!-- Peeking Red Bird on Top Center/Right Foliage -->
+        <div class="peeking-character peek-right" title="Red Hero Peeking">
+          <svg viewBox="0 0 80 80" width="75" height="75">
+            <circle cx="40" cy="42" r="30" fill="#dc2626" stroke="#7f1d1d" stroke-width="3.5" />
+            <polygon points="18,24 38,32 38,28 20,20" fill="#1f2937" />
+            <polygon points="62,24 42,32 42,28 60,20" fill="#1f2937" />
+            <circle cx="32" cy="35" r="6.5" fill="#ffffff" />
+            <circle cx="48" cy="35" r="6.5" fill="#ffffff" />
+            <circle cx="34" cy="35" r="3.2" fill="#111827" />
+            <circle cx="46" cy="35" r="3.2" fill="#111827" />
+            <polygon points="40,36 49,46 31,46" fill="#facc15" stroke="#78350f" stroke-width="1.5" />
+          </svg>
         </div>
       </div>
-    </div>
 
-    <!-- Stepped 8-Bit Pixel Sawtooth Wave Transition -->
-    <div class="pixo-stepped-scallop" aria-hidden="true">
-      <svg viewBox="0 0 1200 40" preserveAspectRatio="none">
-        <path
-          d="M 0 40 L 0 20 L 20 20 L 20 12 L 40 12 L 40 20 L 60 20 L 60 28 L 80 28 L 80 20 L 100 20 L 100 12 L 120 12 L 120 20 L 140 20 L 140 28 L 160 28 L 160 20 L 180 20 L 180 12 L 200 12 L 200 20 L 220 20 L 220 28 L 240 28 L 240 20 L 260 20 L 260 12 L 280 12 L 280 20 L 300 20 L 300 28 L 320 28 L 320 20 L 340 20 L 340 12 L 360 12 L 360 20 L 380 20 L 380 28 L 400 28 L 400 20 L 420 20 L 420 12 L 440 12 L 440 20 L 460 20 L 460 28 L 480 28 L 480 20 L 500 20 L 500 12 L 520 12 L 520 20 L 540 20 L 540 28 L 560 28 L 560 20 L 580 20 L 580 12 L 600 12 L 600 20 L 620 20 L 620 28 L 640 28 L 640 20 L 660 20 L 660 12 L 680 12 L 680 20 L 700 20 L 700 28 L 720 28 L 720 20 L 740 20 L 740 12 L 760 12 L 760 20 L 780 20 L 780 28 L 800 28 L 800 20 L 820 20 L 820 12 L 840 12 L 840 20 L 860 20 L 860 28 L 880 28 L 880 20 L 900 20 L 900 12 L 920 12 L 920 20 L 940 20 L 940 28 L 960 28 L 960 20 L 980 20 L 980 12 L 1000 12 L 1000 20 L 1020 20 L 1020 28 L 1040 28 L 1040 20 L 1060 20 L 1060 12 L 1080 12 L 1080 20 L 1100 20 L 1100 28 L 1120 28 L 1120 20 L 1140 20 L 1140 12 L 1160 12 L 1160 20 L 1180 20 L 1180 28 L 1200 28 L 1200 40 Z"
-          fill="#8b5cf6" />
-      </svg>
-    </div>
+      <div class="container hero-content-container">
 
-    <!-- Bottom Pink Shelf: Built For Real Work (3 Feature Cards) -->
-    <div class="pixo-bottom-shelf">
-      <div class="container pixo-shelf-container">
-
-        <div class="pixo-shelf-header">
-          <span class="pixo-shelf-tag">BUILT FOR REAL WORK</span>
+        <!-- Top Kicker Pill -->
+        <div class="hero-kicker-pill">
+          <i class="fa-solid fa-gamepad"></i>
+          <span>AN OFFICIAL DIGITAL PORTFOLIO &bull; SMKS BRANTAS KARANGKATES</span>
         </div>
 
-        <div class="pixo-cards-grid">
+        <!-- ===================== FIGMA CANVAS STAGE (Matching Layout from Reference Image) ===================== -->
+        <div class="hero-canvas-artboard-stage" id="heroCanvasStage">
 
-          <!-- Card 1: Plan & create -->
-          <div class="pixo-card">
-            <div class="pixo-card-icon-box">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="#8b5cf6">
-                <path
-                  d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" />
-              </svg>
-            </div>
-            <h3 class="pixo-card-title">Plan &amp; create</h3>
-            <p class="pixo-card-desc">Mengubah ide kreatif menjadi antarmuka web interaktif yang intuitif dan berkesan.
-            </p>
-            <a href="#projects" class="pixo-card-link">Lihat Desain &rarr;</a>
+          <!-- Top-Right Floating Context Action Menu (Matching Reference) -->
+          <div class="canvas-floating-context-menu" aria-label="Menu Aksi Cepat">
+            <a href="#story" class="context-menu-item active-item" title="Buka Profil &amp; Cerita">
+              <span class="item-check"><i class="fa-solid fa-check"></i></span>
+              <span class="item-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              <span class="item-label">The Story</span>
+              <span class="item-key">S</span>
+            </a>
+            <a href="#cast" class="context-menu-item" title="Buka Keahlian &amp; Teknologi">
+              <span class="item-icon"><i class="fa-solid fa-shapes"></i></span>
+              <span class="item-label">The Cast</span>
+              <span class="item-key">C</span>
+            </a>
+            <a href="#gallery" class="context-menu-item" title="Buka Rak Karya Proyek">
+              <span class="item-icon"><i class="fa-solid fa-hand"></i></span>
+              <span class="item-label">Featured Stills</span>
+              <span class="item-key">P</span>
+            </a>
+            <a href="#signpost" class="context-menu-item" title="Hubungi Anandita">
+              <span class="item-icon"><i class="fa-solid fa-paper-plane"></i></span>
+              <span class="item-label">Transmission</span>
+              <span class="item-key">T</span>
+            </a>
           </div>
 
-          <!-- Card 2: Automate tasks -->
-          <div class="pixo-card">
-            <div class="pixo-card-icon-box">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="#8b5cf6">
-                <path
-                  d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM10.56 16.44l-3-3 1.41-1.41 1.59 1.58 4.59-4.59 1.41 1.41-6 6.01z" />
-              </svg>
+          <!-- Centerpiece Vector Bounding Box with Corner Handles & 3D Typography -->
+          <div class="canvas-bounding-box" id="canvasBoundingBox">
+            <!-- Top Bounding Edge with Top Handles (Moves UP on Stayscroll) -->
+            <div class="box-edge-top" id="boxEdgeTop" aria-hidden="true">
+              <span class="anchor-handle handle-tl"></span>
+              <span class="anchor-handle handle-tr"></span>
             </div>
-            <h3 class="pixo-card-title">Automate tasks</h3>
-            <p class="pixo-card-desc">Membangun sistem informasi dan solusi web andal berbasis arsitektur terstruktur.
-            </p>
-            <a href="#skills" class="pixo-card-link">Jelajahi Kode &rarr;</a>
+
+            <!-- Giant Two-Line 3D Tilted Text: PORT / FOLIO -->
+            <div class="canvas-giant-typography" aria-label="PORTFOLIO">
+              <span class="typo-word typo-port" id="typoPort">PORTO</span>
+
+              <!-- Center Parting Reveal Inside the expanding stayscroll gap -->
+              <div class="canvas-parting-reveal" id="partingReveal" aria-hidden="true">
+                <div class="parting-glow-disk"></div>
+                <div class="parting-kicker">
+                  <i class="fa-solid fa-compass"></i>
+                  <span>ADVENTURE OF A DIGITAL CREATOR</span>
+                </div>
+                <h2 class="parting-name">ANANDITA GALUH SEKAR KINANTI</h2>
+                <div class="parting-badges-row">
+                  <span class="parting-badge"><i class="fa-solid fa-school"></i> SMKS BRANTAS KARANGKATES</span>
+                  <span class="parting-badge"><i class="fa-solid fa-code"></i> REKAYASA PERANGKAT LUNAK</span>
+                  <span class="parting-badge"><i class="fa-solid fa-pen-nib"></i> UI/UX &amp; FRONTEND</span>
+                </div>
+                <div class="parting-scroll-hint">
+                  <span>GULIR KE BAWAH UNTUK MEMASUKI THE STORY</span>
+                  <i class="fa-solid fa-angles-down"></i>
+                </div>
+              </div>
+
+              <span class="typo-word typo-folio" id="typoFolio">FOLIO</span>
+            </div>
+
+            <!-- Bottom Bounding Edge with Bottom Handles & Cursor (Moves DOWN on Stayscroll) -->
+            <div class="box-edge-bottom" id="boxEdgeBottom">
+              <span class="anchor-handle handle-bl"></span>
+              <span class="anchor-handle handle-br"></span>
+
+              <!-- Interactive User Cursor with Name Tag (Matching Reference) -->
+              <div class="canvas-author-cursor" id="authorCursor">
+                <svg class="cursor-pointer-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <path d="M 2 2 L 9 22 L 13 13 L 22 9 Z" fill="#f97316" stroke="#1a0f07" stroke-width="2.5"
+                    stroke-linejoin="round" />
+                </svg>
+                <span class="cursor-name-badge">Anandita Galuh Sekar Kinanti</span>
+              </div>
+            </div>
           </div>
 
-          <!-- Card 3: Work smarter -->
-          <div class="pixo-card">
-            <div class="pixo-card-icon-box">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="#8b5cf6">
-                <path
-                  d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9.07l-9-7-9 7 1.63 1.2L12 16z" />
-              </svg>
+          <!-- Bottom-Left Floating Edition Prompt Widget (Matching Reference) -->
+          <div class="canvas-floating-edition-widget">
+            <div class="edition-widget-header">
+              <span class="edition-title">2026 Edition</span>
+              <span class="edition-sub">RPL &bull; SMKS Brantas</span>
             </div>
-            <h3 class="pixo-card-title">Work smarter</h3>
-            <p class="pixo-card-desc">Pengembangan gim retro dan perangkat lunak cerdas yang efisien dan responsif.</p>
-            <a href="#projects" class="pixo-card-link">Eksplorasi Proyek &rarr;</a>
+            <div class="edition-widget-bar">
+              <div class="edition-icons-cluster">
+                <span class="tool-mini-icon" title="Frontend Web"><i class="fa-solid fa-code"></i></span>
+                <span class="tool-mini-icon" title="UI/UX Prototyping"><i class="fa-solid fa-pen-nib"></i></span>
+                <span class="tool-mini-icon" title="Interactive Software"><i class="fa-solid fa-laptop-code"></i></span>
+              </div>
+              <a href="#gallery" class="btn-edition-jump" title="Langsung Buka Proyek"
+                aria-label="Langsung Buka Proyek">
+                <i class="fa-solid fa-arrow-up"></i>
+              </a>
+            </div>
           </div>
 
         </div>
+
+        <!-- ===================== BOTTOM CREATIVE FLOATING TOOLBAR DOCK ===================== -->
+        <nav class="canvas-floating-dock" aria-label="Toolbar Desain &amp; Kode">
+          <button class="dock-tool-btn active-dock" type="button" title="Select Pointer (V)" data-dock-action="select">
+            <i class="fa-solid fa-location-arrow"></i>
+          </button>
+          <span class="dock-divider"></span>
+          <a href="#story" class="dock-tool-btn" title="Frame / The Story (#)">
+            <i class="fa-solid fa-hashtag"></i>
+          </a>
+          <a href="#cast" class="dock-tool-btn" title="Shapes / Keahlian (O)">
+            <i class="fa-solid fa-circle-notch"></i>
+          </a>
+          <a href="#castGrid" class="dock-tool-btn" title="Vector / Components (P)">
+            <i class="fa-solid fa-draw-polygon"></i>
+          </a>
+          <a href="#gallery" class="dock-tool-btn" title="Text / Proyek (T)">
+            <span class="dock-letter">T</span>
+          </a>
+          <span class="dock-divider"></span>
+          <a href="#signpost" class="dock-tool-btn" title="Pencil / Hubungi">
+            <i class="fa-solid fa-signature"></i>
+          </a>
+          <a href="https://github.com/ananditaaa2010-a11y" target="_blank" rel="noopener noreferrer"
+            class="dock-tool-btn" title="Inspect Code GitHub (&lt;/&gt;)">
+            <i class="fa-solid fa-code"></i>
+          </a>
+        </nav>
 
       </div>
-    </div>
 
-  </section>
-
-  <!-- ===================== SECTION 1: ABOUT (RETRO TV HORIZONTAL SCROLL) ===================== -->
-  <section class="section about-tv-pinned-section" id="about" aria-label="About Us Section">
-    
-    <!-- Pinned Sticky Viewport Frame -->
-    <div class="about-tv-sticky-frame" id="aboutTvStickyFrame">
-      <div class="container about-tv-container">
-
-        <!-- Top Stage Header Tag (Pixel Art Pill) -->
-        <div class="tv-stage-header">
-          <span class="tv-stage-tag"><i class="fa-solid fa-tv"></i> SIARAN RETRO // PROFIL</span>
-          <h2 class="tv-stage-title">TENTANG SAYA // ANANDITA GALUH</h2>
-          <p class="tv-stage-desc">gulir ke bawah untuk memutar saluran profil di dalam layar TV retro</p>
-        </div>
-
-        <!-- The Big Retro TV Appliance Entity -->
-        <div class="retro-tv-appliance" id="retroTvAppliance">
-          
-          <!-- Top Antennas (Classic Rabbit Ears) -->
-          <div class="tv-antenna-rig" aria-hidden="true">
-            <div class="antenna-mast mast-left">
-              <div class="antenna-tip"></div>
-            </div>
-            <div class="antenna-base-socket"></div>
-            <div class="antenna-mast mast-right">
-              <div class="antenna-tip"></div>
-            </div>
-          </div>
-
-          <!-- Main TV Chassis / Cabinet (Chunky Soft Purple Shell with Retro Outlines) -->
-          <div class="tv-cabinet-body">
-            
-            <!-- Left & Center: Big CRT Screen Area -->
-            <div class="tv-screen-chassis">
-              <div class="tv-screen-bezel">
-                
-                <!-- Bezel Calibration Marker (Top Center) -->
-                <div class="bezel-marker-top" aria-hidden="true">
-                  <span class="marker-triangle">▼</span>
-                  <span class="marker-text">FOKUS TENGAH</span>
-                </div>
-
-                <!-- CRT Glass Screen -->
-                <div class="tv-crt-viewport" id="tvCrtViewport">
-                  
-                  <!-- CRT Scanlines and Glass Glare Effects -->
-                  <div class="tv-scanlines-overlay" aria-hidden="true"></div>
-                  <div class="tv-glass-glare" aria-hidden="true"></div>
-                  <div class="tv-center-focus-spotlight" aria-hidden="true"></div>
-
-                  <!-- CRT Center Alignment Reticle & Live OSD HUD -->
-                  <div class="tv-crt-center-hud" id="tvCrtCenterHud" aria-hidden="true">
-                    <span class="hud-target-bracket bracket-l">[</span>
-                    <span class="hud-center-pill is-locked" id="tvCenterPill">
-                      <span class="hud-live-dot"></span>
-                      <span id="tvCenterPillText">HALAMAN 01 // TERFOKUS DI TENGAH</span>
-                    </span>
-                    <span class="hud-target-bracket bracket-r">]</span>
-                  </div>
-
-                  <!-- Bottom Channel Pips Timeline -->
-                  <div class="tv-crt-pips-bar" id="tvCrtPipsBar" aria-hidden="true">
-                    <div class="tv-pip-item active" data-page="1"><span class="pip-dot"></span>01 INTRO</div>
-                    <div class="tv-pip-item" data-page="2"><span class="pip-dot"></span>02 LATAR</div>
-                    <div class="tv-pip-item" data-page="3"><span class="pip-dot"></span>03 KARYA</div>
-                    <div class="tv-pip-item" data-page="4"><span class="pip-dot"></span>04 PROFIL</div>
-                  </div>
-
-                  <!-- Horizontal Pages Track (4 Pages = 400% width) -->
-                  <div class="tv-pages-track" id="tvPagesTrack">
-                    
-                    <!-- PAGE 1: INTRODUCTION -->
-                    <div class="tv-page-slide tv-page-intro is-centered" data-page="1">
-                      <div class="tv-slide-content">
-                        <div class="tv-slide-badge">
-                          <span class="tv-badge-pill"><i class="fa-solid fa-satellite-dish"></i> CHANNEL 01</span>
-                          <span class="tv-badge-topic">PERKENALAN // PROFIL UTAMA</span>
-                          <span class="tv-center-lock-indicator"><i class="fa-solid fa-crosshairs"></i> DI TENGAH</span>
-                        </div>
-                        
-                        <div class="tv-intro-grid">
-                          <div class="tv-portrait-col">
-                            <div class="tv-photo-card">
-                              <div class="tv-photo-bezel">
-                                <img src="img/5. ANANDITA GALUH SEKAR KINANTI.jpg" alt="Foto Profil Anandita Galuh Sekar Kinanti" class="tv-portrait-img" />
-                              </div>
-                              <div class="tv-photo-footer">
-                                <span class="photo-pulse-dot"></span>
-                                <span class="photo-caption">ANANDITA GALUH S.K.</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="tv-intro-text-col">
-                            <h3 class="tv-slide-heading">Halo! Saya Anandita Galuh</h3>
-                            <p class="tv-slide-subheading">Siswi Rekayasa Perangkat Lunak &amp; UI/UX Enthusiast</p>
-                            
-                            <div class="tv-intro-bio-card">
-                              <p>Saya adalah siswi di <strong>SMKS Brantas Karangkates</strong> dengan dedikasi tinggi pada perancangan antarmuka pengguna digital (UI/UX) dan pengembangan website modern yang interaktif, bersih, serta intuitif.</p>
-                            </div>
-
-                            <div class="tv-stat-chips-row">
-                              <div class="tv-stat-chip">
-                                <span class="chip-k">STATUS</span>
-                                <span class="chip-v">Siswa Aktif RPL</span>
-                              </div>
-                              <div class="tv-stat-chip">
-                                <span class="chip-k">LOKASI</span>
-                                <span class="chip-v">Malang, Jatim</span>
-                              </div>
-                              <div class="tv-stat-chip">
-                                <span class="chip-k">FOKUS</span>
-                                <span class="chip-v">Frontend &amp; UI</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="tv-slide-nav-hint">
-                          <span class="nav-hint-arrow"><i class="fa-solid fa-angles-down"></i> Gulir ke bawah untuk memutar siaran berikutnya</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- PAGE 2: BACKGROUND & JOURNEY -->
-                    <div class="tv-page-slide tv-page-background" data-page="2">
-                      <div class="tv-slide-content">
-                        <div class="tv-slide-badge">
-                          <span class="tv-badge-pill"><i class="fa-solid fa-graduation-cap"></i> CHANNEL 02</span>
-                          <span class="tv-badge-topic">LATAR BELAKANG &amp; PENDIDIKAN</span>
-                          <span class="tv-center-lock-indicator"><i class="fa-solid fa-crosshairs"></i> DI TENGAH</span>
-                        </div>
-
-                        <h3 class="tv-slide-heading">Perjalanan Belajar &amp; Dedikasi</h3>
-                        <p class="tv-slide-subheading">Dari baris kode pertama hingga antarmuka digital yang interaktif</p>
-
-                        <div class="tv-timeline-grid">
-                          <div class="tv-timeline-card">
-                            <div class="tline-icon-wrap">
-                              <i class="fa-solid fa-seedling"></i>
-                            </div>
-                            <div class="tline-meta">
-                              <span class="tline-year">FASE 01 &bull; 2023</span>
-                              <h4 class="tline-title">Langkah Awal Koding</h4>
-                              <p class="tline-desc">Mempelajari logika komputasi, struktur dasar HTML5, tata letak CSS3, serta pengenalan algoritma pemrograman di SMKS Brantas Karangkates.</p>
-                            </div>
-                          </div>
-
-                          <div class="tv-timeline-card">
-                            <div class="tline-icon-wrap">
-                              <i class="fa-solid fa-palette"></i>
-                            </div>
-                            <div class="tline-meta">
-                              <span class="tline-year">FASE 02 &bull; 2024</span>
-                              <h4 class="tline-title">Eksplorasi UI/UX &amp; JS</h4>
-                              <p class="tline-desc">Mendalami wireframing, moodboard, prototyping di Figma, serta interaktivitas JavaScript dan desain responsif ramah pengguna.</p>
-                            </div>
-                          </div>
-
-                          <div class="tv-timeline-card highlight-card">
-                            <div class="tline-icon-wrap">
-                              <i class="fa-solid fa-rocket"></i>
-                            </div>
-                            <div class="tline-meta">
-                              <span class="tline-year">FASE 03 &bull; 2025 - 2026</span>
-                              <h4 class="tline-title">Karya Nyata &amp; Portofolio</h4>
-                              <p class="tline-desc">Mengembangkan berbagai platform seperti portal web universitas, landing page produk, dan game logika web siap produksi.</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="tv-quote-banner">
-                          <i class="fa-solid fa-quote-left quote-ico"></i>
-                          <span>« Belajar koding sama seperti gim klasik: butuh ketelitian, rasa ingin tahu, dan eksperimen berkelanjutan. »</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- PAGE 3: WHAT I DO -->
-                    <div class="tv-page-slide tv-page-whatido" data-page="3">
-                      <div class="tv-slide-content">
-                        <div class="tv-slide-badge">
-                          <span class="tv-badge-pill"><i class="fa-solid fa-screwdriver-wrench"></i> CHANNEL 03</span>
-                          <span class="tv-badge-topic">KEAHLIAN &amp; BIDANG KARYA</span>
-                          <span class="tv-center-lock-indicator"><i class="fa-solid fa-crosshairs"></i> DI TENGAH</span>
-                        </div>
-
-                        <h3 class="tv-slide-heading">Hal yang Saya Kerjakan</h3>
-                        <p class="tv-slide-subheading">Kombinasi kreativitas visual antarmuka dengan fondasi kode yang terstruktur</p>
-
-                        <div class="tv-services-grid">
-                          <div class="tv-service-card card-purple">
-                            <div class="serv-icon-bubble">
-                              <i class="fa-solid fa-pen-ruler"></i>
-                            </div>
-                            <h4 class="serv-card-title">UI/UX Design &amp; Wireframe</h4>
-                            <p class="serv-card-desc">Merancang rancangan visual antarmuka yang ramah pengguna, sistem tipografi, komponen desain terstandar, dan prototipe interaktif di Figma.</p>
-                            <span class="serv-badge-label">Figma &bull; Prototyping</span>
-                          </div>
-
-                          <div class="tv-service-card card-yellow">
-                            <div class="serv-icon-bubble">
-                              <i class="fa-solid fa-laptop-code"></i>
-                            </div>
-                            <h4 class="serv-card-title">Frontend Development</h4>
-                            <p class="serv-card-desc">Mengubah desain visual menjadi antarmuka web responsif dan cepat menggunakan HTML5 semantik, animasi CSS murni, dan Vanilla JavaScript.</p>
-                            <span class="serv-badge-label">HTML5 &bull; CSS3 &bull; JS</span>
-                          </div>
-
-                          <div class="tv-service-card card-cyan">
-                            <div class="serv-icon-bubble">
-                              <i class="fa-solid fa-microchip"></i>
-                            </div>
-                            <h4 class="serv-card-title">Logika Web &amp; API</h4>
-                            <p class="serv-card-desc">Mengimplementasikan manipulasi DOM tingkat lanjut, integrasi Web Audio API, logika interaktif gim retro, serta koneksi data dinamis.</p>
-                            <span class="serv-badge-label">Web API &bull; DOM Logic</span>
-                          </div>
-                        </div>
-
-                        <div class="tv-skill-tags-row">
-                          <span class="tv-tag-pill">UI/UX</span>
-                          <span class="tv-tag-pill">Responsive Design</span>
-                          <span class="tv-tag-pill">Clean Code</span>
-                          <span class="tv-tag-pill">Micro-Interactions</span>
-                          <span class="tv-tag-pill">Performance First</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- PAGE 4: MY PERSONALITY, PRINCIPLES & VISION -->
-                    <div class="tv-page-slide tv-page-personality" data-page="4">
-                      <div class="tv-slide-content">
-                        <div class="tv-slide-badge">
-                          <span class="tv-badge-pill"><i class="fa-solid fa-heart"></i> CHANNEL 04</span>
-                          <span class="tv-badge-topic">KARAKTER, PRINSIP &amp; VISI</span>
-                          <span class="tv-center-lock-indicator"><i class="fa-solid fa-crosshairs"></i> DI TENGAH</span>
-                        </div>
-
-                        <h3 class="tv-slide-heading">Kepribadian &amp; Nilai Kerja</h3>
-                        <p class="tv-slide-subheading">Karakter personal, etos kerja, dan cita-cita di dunia rekayasa perangkat lunak</p>
-
-                        <div class="tv-personality-grid">
-                          <div class="tv-persona-col principles-box">
-                            <h4 class="persona-col-title"><i class="fa-solid fa-compass"></i> Prinsip Kerja Saya</h4>
-                            
-                            <div class="persona-item">
-                              <div class="item-bullet"><i class="fa-solid fa-check"></i></div>
-                              <div class="item-text">
-                                <strong>Teliti &amp; Terstruktur:</strong> Mengutamakan kerapian hierarki kode, penamaan komponen yang jelas, dan bebas eror.
-                              </div>
-                            </div>
-
-                            <div class="persona-item">
-                              <div class="item-bullet"><i class="fa-solid fa-check"></i></div>
-                              <div class="item-text">
-                                <strong>Empati Pengguna:</strong> Selalu berpikir dari sudut pandang audiens agar antarmuka mudah digunakan oleh siapa saja.
-                              </div>
-                            </div>
-
-                            <div class="persona-item">
-                              <div class="item-bullet"><i class="fa-solid fa-check"></i></div>
-                              <div class="item-text">
-                                <strong>Terus Bertumbuh:</strong> Aktif mempelajari teknologi baru dan siap menerima masukan demi peningkatan kualitas karya.
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="tv-persona-col hobbies-box">
-                            <h4 class="persona-col-title"><i class="fa-solid fa-gamepad"></i> Hobi &amp; Visi Masa Depan</h4>
-                            
-                            <div class="hobbies-chips-wrap">
-                              <span class="hobby-pill"><i class="fa-solid fa-brush"></i> Pixel Art Illustration</span>
-                              <span class="hobby-pill"><i class="fa-solid fa-headphones"></i> Musik 8-Bit Chiptune</span>
-                              <span class="hobby-pill"><i class="fa-solid fa-puzzle-piece"></i> Game Puzzle &amp; Retro</span>
-                            </div>
-
-                            <div class="vision-card">
-                              <span class="vision-tag">CITA-CITA &amp; VISI:</span>
-                              <p class="vision-quote">Menjadi Software Engineer dan UI/UX Designer profesional yang menciptakan produk teknologi berdampak nyata dan membawa kebahagiaan bagi para penggunanya.</p>
-                            </div>
-
-                            <a href="files/CV_Anandita Galuh Sekar Kinanti.pdf" download class="tv-cv-download-btn">
-                              <i class="fa-solid fa-file-pdf"></i> Unduh Lembar CV Lengkap
-                            </a>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div> <!-- end tv-pages-track -->
-
-                </div> <!-- end tv-crt-viewport -->
-
-                <!-- Bezel Calibration Marker (Bottom Center) -->
-                <div class="bezel-marker-bottom" aria-hidden="true">
-                  <span class="marker-triangle">▲</span>
-                </div>
-
-              </div> <!-- end tv-screen-bezel -->
-            </div> <!-- end tv-screen-chassis -->
-
-            <!-- Right: TV Analog Control Panel -->
-            <div class="tv-control-panel">
-              
-              <!-- TV Brand Metal Badge -->
-              <div class="tv-metal-badge">
-                <span class="tv-brand-title">PIXO-VISION</span>
-                <span class="tv-brand-sub">CRT-1989 // RETRO COLOR</span>
-              </div>
-
-              <!-- Channel Digital Readout (01 / 04) -->
-              <div class="tv-channel-readout-wrap">
-                <span class="readout-label">CHANNEL</span>
-                <div class="readout-display" id="tvChannelDisplay">
-                  <span class="ch-curr" id="tvCurrentChannel">01</span>
-                  <span class="ch-sep">/</span>
-                  <span class="ch-total">04</span>
-                </div>
-              </div>
-
-              <!-- Rotary Dials & Knobs -->
-              <div class="tv-dials-group">
-                <div class="tv-dial-item">
-                  <div class="dial-knob-outer knob-channel" id="tvKnobChannel">
-                    <div class="knob-indicator-dot"></div>
-                  </div>
-                  <span class="dial-label">TUNING</span>
-                </div>
-
-                <div class="tv-dial-item">
-                  <div class="dial-knob-outer knob-volume">
-                    <div class="knob-indicator-dot" style="transform: rotate(45deg);"></div>
-                  </div>
-                  <span class="dial-label">VOLUME</span>
-                </div>
-              </div>
-
-              <!-- Retro Sound Speaker Grille (Horizontal Grooves) -->
-              <div class="tv-speaker-panel" aria-hidden="true">
-                <div class="speaker-slot"></div>
-                <div class="speaker-slot"></div>
-                <div class="speaker-slot"></div>
-                <div class="speaker-slot"></div>
-                <div class="speaker-slot"></div>
-                <div class="speaker-slot"></div>
-              </div>
-
-              <!-- Power Button & Live Status LED -->
-              <div class="tv-power-row">
-                <div class="tv-power-led-wrap">
-                  <span class="power-led-bulb active" id="tvPowerLed"></span>
-                  <span class="power-label">POWER</span>
-                </div>
-                <div class="tv-stereo-badge">STEREO</div>
-              </div>
-
-            </div> <!-- end tv-control-panel -->
-
-          </div> <!-- end tv-cabinet-body -->
-
-          <!-- TV Wooden Sturdy Pedestal Stand (Classic Retro TV Legs) -->
-          <div class="tv-pedestal-stand" aria-hidden="true">
-            <div class="tv-leg leg-left"></div>
-            <div class="tv-stand-shelf"></div>
-            <div class="tv-leg leg-right"></div>
-          </div>
-
-        </div> <!-- end retro-tv-appliance -->
-
+      <!-- Bottom Tropical Leaf Bush Accents -->
+      <div class="hero-canopy-bottom" aria-hidden="true">
+        <div class="bottom-bush bush-left"></div>
+        <div class="bottom-bush bush-center"></div>
+        <div class="bottom-bush bush-right"></div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===================== SECTION 2: SKILLS (SAGE-GRAY TORN PAPER & RETRO NOTEBOOK) ===================== -->
-  <section class="section skills-paper-section skills-pinned-section" id="skills" aria-label="Skills Section">
-    <div class="skills-sticky-frame" id="skillsStickyFrame">
-      <div class="container skills-pinned-container">
+    </section>
+  </div>
 
-        <!-- Section Header in Pixel Typography -->
-        <div class="section-header-pixel reveal">
-          <span class="skills-stage-tag"><i class="fa-solid fa-book-bookmark"></i> DOKUMEN DIGITAL // BUKU
-            KEAHLIAN</span>
-          <h2 class="pixel-section-title">KEAHLIAN &amp; TECH STACK</h2>
-          <p class="pixel-section-desc">buka buku dokumen teknologi 3D interaktif di bawah</p>
+  <!-- ===================== SMOOTH ORGANIC WAVE TRANSITION 1: HERO (WHITE/LILAC) TO THE STORY (DARK) ===================== -->
+  <div class="silhouette-divider divider-hero-to-story" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <!-- Layer 1: Soft lilac accent wave -->
+      <path class="wave-layer wave-accent"
+        d="M 0,38 C 240,86 460,12 720,54 C 980,96 1220,18 1440,58 L 1440,120 L 0,120 Z"
+        fill="rgba(192, 132, 252, 0.45)" />
+      <!-- Layer 2: Deeper purple accent wave -->
+      <path class="wave-layer wave-mid"
+        d="M 0,58 C 260,104 520,28 780,72 C 1040,114 1260,38 1440,78 L 1440,120 L 0,120 Z"
+        fill="rgba(126, 34, 206, 0.55)" />
+      <!-- Layer 3: Solid light purple wave seamlessly merging into #story (#faf5ff) -->
+      <path class="wave-layer wave-front"
+        d="M 0,74 C 290,124 560,42 840,88 C 1110,130 1310,52 1440,84 L 1440,120 L 0,120 Z" fill="#faf5ff" />
+    </svg>
+  </div>
+
+  <!-- ===================== SECTION 2: THE STORY (TORN PAPER MANGA / COMIC BANNER) ===================== -->
+  <section class="adventure-story-section" id="story">
+    <div class="story-torn-wrapper">
+
+      <!-- Top Meta Strip (matches reference: ANANDITA GALUH | SOFTWARE & UI/UX DESIGNER | 2026 + AVATAR) -->
+      <div class="container story-meta-strip">
+        <div class="story-meta-author story-scroll-elem">ANANDITA GALUH</div>
+        <div class="story-meta-role story-scroll-elem">SOFTWARE &amp; UI/UX DESIGNER</div>
+        <div class="story-meta-year story-scroll-elem">
+          <span>2026</span>
+          <div class="story-meta-avatar-badge" title="Anandita Galuh">
+            <img src="img/qinanthi.png" alt="Anandita Avatar Badge" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Torn Red Paper Banner (Zero white outline) -->
+      <div class="story-torn-banner">
+
+        <!-- Top Torn Edge SVG (Pure royal purple torn edge) -->
+        <div class="torn-paper-edge edge-top" aria-hidden="true">
+          <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+            <path class="torn-edge-purple"
+              d="M 0,90 L 0.0,58.0 L 29.9,58.0 L 59.3,54.6 L 85.4,61.8 L 110.3,61.2 L 140.8,59.2 L 173.9,52.1 L 205.1,52.0 L 238.0,57.6 L 271.3,53.7 L 306.6,54.8 L 337.6,56.1 L 361.9,45.6 L 390.3,51.8 L 411.0,49.1 L 440.9,51.5 L 464.1,45.7 L 498.7,50.6 L 531.5,48.0 L 564.1,47.8 L 593.0,48.6 L 616.4,50.9 L 644.9,46.2 L 672.8,46.5 L 707.2,46.6 L 739.2,44.5 L 768.1,41.7 L 789.2,35.2 L 811.9,43.5 L 847.2,45.3 L 876.0,38.8 L 910.1,43.4 L 942.0,34.1 L 967.5,31.5 L 998.4,38.5 L 1021.4,36.2 L 1050.3,32.1 L 1083.8,32.3 L 1116.0,35.2 L 1138.5,33.7 L 1163.7,27.6 L 1193.9,31.5 L 1222.7,36.3 L 1246.3,28.5 L 1272.3,30.9 L 1305.5,31.9 L 1338.5,24.7 L 1363.9,31.8 L 1392.4,28.6 L 1414.6,31.7 L 1440.0,27.1 L 1440,90 Z"
+              fill="#7c3aed" />
+          </svg>
         </div>
 
-        <!-- 3D Perspective Stage for Closed-to-Open Notebook Animation -->
-        <div class="skills-3d-stage" id="skills3dStage">
+        <!-- Banner Body (Halftone Comic Red Texture) -->
+        <div class="torn-banner-body">
+          <div class="container torn-banner-container">
+            <div class="torn-banner-grid">
 
-          <!-- The 3D Retro Notebook Entity -->
-          <div class="cosmic-notebook state-closed" id="cosmicNotebook" role="region"
-            aria-label="Buku Catatan Keahlian Digital 3D">
+              <!-- ================= COLUMN 1 (LEFT): PENJELASAN / NARRATIVE ================= -->
+              <div class="torn-story-left">
+                <h2 class="torn-display-title story-scroll-elem">HELLO !</h2>
+                <div class="torn-author-tag story-scroll-elem">IM ANANDITA</div>
+                <h3 class="torn-specialization story-scroll-elem">
+                  Specializing in UI/UX Design, Frontend Web &amp; Interactive Solutions
+                </h3>
 
-            <!-- Inside Base Spread (The Revealed Interior Paper) -->
-            <div class="notebook-inside-spread">
+                <!-- Habib Alfino word-by-word scroll text illumination -->
+                <p class="story-lead-paragraph">
+                  Perjalanan <strong>Anandita Galuh Sekar Kinanti</strong> di dunia teknologi bermula dari rasa ingin
+                  tahu yang mendalam tentang bagaimana ide di atas kertas dapat bertransformasi menjadi antarmuka
+                  digital
+                  yang interaktif, bernilai estetika tinggi, dan berdaya guna bagi pengguna.
+                </p>
+                <p class="story-body-text">
+                  Sebagai siswi di <strong>SMKS Brantas Karangkates</strong> jurusan Rekayasa Perangkat Lunak (RPL),
+                  Anandita mendedikasikan keterampilannya untuk memadukan estetika desain grafis antarmuka <strong>UI/UX
+                    di
+                    Figma</strong> dengan kekuatan koding <strong>frontend modern</strong> yang kokoh, semantik, dan
+                  responsif.
+                </p>
+              </div>
 
-              <!-- Left Page: Retro Tech Blueprint & Operator Spec -->
-              <div class="notebook-page page-left">
-                <div class="page-header-row">
-                  <span class="cyber-stamp">DOC-ID: #SKL-2026</span>
-                  <span class="cyber-status-dot"><span class="pulse-dot-green"></span> ONLINE</span>
+              <!-- ================= COLUMN 2 (CENTER): FOTO ANANDITA ================= -->
+              <div class="torn-story-center">
+                <!-- Floating comic sparkles around photo -->
+                <svg class="comic-sparkle sparkle-center-top story-scroll-elem" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" fill="#ffffff" />
+                </svg>
+                <svg class="comic-action-lines story-scroll-elem" viewBox="0 0 100 100" aria-hidden="true">
+                  <path d="M 18 42 Q 32 18 62 14" stroke="rgba(255,255,255,0.75)" stroke-width="2.5" fill="none"
+                    stroke-linecap="round" />
+                  <path d="M 10 70 Q 38 62 66 75" stroke="rgba(255,255,255,0.75)" stroke-width="2.5" fill="none"
+                    stroke-linecap="round" />
+                </svg>
+
+                <!-- Character Cutout Stage (Bound to #storyPoster for scroll scaling animation) -->
+                <div class="story-cutout-stage" id="storyPoster">
+                  <img src="img/anandita-cutout.png" alt="Anandita Galuh Sekar Kinanti" class="story-cutout-img"
+                    id="storyCutoutImg" />
+
+                  <!-- Character Caption Tag -->
+                  <div class="story-cutout-caption story-scroll-elem">
+                    <span class="role-pill"><i class="fa-solid fa-code"></i> FULLSTACK DEVELOPER</span>
+                    <h3 class="poster-student-name">Anandita Galuh S.K.</h3>
+                    <p class="poster-school-meta">SMKS Brantas Karangkates &bull; Angkatan 2026</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ================= COLUMN 3 (RIGHT): ELEMENT-ELEMENT LAINNYA ================= -->
+              <div class="torn-story-right">
+                <!-- Chapter Timeline Cards (Sleek comic cards) -->
+                <div class="story-chapters-list">
+                  <div class="story-chapter-card story-scroll-elem">
+                    <div class="chapter-number-badge">01</div>
+                    <div class="chapter-body">
+                      <h4 class="chapter-title">Fase Fondasi &bull; Logika &amp; Struktur Web</h4>
+                      <p class="chapter-desc">
+                        Mempelajari arsitektur komputasi, algoritma pemrograman terstruktur, standar semantik HTML5, dan
+                        penataan tata letak responsif CSS3 modern.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="story-chapter-card story-scroll-elem">
+                    <div class="chapter-number-badge">02</div>
+                    <div class="chapter-body">
+                      <h4 class="chapter-title">Fase Eksplorasi &bull; Desain UI/UX di Figma</h4>
+                      <p class="chapter-desc">
+                        Merancang pengalaman visual pengguna, alur prototipe interaktif, moodboard digital, dan sistem
+                        desain yang berorientasi pada kemudahan navigasi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="story-chapter-card story-scroll-elem">
+                    <div class="chapter-number-badge">03</div>
+                    <div class="chapter-body">
+                      <h4 class="chapter-title">Fase Rekayasa &bull; Aplikasi &amp; DOM Dinamis</h4>
+                      <p class="chapter-desc">
+                        Mengembangkan aplikasi interaktif berbasis Vanilla JavaScript, integrasi Web API, pemrograman
+                        server backend, serta kontrol versi terstandar Git &amp; GitHub.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="page-title-group">
-                  <h3 class="inside-page-title">// ARSITEKTUR SISTEM</h3>
-                  <p class="inside-page-subtitle">Spesifikasi penguasaan teknologi web &amp; rekayasa perangkat lunak
+                <!-- Story Quote Card -->
+                <div class="story-quote-card story-scroll-elem">
+                  <i class="fa-solid fa-quote-left story-quote-icon"></i>
+                  <p class="story-quote-text">
+                    "Koding bukan sekadar menulis baris instruksi, melainkan merangkai pengalaman yang membuat pengguna
+                    merasa nyaman, takjub, dan terbantu."
                   </p>
+                  <span class="story-quote-author">&mdash; Anandita Galuh Sekar Kinanti</span>
                 </div>
 
-                <!-- Operator Diagnostics Blueprint -->
-                <div class="blueprint-spec-box">
-                  <div class="spec-line"><span class="spec-k">OPERATOR:</span> <span class="spec-v">Anandita Galuh
-                      S.K.</span></div>
-                  <div class="spec-line"><span class="spec-k">DISIPLIN:</span> <span class="spec-v">Full-Stack &amp;
-                      UI/UX</span></div>
-                  <div class="spec-line"><span class="spec-k">STATUS:</span> <span class="spec-v active-spec">Production
-                      Ready</span></div>
-                  <div class="spec-line"><span class="spec-k">ARSITEKTUR:</span> <span class="spec-v">Modern Component
-                      &amp; API</span></div>
-                </div>
-
-                <!-- Mini Data Telemetry Meter -->
-                <div class="inside-telemetry-panel">
-                  <div class="telemetry-bar-wrap">
-                    <div class="tel-label-row">
-                      <span class="tel-label">SYSTEM PROFICIENCY</span>
-                      <span class="tel-val">92%</span>
-                    </div>
-                    <div class="tel-track">
-                      <div class="tel-fill fill-yellow" style="width: 92%;"></div>
-                    </div>
+                <!-- Trait Meters Cluster -->
+                <div class="poster-trait-cluster story-scroll-elem">
+                  <div class="trait-row">
+                    <span class="trait-label">UI/UX &amp; KREATIVITAS VISUAL</span>
+                    <span class="trait-val">95%</span>
                   </div>
-                  <div class="telemetry-bar-wrap">
-                    <div class="tel-label-row">
-                      <span class="tel-label">INTERFACE INTUITION</span>
-                      <span class="tel-val">88%</span>
-                    </div>
-                    <div class="tel-track">
-                      <div class="tel-fill fill-blue" style="width: 88%;"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="page-corner-hint">
-                  <i class="fa-solid fa-microchip"></i> <span>CORE ENGINE // 2026</span>
-                </div>
-              </div>
-
-              <!-- Dedicated Spiral Binding Channel (Center Seam - Zero Overlap with Content!) -->
-              <div class="notebook-spine-channel" id="notebookSpineChannel" aria-hidden="true">
-                <div class="spine-ring ring-1"></div>
-                <div class="spine-ring ring-2"></div>
-                <div class="spine-ring ring-3"></div>
-                <div class="spine-ring ring-4"></div>
-                <div class="spine-ring ring-5"></div>
-                <div class="spine-ring ring-6"></div>
-              </div>
-
-              <!-- Right Page: Category Menu Tabs & Technology Icon Pop-Out Stage -->
-              <div class="notebook-page page-right">
-
-                <!-- PHASE 3: Category Menu Choices -->
-                <div class="skills-category-tabs" id="skillsCategoryTabs" role="tablist" aria-label="Kategori Keahlian">
-                  <button class="skills-cat-tab" id="tabFrontend" data-category="frontend" role="tab"
-                    aria-selected="false" type="button">
-                    <span class="tab-index">01</span>
-                    <span class="tab-text">FRONTEND</span>
-                    <span class="tab-indicator"></span>
-                  </button>
-                  <button class="skills-cat-tab" id="tabBackend" data-category="backend" role="tab"
-                    aria-selected="false" type="button">
-                    <span class="tab-index">02</span>
-                    <span class="tab-text">BACKEND</span>
-                    <span class="tab-indicator"></span>
-                  </button>
-                  <button class="skills-cat-tab" id="tabTools" data-category="tools" role="tab" aria-selected="false"
-                    type="button">
-                    <span class="tab-index">03</span>
-                    <span class="tab-text">TOOLS</span>
-                    <span class="tab-indicator"></span>
-                  </button>
-                </div>
-
-                <!-- PHASE 4: Technology Icon Pop-Out Stage -->
-                <div class="skills-icons-stage" id="skillsIconsStage">
-
-                  <!-- Initial State Message -->
-                  <div class="skills-prompt-empty" id="skillsPromptEmpty">
-                    <div class="prompt-cyber-icon"><i class="fa-solid fa-hand-pointer"></i></div>
-                    <h4 class="prompt-title">PILIH KATEGORI KEAHLIAN</h4>
-                    <p class="prompt-desc">Klik tab <strong>FRONTEND</strong>, <strong>BACKEND</strong>, atau
-                      <strong>TOOLS</strong> untuk memunculkan ikon teknologi 3D!</p>
+                  <div class="trait-bar">
+                    <div class="trait-fill" style="--target-width: 95%;"></div>
                   </div>
 
-                  <!-- Grid of Emerged 3D Technology Icons -->
-                  <div class="skills-icons-grid" id="skillsIconsGrid" aria-live="polite">
-                    <!-- Injected via JavaScript with 3D Pop-Out Animations -->
+                  <div class="trait-row">
+                    <span class="trait-label">FRONTEND CODE &amp; RESPONSIVE</span>
+                    <span class="trait-val">92%</span>
+                  </div>
+                  <div class="trait-bar">
+                    <div class="trait-fill" style="--target-width: 92%;"></div>
                   </div>
 
+                  <div class="trait-row">
+                    <span class="trait-label">PROBLEM SOLVING &amp; LOGIKA</span>
+                    <span class="trait-val">88%</span>
+                  </div>
+                  <div class="trait-bar">
+                    <div class="trait-fill" style="--target-width: 88%;"></div>
+                  </div>
                 </div>
-
-                <!-- Active Technology Hover Name HUD -->
-                <div class="tech-tooltip-hud" id="techTooltipHud" aria-hidden="true">
-                  <span class="hud-tech-name" id="hudTechName">Arahkan kursor ke ikon</span>
-                </div>
-
               </div>
 
             </div>
+          </div>
+        </div>
 
-            <!-- Rotating Front Cover (Hinged at spine left center, rotates rotateY(-180deg) to open) -->
-            <div class="notebook-cover-flipper" id="notebookCoverFlipper">
+        <!-- Bottom Torn Edge SVG (Pure royal purple torn edge) -->
+        <div class="torn-paper-edge edge-bottom" aria-hidden="true">
+          <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+            <path class="torn-edge-purple"
+              d="M 0,0 L 0.0,31.0 L 23.9,25.2 L 47.3,30.9 L 76.6,26.5 L 111.8,32.8 L 142.1,35.4 L 162.3,28.1 L 197.0,35.9 L 231.9,39.6 L 264.5,30.8 L 294.9,37.6 L 322.3,39.6 L 354.3,31.7 L 387.0,34.1 L 418.5,42.7 L 452.2,35.7 L 473.4,38.3 L 502.7,35.1 L 523.6,35.7 L 548.9,41.1 L 572.0,34.4 L 602.6,39.4 L 623.0,46.2 L 658.2,36.8 L 680.1,44.8 L 704.5,44.5 L 735.6,36.3 L 760.4,41.4 L 785.5,49.0 L 817.7,38.6 L 850.5,47.3 L 873.3,45.1 L 896.2,42.1 L 931.7,47.5 L 954.2,43.5 L 975.5,45.2 L 995.8,53.3 L 1027.9,42.2 L 1053.1,42.7 L 1080.9,53.8 L 1113.3,51.4 L 1144.5,45.4 L 1175.7,44.9 L 1202.0,46.1 L 1237.7,45.9 L 1264.7,50.1 L 1294.2,53.9 L 1329.5,46.8 L 1360.3,56.3 L 1380.8,51.0 L 1410.8,51.8 L 1440.0,54.4 L 1440,0 Z"
+              fill="#7c3aed" />
+          </svg>
+        </div>
 
-              <!-- Outside Front Cover Face (Visible When Closed) -->
-              <div class="cover-face cover-front">
-                <div class="cover-hologram-border">
-                  <div class="cover-corner corner-tl"></div>
-                  <div class="cover-corner corner-tr"></div>
-                  <div class="cover-corner corner-bl"></div>
-                  <div class="cover-corner corner-br"></div>
-                </div>
+      </div>
 
-                <div class="cover-emblem-wrap">
-                  <div class="cover-cyber-clasp">
-                    <i class="fa-solid fa-lock cover-clasp-icon" id="coverClaspIcon"></i>
-                  </div>
-                  <span class="cover-badge-tag">TOY STORY // DOSSIER TEKNOLOGI</span>
-                  <h3 class="cover-title">KEAHLIAN &amp; TECH STACK</h3>
-                  <p class="cover-desc">Catatan portofolio teknologi &amp; rekayasa antarmuka digital Anandita Galuh
-                    S.K.</p>
-                  <div class="cover-scroll-hint">
-                    <i class="fa-solid fa-angles-down cover-hint-bounce"></i>
-                    <span>Gulir untuk membuka buku dokumen</span>
-                  </div>
-                </div>
+    </div>
+  </section>
 
-                <div class="cover-spine-ridge"></div>
-              </div>
+  <!-- ===================== SMOOTH ORGANIC WAVE TRANSITION 2: THE STORY (DARK) TO THE CAST (ORANGE) ===================== -->
+  <div class="silhouette-divider divider-story-to-cast" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <!-- Soft lilac accent wave -->
+      <path class="wave-layer wave-accent"
+        d="M 0,36 C 250,82 480,10 740,56 C 1000,98 1220,18 1440,60 L 1440,120 L 0,120 Z"
+        fill="rgba(192, 132, 252, 0.45)" />
+      <!-- Royal purple accent wave -->
+      <path class="wave-layer wave-mid"
+        d="M 0,56 C 270,105 530,26 800,74 C 1050,116 1270,36 1440,78 L 1440,120 L 0,120 Z"
+        fill="rgba(126, 34, 206, 0.5)" />
+      <!-- Solid light purple front wave merging into #cast (#f5f3ff) -->
+      <path class="wave-layer wave-front"
+        d="M 0,72 C 300,122 580,44 860,90 C 1120,132 1320,52 1440,84 L 1440,120 L 0,120 Z" fill="#f5f3ff" />
+    </svg>
+  </div>
+  <!-- ===================== SECTION 3: THE SKILLS ARCHIVE (INTERACTIVE FILE & FOLDER SYSTEM) ===================== -->
+  <section class="adventure-cast-section" id="cast">
+    <!-- Blueprint / Grid Canvas Texture Overlay (Kotak-Kotak seperti Home Page) -->
+    <div class="cast-canvas-grid-pattern" aria-hidden="true"></div>
 
-              <!-- Inside Front Cover Backface (Visible Once Flipped -180deg) -->
-              <div class="cover-face cover-back" aria-hidden="true"></div>
+    <div class="container cast-content-container">
+      <!-- Section Header -->
+      <div class="cast-header-block scroll-appear-item">
+        <h2 class="movie-section-title text-cast-title">ARSIP BERKAS KEAHLIAN</h2>
+        <span class="movie-section-subtitle">DIREKTORI BERKAS &bull; JALUR POHON FOLDER KATEGORI &bull; SMKS BRANTAS KARANGKATES</span>
+      </div>
 
+      <!-- Interactive Category Switcher Filter Tabs -->
+      <div class="skills-branch-filter-bar scroll-appear-item appear-delay-1" role="tablist" aria-label="Filter Cabang Berkas">
+        <button class="branch-filter-chip is-active" data-filter="all" type="button" role="tab" aria-selected="true">
+          <i class="fa-solid fa-folder-tree"></i>
+          <span>Semua Cabang (15)</span>
+        </button>
+        <button class="branch-filter-chip" data-filter="frontend" type="button" role="tab" aria-selected="false">
+          <span class="chip-color-dot" style="background:#8b5cf6;"></span>
+          <span>Frontend (3)</span>
+        </button>
+        <button class="branch-filter-chip" data-filter="backend" type="button" role="tab" aria-selected="false">
+          <span class="chip-color-dot" style="background:#0284c7;"></span>
+          <span>Backend (3)</span>
+        </button>
+        <button class="branch-filter-chip" data-filter="framework" type="button" role="tab" aria-selected="false">
+          <span class="chip-color-dot" style="background:#ea580c;"></span>
+          <span>Framework (4)</span>
+        </button>
+        <button class="branch-filter-chip" data-filter="editing" type="button" role="tab" aria-selected="false">
+          <span class="chip-color-dot" style="background:#ec4899;"></span>
+          <span>Editing (5)</span>
+        </button>
+      </div>
+
+      <!-- ===================== SKILLS HIERARCHICAL BRANCHING TREE STAGE ===================== -->
+      <div class="skills-burst-stage filter-all scroll-appear-bounce appear-delay-2" id="skillsBurstStage">
+        <!-- Connecting Tree Lines SVG -->
+        <svg class="burst-lines-svg" viewBox="0 0 960 740" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <line class="tree-line tree-line-lvl1" data-folder-id="frontend" x1="480" y1="370" x2="270" y2="210" style="--line-len: 264.0px; --color: #8b5cf6;" />
+          <line class="tree-line tree-line-lvl1" data-folder-id="backend" x1="480" y1="370" x2="690" y2="210" style="--line-len: 264.0px; --color: #0284c7;" />
+          <line class="tree-line tree-line-lvl1" data-folder-id="framework" x1="480" y1="370" x2="270" y2="530" style="--line-len: 264.0px; --color: #ea580c;" />
+          <line class="tree-line tree-line-lvl1" data-folder-id="editing" x1="480" y1="370" x2="690" y2="530" style="--line-len: 264.0px; --color: #ec4899;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="css" data-parent-folder="frontend" x1="270" y1="210" x2="250" y2="90" style="--line-len: 121.7px; --color: #8b5cf6; --delay: 0ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="html" data-parent-folder="frontend" x1="270" y1="210" x2="155" y2="145" style="--line-len: 132.1px; --color: #8b5cf6; --delay: 20ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="js" data-parent-folder="frontend" x1="270" y1="210" x2="150" y2="245" style="--line-len: 125.0px; --color: #8b5cf6; --delay: 40ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="mysql" data-parent-folder="backend" x1="690" y1="210" x2="710" y2="90" style="--line-len: 121.7px; --color: #0284c7; --delay: 60ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="php" data-parent-folder="backend" x1="690" y1="210" x2="805" y2="145" style="--line-len: 132.1px; --color: #0284c7; --delay: 80ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="python" data-parent-folder="backend" x1="690" y1="210" x2="810" y2="245" style="--line-len: 125.0px; --color: #0284c7; --delay: 100ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="laravel" data-parent-folder="framework" x1="270" y1="530" x2="145" y2="495" style="--line-len: 129.8px; --color: #ea580c; --delay: 120ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="vscode" data-parent-folder="framework" x1="270" y1="530" x2="145" y2="565" style="--line-len: 129.8px; --color: #ea580c; --delay: 140ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="github" data-parent-folder="framework" x1="270" y1="530" x2="195" y2="635" style="--line-len: 129.0px; --color: #ea580c; --delay: 160ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="antigravity" data-parent-folder="framework" x1="270" y1="530" x2="275" y2="660" style="--line-len: 130.1px; --color: #ea580c; --delay: 180ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="figma" data-parent-folder="editing" x1="690" y1="530" x2="815" y2="495" style="--line-len: 129.8px; --color: #ec4899; --delay: 200ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="capcut" data-parent-folder="editing" x1="690" y1="530" x2="815" y2="565" style="--line-len: 129.8px; --color: #ec4899; --delay: 220ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="claude" data-parent-folder="editing" x1="690" y1="530" x2="775" y2="635" style="--line-len: 135.1px; --color: #ec4899; --delay: 240ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="alight" data-parent-folder="editing" x1="690" y1="530" x2="705" y2="660" style="--line-len: 130.9px; --color: #ec4899; --delay: 260ms;" />
+          <line class="tree-line tree-line-lvl2 parent-is-open" data-skill-id="openai" data-parent-folder="editing" x1="690" y1="530" x2="635" y2="655" style="--line-len: 136.6px; --color: #ec4899; --delay: 280ms;" />
+        </svg>
+
+        <!-- Central Root Archive Folder -->
+        <div class="central-folder-wrapper">
+          <button class="central-folder-button" id="skillsCentralFolder" type="button" aria-expanded="false" aria-label="Buka Folder Arsip Keahlian">
+            <svg class="folder-svg-icon" viewBox="0 0 160 130" width="160" height="130" aria-hidden="true">
+              <path class="folder-back" d="M 12,28 C 12,18 20,10 30,10 L 68,10 C 74,10 80,14 84,20 L 92,30 L 138,30 C 148,30 154,36 154,46 L 154,108 C 154,118 146,124 136,124 L 28,124 C 18,124 12,118 12,108 Z" fill="#d8b4fe" stroke="#2e1065" stroke-width="3.5" />
+              <rect class="folder-inner-doc" x="26" y="22" width="112" height="70" rx="8" fill="#ffffff" stroke="#2e1065" stroke-width="2.5" />
+              <line class="folder-doc-line" x1="40" y1="38" x2="90" y2="38" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" />
+              <line class="folder-doc-line" x1="40" y1="48" x2="110" y2="48" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" />
+              <path class="folder-front" d="M 10,48 L 154,48 L 146,118 C 144,124 138,128 132,128 L 26,128 C 20,128 14,124 12,118 Z" fill="url(#rootFolderGrad)" stroke="#2e1065" stroke-width="3.5" />
+              <defs>
+                <linearGradient id="rootFolderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#a855f7" />
+                  <stop offset="50%" stop-color="#8b5cf6" />
+                  <stop offset="100%" stop-color="#7c3aed" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="folder-center-crest" aria-hidden="true">
+              <i class="fa-solid fa-folder-tree"></i>
             </div>
+          </button>
+          <div class="folder-hint-pill" id="skillsFolderHint">
+            <i class="fa-solid fa-hand-pointer hint-icon"></i>
+            <span class="hint-text">KLIK FOLDER UNTUK MEMBUKA CABANG</span>
+          </div>
+        </div>
+
+        <!-- 4 Category Subfolders (Frontend, Backend, Framework, Editing) -->
+        <div class="category-folders-container" id="categoryFoldersContainer">
+          <div class="category-branch-folder is-open-folder" data-folder-id="frontend" style="--target-x: -210px; --target-y: -160px; --folder-color: #8b5cf6;">
+            <button class="category-folder-btn" type="button" aria-expanded="true" aria-label="Buka / Tutup Folder Frontend" title="Klik untuk Buka / Tutup Folder Frontend">
+              <div class="category-tab-badge">3 Berkas</div>
+              <div class="category-icon-art">
+                <svg viewBox="0 0 86 68" width="86" height="68" aria-hidden="true">
+                  <path class="subfolder-back" d="M 8,16 C 8,10 12,6 18,6 L 36,6 C 40,6 44,9 46,12 L 50,18 L 74,18 C 80,18 84,22 84,28 L 84,56 C 84,62 80,66 74,66 L 18,66 C 12,66 8,62 8,56 Z" fill="#8b5cf6" stroke="#2e1065" stroke-width="2.8" />
+                  <rect class="subfolder-paper" x="16" y="12" width="58" height="38" rx="5" fill="#ffffff" stroke="#2e1065" stroke-width="2" />
+                  <path class="subfolder-front" d="M 6,26 L 82,26 L 78,64 C 77,67 74,68 70,68 L 18,68 C 14,68 11,67 10,64 Z" fill="#8b5cf6" stroke="#2e1065" stroke-width="2.8" />
+                </svg>
+              </div>
+              <div class="category-name-badge">
+                <i class="fa-solid fa-code"></i>
+                <span>Frontend</span>
+                <i class="fa-solid fa-chevron-down toggle-state-icon"></i>
+              </div>
+            </button>
+          </div>
+          <div class="category-branch-folder is-open-folder" data-folder-id="backend" style="--target-x: 210px; --target-y: -160px; --folder-color: #0284c7;">
+            <button class="category-folder-btn" type="button" aria-expanded="true" aria-label="Buka / Tutup Folder Backend" title="Klik untuk Buka / Tutup Folder Backend">
+              <div class="category-tab-badge">3 Berkas</div>
+              <div class="category-icon-art">
+                <svg viewBox="0 0 86 68" width="86" height="68" aria-hidden="true">
+                  <path class="subfolder-back" d="M 8,16 C 8,10 12,6 18,6 L 36,6 C 40,6 44,9 46,12 L 50,18 L 74,18 C 80,18 84,22 84,28 L 84,56 C 84,62 80,66 74,66 L 18,66 C 12,66 8,62 8,56 Z" fill="#0284c7" stroke="#2e1065" stroke-width="2.8" />
+                  <rect class="subfolder-paper" x="16" y="12" width="58" height="38" rx="5" fill="#ffffff" stroke="#2e1065" stroke-width="2" />
+                  <path class="subfolder-front" d="M 6,26 L 82,26 L 78,64 C 77,67 74,68 70,68 L 18,68 C 14,68 11,67 10,64 Z" fill="#0284c7" stroke="#2e1065" stroke-width="2.8" />
+                </svg>
+              </div>
+              <div class="category-name-badge">
+                <i class="fa-solid fa-server"></i>
+                <span>Backend</span>
+                <i class="fa-solid fa-chevron-down toggle-state-icon"></i>
+              </div>
+            </button>
+          </div>
+          <div class="category-branch-folder is-open-folder" data-folder-id="framework" style="--target-x: -210px; --target-y: 160px; --folder-color: #ea580c;">
+            <button class="category-folder-btn" type="button" aria-expanded="true" aria-label="Buka / Tutup Folder Framework" title="Klik untuk Buka / Tutup Folder Framework">
+              <div class="category-tab-badge">4 Berkas</div>
+              <div class="category-icon-art">
+                <svg viewBox="0 0 86 68" width="86" height="68" aria-hidden="true">
+                  <path class="subfolder-back" d="M 8,16 C 8,10 12,6 18,6 L 36,6 C 40,6 44,9 46,12 L 50,18 L 74,18 C 80,18 84,22 84,28 L 84,56 C 84,62 80,66 74,66 L 18,66 C 12,66 8,62 8,56 Z" fill="#ea580c" stroke="#2e1065" stroke-width="2.8" />
+                  <rect class="subfolder-paper" x="16" y="12" width="58" height="38" rx="5" fill="#ffffff" stroke="#2e1065" stroke-width="2" />
+                  <path class="subfolder-front" d="M 6,26 L 82,26 L 78,64 C 77,67 74,68 70,68 L 18,68 C 14,68 11,67 10,64 Z" fill="#ea580c" stroke="#2e1065" stroke-width="2.8" />
+                </svg>
+              </div>
+              <div class="category-name-badge">
+                <i class="fa-solid fa-cubes"></i>
+                <span>Framework</span>
+                <i class="fa-solid fa-chevron-down toggle-state-icon"></i>
+              </div>
+            </button>
+          </div>
+          <div class="category-branch-folder is-open-folder" data-folder-id="editing" style="--target-x: 210px; --target-y: 160px; --folder-color: #ec4899;">
+            <button class="category-folder-btn" type="button" aria-expanded="true" aria-label="Buka / Tutup Folder Editing" title="Klik untuk Buka / Tutup Folder Editing">
+              <div class="category-tab-badge">5 Berkas</div>
+              <div class="category-icon-art">
+                <svg viewBox="0 0 86 68" width="86" height="68" aria-hidden="true">
+                  <path class="subfolder-back" d="M 8,16 C 8,10 12,6 18,6 L 36,6 C 40,6 44,9 46,12 L 50,18 L 74,18 C 80,18 84,22 84,28 L 84,56 C 84,62 80,66 74,66 L 18,66 C 12,66 8,62 8,56 Z" fill="#ec4899" stroke="#2e1065" stroke-width="2.8" />
+                  <rect class="subfolder-paper" x="16" y="12" width="58" height="38" rx="5" fill="#ffffff" stroke="#2e1065" stroke-width="2" />
+                  <path class="subfolder-front" d="M 6,26 L 82,26 L 78,64 C 77,67 74,68 70,68 L 18,68 C 14,68 11,67 10,64 Z" fill="#ec4899" stroke="#2e1065" stroke-width="2.8" />
+                </svg>
+              </div>
+              <div class="category-name-badge">
+                <i class="fa-solid fa-bezier-curve"></i>
+                <span>Editing</span>
+                <i class="fa-solid fa-chevron-down toggle-state-icon"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- 15 Application / Skill Leaves -->
+        <div class="skills-nodes-container" id="skillsNodesContainer">
+          <div class="skill-burst-node parent-is-open" data-skill-id="css" data-parent-folder="frontend" style="--target-x: -230px; --target-y: -280px; --parent-x: -210px; --parent-y: -160px; --skill-color: #8b5cf6;" role="button" tabindex="0" title="CSS3 (92%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/css.png" alt="CSS3" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">CSS3</span>
+              <span class="tooltip-level">92%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="html" data-parent-folder="frontend" style="--target-x: -325px; --target-y: -225px; --parent-x: -210px; --parent-y: -160px; --skill-color: #8b5cf6;" role="button" tabindex="0" title="HTML5 (95%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/html.png" alt="HTML5" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">HTML5</span>
+              <span class="tooltip-level">95%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="js" data-parent-folder="frontend" style="--target-x: -330px; --target-y: -125px; --parent-x: -210px; --parent-y: -160px; --skill-color: #8b5cf6;" role="button" tabindex="0" title="JavaScript (90%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/js.png" alt="JavaScript" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">JavaScript</span>
+              <span class="tooltip-level">90%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="mysql" data-parent-folder="backend" style="--target-x: 230px; --target-y: -280px; --parent-x: 210px; --parent-y: -160px; --skill-color: #0284c7;" role="button" tabindex="0" title="MySQL (86%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/mysql.png" alt="MySQL" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">MySQL</span>
+              <span class="tooltip-level">86%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="php" data-parent-folder="backend" style="--target-x: 325px; --target-y: -225px; --parent-x: 210px; --parent-y: -160px; --skill-color: #0284c7;" role="button" tabindex="0" title="PHP (88%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/php.png" alt="PHP" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">PHP</span>
+              <span class="tooltip-level">88%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="python" data-parent-folder="backend" style="--target-x: 330px; --target-y: -125px; --parent-x: 210px; --parent-y: -160px; --skill-color: #0284c7;" role="button" tabindex="0" title="Python (85%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/python.png" alt="Python" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">Python</span>
+              <span class="tooltip-level">85%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="laravel" data-parent-folder="framework" style="--target-x: -335px; --target-y: 125px; --parent-x: -210px; --parent-y: 160px; --skill-color: #ea580c;" role="button" tabindex="0" title="Laravel (88%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/laravel.png" alt="Laravel" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">Laravel</span>
+              <span class="tooltip-level">88%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="vscode" data-parent-folder="framework" style="--target-x: -335px; --target-y: 195px; --parent-x: -210px; --parent-y: 160px; --skill-color: #ea580c;" role="button" tabindex="0" title="VS Code (92%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/vs.png" alt="VS Code" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">VS Code</span>
+              <span class="tooltip-level">92%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="github" data-parent-folder="framework" style="--target-x: -285px; --target-y: 265px; --parent-x: -210px; --parent-y: 160px; --skill-color: #ea580c;" role="button" tabindex="0" title="GitHub (92%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon github-icon" src="img/skills/github.png" alt="GitHub" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">GitHub</span>
+              <span class="tooltip-level">92%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="antigravity" data-parent-folder="framework" style="--target-x: -205px; --target-y: 290px; --parent-x: -210px; --parent-y: 160px; --skill-color: #ea580c;" role="button" tabindex="0" title="Antigravity AI (92%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/antigravity.png" alt="Antigravity AI" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">Antigravity AI</span>
+              <span class="tooltip-level">92%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="figma" data-parent-folder="editing" style="--target-x: 335px; --target-y: 125px; --parent-x: 210px; --parent-y: 160px; --skill-color: #ec4899;" role="button" tabindex="0" title="Figma (95%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/figma.png" alt="Figma" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">Figma</span>
+              <span class="tooltip-level">95%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="capcut" data-parent-folder="editing" style="--target-x: 335px; --target-y: 195px; --parent-x: 210px; --parent-y: 160px; --skill-color: #ec4899;" role="button" tabindex="0" title="CapCut (88%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/capcut.png" alt="CapCut" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">CapCut</span>
+              <span class="tooltip-level">88%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="claude" data-parent-folder="editing" style="--target-x: 295px; --target-y: 265px; --parent-x: 210px; --parent-y: 160px; --skill-color: #ec4899;" role="button" tabindex="0" title="Claude AI (90%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/claude.svg" alt="Claude AI" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">Claude AI</span>
+              <span class="tooltip-level">90%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="alight" data-parent-folder="editing" style="--target-x: 225px; --target-y: 290px; --parent-x: 210px; --parent-y: 160px; --skill-color: #ec4899;" role="button" tabindex="0" title="Alight Motion (85%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/alight.png" alt="Alight Motion" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">Alight Motion</span>
+              <span class="tooltip-level">85%</span>
+            </div>
+          </div>
+          <div class="skill-burst-node parent-is-open" data-skill-id="openai" data-parent-folder="editing" style="--target-x: 155px; --target-y: 285px; --parent-x: 210px; --parent-y: 160px; --skill-color: #ec4899;" role="button" tabindex="0" title="ChatGPT (90%)">
+            <div class="skill-node-bubble">
+              <img class="skill-node-icon" src="img/skills/openai.svg" alt="ChatGPT" loading="lazy" />
+            </div>
+            <div class="skill-node-tooltip" aria-hidden="true">
+              <span class="tooltip-name">ChatGPT</span>
+              <span class="tooltip-level">90%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SMOOTH ORGANIC WAVE TRANSITION 3: THE CAST (ORANGE) TO GALLERY (WOOD) ===================== -->
+  <div class="silhouette-divider divider-cast-to-gallery" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <!-- Soft lilac accent wave -->
+      <path class="wave-layer wave-accent"
+        d="M 0,38 C 240,84 470,14 720,58 C 980,96 1210,18 1440,62 L 1440,120 L 0,120 Z"
+        fill="rgba(192, 132, 252, 0.45)" />
+      <!-- Deeper purple accent wave -->
+      <path class="wave-layer wave-mid"
+        d="M 0,58 C 270,106 540,28 790,74 C 1050,115 1270,38 1440,80 L 1440,120 L 0,120 Z"
+        fill="rgba(147, 51, 234, 0.45)" />
+      <!-- Solid soft purple front wave merging into #gallery (#faf5ff) -->
+      <path class="wave-layer wave-front"
+        d="M 0,74 C 300,124 570,44 850,90 C 1120,130 1310,54 1440,86 L 1440,120 L 0,120 Z" fill="#faf5ff" />
+    </svg>
+  </div>
+
+  <!-- ===================== SECTION 4: FEATURED PROJECTS (3D COVERFLOW SLIDER) ===================== -->
+  <section class="adventure-gallery-section" id="gallery" aria-label="Galeri Proyek Terpilih">
+    <div class="gallery-stage-container" id="galleryStage">
+      <div class="container gallery-content-container">
+
+        <!-- Section Header -->
+        <div class="gallery-header-block scroll-appear-item">
+          <div class="stills-counter-pill" id="stillsCounterPill" role="status" aria-live="polite">
+            <span class="pulse-wood-dot"></span>
+            <span class="counter-text" id="counterText">PROYEK <strong id="currentSlideNum">01</strong> / <span id="totalSlidesNum">06</span></span>
+          </div>
+          <h2 class="movie-section-title text-gallery-title">PROYEK PILIHAN</h2>
+          <span class="movie-section-subtitle">KOLEKSI KARYA APLIKASI WEB - SISTEM INFORMASI - DESAIN ANTARMUKA INTERAKTIF</span>
+        </div>
+
+        <!-- 3D Coverflow Carousel Container -->
+        <div class="coverflow-carousel-wrapper scroll-appear-bounce appear-delay-1" id="coverflowWrapper">
+          <!-- Prev Button -->
+          <button class="coverflow-nav-btn coverflow-btn-prev" id="coverflowPrevBtn" aria-label="Proyek Sebelumnya" type="button">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <!-- 3D Perspective Stage -->
+          <div class="coverflow-stage" id="coverflowStage">
+
+            <!-- Card 1: Sistem Informasi Universitas -->
+            <article class="coverflow-card" data-index="0" data-project-id="p1" role="button" tabindex="0" aria-label="Lihat Proyek Sistem Informasi Universitas">
+              <div class="coverflow-card-inner">
+                <div class="washi-tape-strip tape-cowhide" title="Cowhide Tape"></div>
+                <div class="coverflow-thumb-frame">
+                  <img src="img/univ.jpg" alt="Sistem Informasi Universitas" class="coverflow-img" loading="lazy" />
+                  <span class="project-category-tag"><i class="fa-solid fa-globe"></i> Web Portal</span>
+                  <span class="project-index-number">#01</span>
+                  <div class="coverflow-overlay-hint">
+                    <span class="coverflow-action-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> LIHAT DETAIL</span>
+                  </div>
+                </div>
+                <div class="coverflow-info-bar">
+                  <div class="project-meta-top">
+                    <span class="project-edition-label"><i class="fa-solid fa-graduation-cap"></i> Campus Edition</span>
+                    <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
+                  </div>
+                  <h3 class="coverflow-title">Sistem Informasi Universitas</h3>
+                  <p class="coverflow-desc">Website portal informasi komprehensif untuk Universitas Atma Jaya Yogyakarta dengan tata letak bersih, navigasi terstruktur, dan performa responsif.</p>
+                  
+                  <div class="project-tech-badges">
+                    <span class="tech-badge-pill tech-pill-html"><i class="fa-brands fa-html5"></i> HTML5</span>
+                    <span class="tech-badge-pill tech-pill-css"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                    <span class="tech-badge-pill tech-pill-js"><i class="fa-brands fa-js"></i> JavaScript</span>
+                  </div>
+
+                  <div class="project-footer-actions">
+                    <a href="https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-view-project" aria-label="Lihat Proyek Sistem Informasi Universitas">
+                      <span>LIHAT PROYEK</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button class="coverflow-detail-btn" type="button" aria-label="Detail Sistem Informasi Universitas">
+                      <span>DETAIL</span> <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Website E-Commerce JCO Donuts -->
+            <article class="coverflow-card" data-index="1" data-project-id="p2" role="button" tabindex="0" aria-label="Lihat Proyek Website E-Commerce JCO Donuts">
+              <div class="coverflow-card-inner">
+                <div class="washi-tape-strip tape-flannel" title="Woody Flannel Tape"></div>
+                <div class="coverflow-thumb-frame">
+                  <img src="img/logo baru.png" alt="Website E-Commerce JCO Donuts" class="coverflow-img img-contain-thumb" loading="lazy" />
+                  <span class="project-category-tag"><i class="fa-solid fa-cookie-bite"></i> E-Commerce</span>
+                  <span class="project-index-number">#02</span>
+                  <div class="coverflow-overlay-hint">
+                    <span class="coverflow-action-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> LIHAT DETAIL</span>
+                  </div>
+                </div>
+                <div class="coverflow-info-bar">
+                  <div class="project-meta-top">
+                    <span class="project-edition-label"><i class="fa-solid fa-store"></i> Culinary Edition</span>
+                    <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
+                  </div>
+                  <h3 class="coverflow-title">Website E-Commerce JCO Donuts</h3>
+                  <p class="coverflow-desc">Desain dan implementasi antarmuka landing page katalog produk donat premium J.CO yang lezat, interaktif, dan ramah pengguna.</p>
+                  
+                  <div class="project-tech-badges">
+                    <span class="tech-badge-pill tech-pill-html"><i class="fa-brands fa-html5"></i> HTML5</span>
+                    <span class="tech-badge-pill tech-pill-css"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                    <span class="tech-badge-pill tech-pill-design"><i class="fa-solid fa-basket-shopping"></i> E-Commerce UI</span>
+                  </div>
+
+                  <div class="project-footer-actions">
+                    <a href="https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-view-project" aria-label="Lihat Proyek Website E-Commerce JCO Donuts">
+                      <span>LIHAT PROYEK</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button class="coverflow-detail-btn" type="button" aria-label="Detail Website E-Commerce JCO Donuts">
+                      <span>DETAIL</span> <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Game & Software Python -->
+            <article class="coverflow-card" data-index="2" data-project-id="p3" role="button" tabindex="0" aria-label="Lihat Proyek Game &amp; Software Python">
+              <div class="coverflow-card-inner">
+                <div class="washi-tape-strip tape-buzz" title="Buzz Space Ranger Tape"></div>
+                <div class="coverflow-thumb-frame">
+                  <img src="img/python.jpg" alt="Game & Software Python" class="coverflow-img" loading="lazy" />
+                  <span class="project-category-tag"><i class="fa-brands fa-python"></i> Python Dev</span>
+                  <span class="project-index-number">#03</span>
+                  <div class="coverflow-overlay-hint">
+                    <span class="coverflow-action-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> LIHAT DETAIL</span>
+                  </div>
+                </div>
+                <div class="coverflow-info-bar">
+                  <div class="project-meta-top">
+                    <span class="project-edition-label"><i class="fa-solid fa-gamepad"></i> Arcade Edition</span>
+                    <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
+                  </div>
+                  <h3 class="coverflow-title">Game &amp; Software Python</h3>
+                  <p class="coverflow-desc">Eksplorasi bahasa pemrograman Python untuk merancang logika interaktif, pengolahan data sederhana, dan pengembangan modul gim klasik.</p>
+                  
+                  <div class="project-tech-badges">
+                    <span class="tech-badge-pill tech-pill-python"><i class="fa-brands fa-python"></i> Python 3</span>
+                    <span class="tech-badge-pill tech-pill-algo"><i class="fa-solid fa-microchip"></i> Algorithms</span>
+                    <span class="tech-badge-pill tech-pill-game"><i class="fa-solid fa-ghost"></i> Game Dev</span>
+                  </div>
+
+                  <div class="project-footer-actions">
+                    <a href="https://drive.google.com/drive/folders/1OJ7EV6d5vqvGEp53Jp9b5gFa-r3DJKuk?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-view-project" aria-label="Lihat Proyek Game &amp; Software Python">
+                      <span>LIHAT PROYEK</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button class="coverflow-detail-btn" type="button" aria-label="Detail Game &amp; Software Python">
+                      <span>DETAIL</span> <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Design Landing Page Figma -->
+            <article class="coverflow-card" data-index="3" data-project-id="p4" role="button" tabindex="0" aria-label="Lihat Proyek Design Landing Page Figma">
+              <div class="coverflow-card-inner">
+                <div class="washi-tape-strip tape-pizza" title="Pizza Planet Tape"></div>
+                <div class="coverflow-thumb-frame">
+                  <img src="img/landing.jpg" alt="Design Landing Page Figma" class="coverflow-img" loading="lazy" />
+                  <span class="project-category-tag"><i class="fa-brands fa-figma"></i> UI/UX Figma</span>
+                  <span class="project-index-number">#04</span>
+                  <div class="coverflow-overlay-hint">
+                    <span class="coverflow-action-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> LIHAT DETAIL</span>
+                  </div>
+                </div>
+                <div class="coverflow-info-bar">
+                  <div class="project-meta-top">
+                    <span class="project-edition-label"><i class="fa-solid fa-pen-ruler"></i> Concept Edition</span>
+                    <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
+                  </div>
+                  <h3 class="coverflow-title">Design Landing Page Figma</h3>
+                  <p class="coverflow-desc">Perancangan UI/UX landing page modern di Figma dengan fokus pada hierarki visual, kontras warna yang nyaman, tipografi terstruktur, dan alur prototipe mulus.</p>
+                  
+                  <div class="project-tech-badges">
+                    <span class="tech-badge-pill tech-pill-figma"><i class="fa-brands fa-figma"></i> Figma</span>
+                    <span class="tech-badge-pill tech-pill-ui"><i class="fa-solid fa-layer-group"></i> UI/UX</span>
+                    <span class="tech-badge-pill tech-pill-proto"><i class="fa-solid fa-bezier-curve"></i> Prototyping</span>
+                  </div>
+
+                  <div class="project-footer-actions">
+                    <a href="https://www.figma.com/design/hwiHotD2EtEFiHTnz7G6wJ/E-Commerce-Design?node-id=0-1&t=tHgj5ebnapz78nLI-1" target="_blank" rel="noopener noreferrer" class="btn-view-project" aria-label="Lihat Proyek Design Landing Page Figma">
+                      <span>LIHAT PROYEK</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button class="coverflow-detail-btn" type="button" aria-label="Detail Design Landing Page Figma">
+                      <span>DETAIL</span> <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5: Design Web Batik Khas Yogyakarta -->
+            <article class="coverflow-card" data-index="4" data-project-id="p5" role="button" tabindex="0" aria-label="Lihat Proyek Design Web Batik Khas Yogyakarta">
+              <div class="coverflow-card-inner">
+                <div class="washi-tape-strip tape-cowhide" title="Cowhide Tape"></div>
+                <div class="coverflow-thumb-frame">
+                  <img src="img/batikbaru.jpg" alt="Design Web Batik Khas Yogyakarta" class="coverflow-img" loading="lazy" />
+                  <span class="project-category-tag"><i class="fa-solid fa-palette"></i> Heritage Web</span>
+                  <span class="project-index-number">#05</span>
+                  <div class="coverflow-overlay-hint">
+                    <span class="coverflow-action-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> LIHAT DETAIL</span>
+                  </div>
+                </div>
+                <div class="coverflow-info-bar">
+                  <div class="project-meta-top">
+                    <span class="project-edition-label"><i class="fa-solid fa-gem"></i> Heritage Edition</span>
+                    <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
+                  </div>
+                  <h3 class="coverflow-title">Design Web Batik Khas Yogyakarta</h3>
+                  <p class="coverflow-desc">Perancangan desain toko daring warisan budaya batik khas Yogyakarta yang memadukan nuansa tradisional Nusantara dengan pengalaman belanja digital modern.</p>
+                  
+                  <div class="project-tech-badges">
+                    <span class="tech-badge-pill tech-pill-figma"><i class="fa-brands fa-figma"></i> Figma</span>
+                    <span class="tech-badge-pill tech-pill-design"><i class="fa-solid fa-bag-shopping"></i> E-Commerce</span>
+                    <span class="tech-badge-pill tech-pill-culture"><i class="fa-solid fa-feather"></i> Culture</span>
+                  </div>
+
+                  <div class="project-footer-actions">
+                    <a href="https://docs.google.com/document/d/1IXtKdZZeUXmvzTJlvwLknqLplPBPV6nUzIAECFkfMEw/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-view-project" aria-label="Lihat Proyek Design Web Batik Khas Yogyakarta">
+                      <span>LIHAT PROYEK</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button class="coverflow-detail-btn" type="button" aria-label="Detail Design Web Batik Khas Yogyakarta">
+                      <span>DETAIL</span> <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6: Website E-Commerce Qinanthi -->
+            <article class="coverflow-card" data-index="5" data-project-id="p6" role="button" tabindex="0" aria-label="Lihat Proyek Website E-Commerce Qinanthi">
+              <div class="coverflow-card-inner">
+                <div class="washi-tape-strip tape-flannel" title="Woody Flannel Tape"></div>
+                <div class="coverflow-thumb-frame">
+                  <img src="img/qinanthi.png" alt="Website E-Commerce Qinanthi" class="coverflow-img" loading="lazy" />
+                  <span class="project-category-tag"><i class="fa-solid fa-shirt"></i> Fashion Store</span>
+                  <span class="project-index-number">#06</span>
+                  <div class="coverflow-overlay-hint">
+                    <span class="coverflow-action-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> LIHAT DETAIL</span>
+                  </div>
+                </div>
+                <div class="coverflow-info-bar">
+                  <div class="project-meta-top">
+                    <span class="project-edition-label"><i class="fa-solid fa-vest-patches"></i> Fashion Edition</span>
+                    <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
+                  </div>
+                  <h3 class="coverflow-title">Website E-Commerce Qinanthi</h3>
+                  <p class="coverflow-desc">Konsep platform belanja digital busana dengan katalog produk terstruktur rapi, navigasi pencarian instan, dan antarmuka checkout yang intuitif.</p>
+                  
+                  <div class="project-tech-badges">
+                    <span class="tech-badge-pill tech-pill-figma"><i class="fa-brands fa-figma"></i> Figma</span>
+                    <span class="tech-badge-pill tech-pill-ui"><i class="fa-solid fa-crop-simple"></i> UI/UX</span>
+                    <span class="tech-badge-pill tech-pill-proto"><i class="fa-solid fa-swatchbook"></i> Design System</span>
+                  </div>
+
+                  <div class="project-footer-actions">
+                    <a href="https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-view-project" aria-label="Lihat Proyek Website E-Commerce Qinanthi">
+                      <span>LIHAT PROYEK</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button class="coverflow-detail-btn" type="button" aria-label="Detail Website E-Commerce Qinanthi">
+                      <span>DETAIL</span> <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
 
           </div>
 
+          <!-- Next Button -->
+          <button class="coverflow-nav-btn coverflow-btn-next" id="coverflowNextBtn" aria-label="Proyek Selanjutnya" type="button">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Carousel Pagination Dots -->
+        <div class="coverflow-pagination scroll-appear-item appear-delay-2" id="coverflowPagination" role="tablist" aria-label="Pilihan Slide Proyek">
+          <button class="coverflow-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+          <button class="coverflow-dot" data-index="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+          <button class="coverflow-dot" data-index="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+          <button class="coverflow-dot" data-index="3" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+          <button class="coverflow-dot" data-index="4" role="tab" aria-selected="false" aria-label="Slide 5"></button>
+          <button class="coverflow-dot" data-index="5" role="tab" aria-selected="false" aria-label="Slide 6"></button>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ===================== SECTION 3: PROJECTS (PINNED HORIZONTAL SCROLL SHOWCASE) ===================== -->
-  <section class="section projects-paper-section projects-pinned-section" id="projects" aria-label="Projects Section">
+  <!-- ===================== SMOOTH ORGANIC WAVE TRANSITION 4: GALLERY (WOOD) TO SIGNPOST (WHITE) ===================== -->
+  <div class="silhouette-divider divider-gallery-to-signpost" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <!-- Soft lilac accent wave -->
+      <path class="wave-layer wave-accent"
+        d="M 0,36 C 250,82 480,12 730,56 C 990,98 1220,16 1440,60 L 1440,120 L 0,120 Z" fill="rgba(192, 132, 252, 0.45)" />
+      <!-- Royal purple accent wave -->
+      <path class="wave-layer wave-mid"
+        d="M 0,56 C 270,104 530,26 800,72 C 1060,114 1270,36 1440,78 L 1440,120 L 0,120 Z"
+        fill="rgba(126, 34, 206, 0.5)" />
+      <!-- Solid clean white front wave merging into #signpost (#ffffff) -->
+      <path class="wave-layer wave-front"
+        d="M 0,72 C 290,122 570,42 850,88 C 1110,128 1310,50 1440,82 L 1440,120 L 0,120 Z" fill="#ffffff" />
+    </svg>
+  </div>
 
-    <!-- Floating Andy's Room Fluffy Clouds in Background -->
-    <div class="projects-clouds-bg" aria-hidden="true">
-      <div class="andy-cloud proj-cloud-1"></div>
-      <div class="andy-cloud proj-cloud-2"></div>
-      <div class="andy-cloud proj-cloud-3"></div>
-      <div class="andy-cloud proj-cloud-4"></div>
-    </div>
+  <!-- ===================== SECTION 5: SIGNPOST & CONTACT (CLEAN WHITE ADVENTURE) ===================== -->
+  <section class="adventure-signpost-section" id="signpost">
+    <div class="container signpost-content-container">
 
-    <!-- Pinned Sticky Viewport Frame -->
-    <div class="projects-sticky-frame" id="projectsStickyFrame">
-
-      <!-- Top Control Bar (Clean Title, Counter & Circular Nav Controls) -->
-      <div class="projects-pinned-header-bar">
-        <div class="container projects-header-inner">
-
-          <div class="projects-header-left">
-            <div class="section-header-pixel white-text">
-              <div class="projects-header-meta">
-                <span class="projects-stage-tag"><i class="fa-solid fa-gamepad"></i> GALERI KARYA</span>
-                <span class="projects-live-pill"><span class="live-pulse-dot"></span> SHOWCASE</span>
-              </div>
-              <h2 class="pixel-section-title">PROYEK PILIHAN</h2>
-              <p class="projects-header-subtitle">Koleksi karya aplikasi web, sistem informasi, dan desain antarmuka
-                interaktif</p>
-            </div>
-          </div>
-
-          <div class="projects-header-right">
-            <!-- Counter Pill -->
-            <div class="project-counter-pill" title="Indikator Kartu Aktif">
-              <span class="counter-label">PROYEK</span>
-              <span class="counter-numbers"><strong id="projectActiveIndex">01</strong> / <span
-                  id="projectTotalCount">06</span></span>
-            </div>
-
-            <!-- Circular Navigation Controls -->
-            <div class="circular-nav-group" aria-label="Kontrol Navigasi Proyek">
-              <button class="circular-nav-btn prev-btn" id="btnProjectPrev" type="button" aria-label="Proyek Sebelumnya"
-                title="Sebelumnya (← / Geser Kiri)">
-                <i class="fa-solid fa-arrow-left"></i>
-              </button>
-              <button class="circular-nav-btn next-btn" id="btnProjectNext" type="button" aria-label="Proyek Berikutnya"
-                title="Berikutnya (→ / Geser Kanan)">
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-
-        </div>
+      <!-- Section Header -->
+      <div class="signpost-header-block scroll-appear-item">
+        <h2 class="movie-section-title text-signpost-title">JOIN THE JOURNEY</h2>
+        <span class="movie-section-subtitle">HUBUNGI ANANDITA UNTUK KOLABORASI, MAGANG, MAUPUN DISKUSI PROYEK</span>
       </div>
 
-      <!-- Main Horizontal Track Stage -->
-      <div class="projects-track-viewport" id="projectsTrackViewport" tabindex="0" role="region"
-        aria-label="Horizontal Project Cards Track">
+      <div class="signpost-interactive-stage">
 
-        <!-- Pinned Horizontal Cards Track -->
-        <div class="projects-horizontal-track" id="projectsGrid">
+        <!-- Center Rustic Wooden Mascot Signpost (Matching Bird Signpost in Reference!) -->
+        <div class="rustic-wood-signpost scroll-appear-bounce appear-delay-1" aria-label="Papan Petunjuk Arah Anandita">
 
-          <!-- Project Card 1 -->
-          <article class="project-card cartridge-card active-card" data-index="0" data-category="Web">
-            <div class="washi-tape-strip tape-cowhide" title="Cowhide Tape"></div>
+          <!-- Top Sign Plaque -->
+          <div class="wood-sign-head">
+            <span class="screw-dot screw-left"></span>
+            <span class="screw-dot screw-right"></span>
+            <span class="sign-head-text">BE HAPPY &bull; WORK SMART</span>
+          </div>
 
-            <div class="project-thumb-container">
-              <img src="img/univ.jpg" alt="Sistem Informasi Universitas" class="project-thumb-img" loading="lazy" />
-              <div class="project-thumb-overlay"></div>
-              <span class="project-category-tag"><i class="fa-solid fa-globe"></i> Web Portal</span>
-              <span class="project-index-number">#01</span>
-              <div class="project-hover-cue"><i class="fa-solid fa-arrow-up-right-from-square"></i> LIHAT DETAIL</div>
-            </div>
+          <!-- Main Welcome Board -->
+          <div class="wood-main-board">
+            <span class="plank-nail n-tl"></span>
+            <span class="plank-nail n-tr"></span>
+            <span class="plank-nail n-bl"></span>
+            <span class="plank-nail n-br"></span>
+            <div class="welcome-board-title">WELCOME TO</div>
+            <div class="welcome-board-sub">ANANDITA'S WORKSPACE</div>
+            <div class="board-badge">SMKS BRANTAS KARANGKATES</div>
+          </div>
 
-            <div class="project-content-container">
-              <div class="project-meta-top">
-                <span class="project-edition-label"><i class="fa-solid fa-graduation-cap"></i> Campus Edition</span>
-                <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
-              </div>
-              <h3 class="project-title">Sistem Informasi Universitas</h3>
-              <p class="project-desc">Website portal informasi komprehensif untuk Universitas Atma Jaya Yogyakarta
-                dengan tata letak bersih, navigasi terstruktur, dan performa responsif.</p>
+          <!-- Hanging Directional Planks -->
+          <div class="hanging-planks-cluster scroll-appear-item appear-delay-2">
 
-              <div class="project-tech-badges">
-                <span class="tech-badge-pill tech-pill-html"><i class="fa-brands fa-html5"></i> HTML5</span>
-                <span class="tech-badge-pill tech-pill-css"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-                <span class="tech-badge-pill tech-pill-js"><i class="fa-brands fa-js"></i> JavaScript</span>
-              </div>
+            <a href="mailto:ananditaaa2010@gmail.com" class="directional-arrow-plank plank-arrow-right"
+              title="Kirim Surat Email">
+              <span class="plank-rope"></span>
+              <span class="plank-text"><i class="fa-solid fa-envelope"></i> KIRIM EMAIL</span>
+            </a>
 
-              <div class="project-footer-actions">
-                <a href="https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link"
-                  target="_blank" rel="noopener noreferrer" class="btn-view-project" onclick="RetroAudio.playCoin()">
-                  <span>LIHAT PROYEK</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
+            <a href="https://github.com/ananditaaa2010-a11y" target="_blank" rel="noopener noreferrer"
+              class="directional-arrow-plank plank-arrow-left" title="Lihat Repositori GitHub">
+              <span class="plank-rope"></span>
+              <span class="plank-text"><i class="fa-brands fa-github"></i> REPOSITORI GITHUB</span>
+            </a>
 
-          <!-- Project Card 2 -->
-          <article class="project-card cartridge-card" data-index="1" data-category="Web App">
-            <div class="washi-tape-strip tape-flannel" title="Woody Flannel Tape"></div>
+            <a href="files/CV_Anandita Galuh Sekar Kinanti.pdf" download
+              class="directional-arrow-plank plank-arrow-right plank-gold" title="Unduh Curriculum Vitae">
+              <span class="plank-rope"></span>
+              <span class="plank-text"><i class="fa-solid fa-file-pdf"></i> UNDUH CV RESMI</span>
+            </a>
 
-            <div class="project-thumb-container">
-              <img src="img/logo baru.png" alt="Website E-Commerce JCO Donuts"
-                class="project-thumb-img img-contain-thumb" loading="lazy" />
-              <div class="project-thumb-overlay"></div>
-              <span class="project-category-tag"><i class="fa-solid fa-cookie-bite"></i> E-Commerce</span>
-              <span class="project-index-number">#02</span>
-              <div class="project-hover-cue"><i class="fa-solid fa-arrow-up-right-from-square"></i> LIHAT DETAIL</div>
-            </div>
+          </div>
 
-            <div class="project-content-container">
-              <div class="project-meta-top">
-                <span class="project-edition-label"><i class="fa-solid fa-store"></i> Culinary Edition</span>
-                <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
-              </div>
-              <h3 class="project-title">Website E-Commerce JCO Donuts</h3>
-              <p class="project-desc">Desain dan implementasi antarmuka landing page katalog produk donat premium J.CO
-                yang lezat, interaktif, dan ramah pengguna.</p>
-
-              <div class="project-tech-badges">
-                <span class="tech-badge-pill tech-pill-html"><i class="fa-brands fa-html5"></i> HTML5</span>
-                <span class="tech-badge-pill tech-pill-css"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-                <span class="tech-badge-pill tech-pill-design"><i class="fa-solid fa-basket-shopping"></i> E-Commerce
-                  UI</span>
-              </div>
-
-              <div class="project-footer-actions">
-                <a href="https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link"
-                  target="_blank" rel="noopener noreferrer" class="btn-view-project" onclick="RetroAudio.playCoin()">
-                  <span>LIHAT PROYEK</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project Card 3 -->
-          <article class="project-card cartridge-card" data-index="2" data-category="Python">
-            <div class="washi-tape-strip tape-buzz" title="Buzz Space Ranger Tape"></div>
-
-            <div class="project-thumb-container">
-              <img src="img/python.jpg" alt="Game & Software Python" class="project-thumb-img" loading="lazy" />
-              <div class="project-thumb-overlay"></div>
-              <span class="project-category-tag"><i class="fa-brands fa-python"></i> Python Dev</span>
-              <span class="project-index-number">#03</span>
-              <div class="project-hover-cue"><i class="fa-solid fa-arrow-up-right-from-square"></i> LIHAT DETAIL</div>
-            </div>
-
-            <div class="project-content-container">
-              <div class="project-meta-top">
-                <span class="project-edition-label"><i class="fa-solid fa-gamepad"></i> Arcade Edition</span>
-                <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
-              </div>
-              <h3 class="project-title">Game &amp; Software Python</h3>
-              <p class="project-desc">Eksplorasi bahasa pemrograman Python untuk merancang logika interaktif, pengolahan
-                data sederhana, dan pengembangan modul gim klasik.</p>
-
-              <div class="project-tech-badges">
-                <span class="tech-badge-pill tech-pill-python"><i class="fa-brands fa-python"></i> Python 3</span>
-                <span class="tech-badge-pill tech-pill-algo"><i class="fa-solid fa-microchip"></i> Algorithms</span>
-                <span class="tech-badge-pill tech-pill-game"><i class="fa-solid fa-ghost"></i> Game Dev</span>
-              </div>
-
-              <div class="project-footer-actions">
-                <a href="https://drive.google.com/drive/folders/1OJ7EV6d5vqvGEp53Jp9b5gFa-r3DJKuk?usp=sharing"
-                  target="_blank" rel="noopener noreferrer" class="btn-view-project" onclick="RetroAudio.playCoin()">
-                  <span>LIHAT PROYEK</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project Card 4 -->
-          <article class="project-card cartridge-card" data-index="3" data-category="Design Web">
-            <div class="washi-tape-strip tape-pizza" title="Pizza Planet Tape"></div>
-
-            <div class="project-thumb-container">
-              <img src="img/landing.jpg" alt="Design Landing Page Figma" class="project-thumb-img" loading="lazy" />
-              <div class="project-thumb-overlay"></div>
-              <span class="project-category-tag"><i class="fa-brands fa-figma"></i> UI/UX Figma</span>
-              <span class="project-index-number">#04</span>
-              <div class="project-hover-cue"><i class="fa-solid fa-arrow-up-right-from-square"></i> LIHAT DETAIL</div>
-            </div>
-
-            <div class="project-content-container">
-              <div class="project-meta-top">
-                <span class="project-edition-label"><i class="fa-solid fa-pen-ruler"></i> Concept Edition</span>
-                <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
-              </div>
-              <h3 class="project-title">Design Landing Page Figma</h3>
-              <p class="project-desc">Perancangan UI/UX landing page modern di Figma dengan fokus pada hierarki visual,
-                kontras warna yang nyaman, tipografi terstruktur, dan alur prototipe mulus.</p>
-
-              <div class="project-tech-badges">
-                <span class="tech-badge-pill tech-pill-figma"><i class="fa-brands fa-figma"></i> Figma</span>
-                <span class="tech-badge-pill tech-pill-ui"><i class="fa-solid fa-layer-group"></i> UI/UX</span>
-                <span class="tech-badge-pill tech-pill-proto"><i class="fa-solid fa-bezier-curve"></i>
-                  Prototyping</span>
-              </div>
-
-              <div class="project-footer-actions">
-                <a href="https://www.figma.com/design/hwiHotD2EtEFiHTnz7G6wJ/E-Commerce-Design?node-id=0-1&t=tHgj5ebnapz78nLI-1"
-                  target="_blank" rel="noopener noreferrer" class="btn-view-project" onclick="RetroAudio.playCoin()">
-                  <span>LIHAT PROYEK</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project Card 5 -->
-          <article class="project-card cartridge-card" data-index="4" data-category="Design Web">
-            <div class="washi-tape-strip tape-cowhide" title="Cowhide Tape"></div>
-
-            <div class="project-thumb-container">
-              <img src="img/batikbaru.jpg" alt="Design Web Batik Khas Yogyakarta" class="project-thumb-img"
-                loading="lazy" />
-              <div class="project-thumb-overlay"></div>
-              <span class="project-category-tag"><i class="fa-solid fa-palette"></i> Heritage Web</span>
-              <span class="project-index-number">#05</span>
-              <div class="project-hover-cue"><i class="fa-solid fa-arrow-up-right-from-square"></i> LIHAT DETAIL</div>
-            </div>
-
-            <div class="project-content-container">
-              <div class="project-meta-top">
-                <span class="project-edition-label"><i class="fa-solid fa-gem"></i> Heritage Edition</span>
-                <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
-              </div>
-              <h3 class="project-title">Design Web Batik Khas Yogyakarta</h3>
-              <p class="project-desc">Perancangan desain toko daring warisan budaya batik khas Yogyakarta yang memadukan
-                nuansa tradisional Nusantara dengan pengalaman belanja digital modern.</p>
-
-              <div class="project-tech-badges">
-                <span class="tech-badge-pill tech-pill-figma"><i class="fa-brands fa-figma"></i> Figma</span>
-                <span class="tech-badge-pill tech-pill-design"><i class="fa-solid fa-bag-shopping"></i>
-                  E-Commerce</span>
-                <span class="tech-badge-pill tech-pill-culture"><i class="fa-solid fa-feather"></i> Culture</span>
-              </div>
-
-              <div class="project-footer-actions">
-                <a href="https://docs.google.com/document/d/1IXtKdZZeUXmvzTJlvwLknqLplPBPV6nUzIAECFkfMEw/edit?usp=sharing"
-                  target="_blank" rel="noopener noreferrer" class="btn-view-project" onclick="RetroAudio.playCoin()">
-                  <span>LIHAT PROYEK</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project Card 6 -->
-          <article class="project-card cartridge-card" data-index="5" data-category="Design Web">
-            <div class="washi-tape-strip tape-flannel" title="Woody Flannel Tape"></div>
-
-            <div class="project-thumb-container">
-              <img src="img/qinanthi.png" alt="Website E-Commerce Qinanthi" class="project-thumb-img" loading="lazy" />
-              <div class="project-thumb-overlay"></div>
-              <span class="project-category-tag"><i class="fa-solid fa-shirt"></i> Fashion Store</span>
-              <span class="project-index-number">#06</span>
-              <div class="project-hover-cue"><i class="fa-solid fa-arrow-up-right-from-square"></i> LIHAT DETAIL</div>
-            </div>
-
-            <div class="project-content-container">
-              <div class="project-meta-top">
-                <span class="project-edition-label"><i class="fa-solid fa-vest-patches"></i> Fashion Edition</span>
-                <span class="project-status-dot"><span class="status-pulse-circle"></span> ACTIVE</span>
-              </div>
-              <h3 class="project-title">Website E-Commerce Qinanthi</h3>
-              <p class="project-desc">Konsep platform belanja digital busana dengan katalog produk terstruktur rapi,
-                navigasi pencarian instan, dan antarmuka checkout yang intuitif.</p>
-
-              <div class="project-tech-badges">
-                <span class="tech-badge-pill tech-pill-figma"><i class="fa-brands fa-figma"></i> Figma</span>
-                <span class="tech-badge-pill tech-pill-ui"><i class="fa-solid fa-crop-simple"></i> UI/UX</span>
-                <span class="tech-badge-pill tech-pill-proto"><i class="fa-solid fa-swatchbook"></i> Design
-                  System</span>
-              </div>
-
-              <div class="project-footer-actions">
-                <a href="https://drive.google.com/drive/folders/169R3fSfCAHkVx097qVUEvLi55mTc7g70?usp=drive_link"
-                  target="_blank" rel="noopener noreferrer" class="btn-view-project" onclick="RetroAudio.playCoin()">
-                  <span>LIHAT PROYEK</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
+          <!-- Wooden Post Pole Base -->
+          <div class="signpost-pole"></div>
+          <div class="signpost-grass-mound"></div>
 
         </div>
-      </div>
 
-      <!-- Bottom Progress Bar & Navigation Hint -->
-      <div class="projects-pinned-footer-bar">
-        <div class="container projects-footer-inner">
-          <div class="project-track-progressbar" title="Progress Gulir Horizontal">
-            <div class="project-progressbar-fill" id="projectTrackProgressFill"></div>
-          </div>
-          <div class="projects-footer-hint">
-            <span><i class="fa-solid fa-computer-mouse"></i> Gulir vertikal untuk geser kartu &bull; Gunakan tombol [←]
-              [→] keyboard &bull; Sentuh &amp; usap di HP</span>
-          </div>
-        </div>
-      </div>
+        <!-- Contact Form Box -->
+        <div class="contact-adventure-box scroll-appear-bounce appear-delay-2">
 
-    </div>
-  </section>
-
-  <!-- ===================== SECTION 4: CONTACT (NOTEPAD MEMO PAPER) ===================== -->
-  <section class="section contact-paper-section" id="contact" aria-label="Contact Section">
-    <div class="container">
-
-      <div class="section-header-pixel reveal">
-        <h2 class="pixel-section-title">СВЯЗЬ // KIRIM PESAN KE GALUH</h2>
-        <p class="pixel-section-desc">saluran komunikasi langsung untuk diskusi dan kolaborasi</p>
-      </div>
-
-      <div class="retro-contact-layout">
-
-        <!-- Left: Retro Walkie-Talkie & Social Frequencies -->
-        <div class="contact-memo-card reveal reveal-left">
-          <div class="memo-tape-header">
-            <span class="memo-stamp">FREQ // 2026</span>
-            <span class="memo-title">SALURAN TERHUBUNG</span>
+          <div class="contact-box-header">
+            <span class="contact-box-tag"><i class="fa-solid fa-paper-plane"></i> TINGGALKAN PESAN</span>
+            <h3 class="contact-box-title">Mari Berkolaborasi!</h3>
+            <p class="contact-box-desc">
+              Punya ide proyek menarik, tawaran kesempatan magang, atau ingin berdiskusi seputar rekayasa web?
+              Kirimkan pesan di bawah ini:
+            </p>
           </div>
 
-          <div class="retro-social-channels">
-            <!-- Email -->
-            <a class="social-channel-row" id="social-email" href="#" target="_blank" rel="noopener">
-              <span class="channel-key">EMAIL:</span>
-              <span class="channel-val" id="contact-email-val">ananditaaa2010@gmail.com</span>
-            </a>
+          <form class="adventure-form" id="contactForm">
 
-            <!-- Instagram -->
-            <a class="social-channel-row" id="social-instagram" href="#" target="_blank" rel="noopener">
-              <span class="channel-key">INSTAGRAM:</span>
-              <span class="channel-val" id="contact-instagram-val">@ananditagaluh</span>
-            </a>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="senderName" class="field-label">NAMA LENGKAP</label>
+                <div class="field-input-wrap">
+                  <i class="fa-solid fa-user field-icon"></i>
+                  <input type="text" id="senderName" name="name" class="movie-input" placeholder="Masukkan nama Anda"
+                    required />
+                </div>
+              </div>
 
-            <!-- GitHub -->
-            <a class="social-channel-row" id="social-github" href="#" target="_blank" rel="noopener">
-              <span class="channel-key">GITHUB:</span>
-              <span class="channel-val" id="contact-github-val">ananditaaa2010-a11y</span>
-            </a>
-
-            <!-- LinkedIn -->
-            <a class="social-channel-row" id="social-linkedin" href="#" target="_blank" rel="noopener">
-              <span class="channel-key">LINKEDIN:</span>
-              <span class="channel-val" id="contact-linkedin-val">Anandita Galuh Sekar Kinanti</span>
-            </a>
-          </div>
-
-          <div class="retro-pixel-mascot">
-            <img src="img/5. ANANDITA GALUH SEKAR KINANTI.jpg" alt="Anandita Galuh" class="mascot-photo-circle" />
-            <span class="mascot-text">"Pesan akan dibalas sesegera mungkin saat berada di depan konsol!"</span>
-          </div>
-        </div>
-
-        <!-- Right: Retro Dispatch Notepad Form -->
-        <div class="contact-memo-card form-memo-card reveal reveal-right reveal-delay-1">
-          <div class="memo-tape-header">
-            <span class="memo-stamp">MEMO // 90S</span>
-            <span class="memo-title">TULISKAN PESAN</span>
-          </div>
-
-          <form class="retro-pixel-form" id="contactForm" novalidate>
-            <div class="form-group-pixel">
-              <label for="nameInput" class="pixel-form-label">NAMA KAMU:</label>
-              <input type="text" id="nameInput" class="pixel-input-box" placeholder="Siapa namamu?" required />
+              <div class="form-field">
+                <label for="senderEmail" class="field-label">ALAMAT EMAIL</label>
+                <div class="field-input-wrap">
+                  <i class="fa-solid fa-envelope field-icon"></i>
+                  <input type="email" id="senderEmail" name="email" class="movie-input" placeholder="nama@email.com"
+                    required />
+                </div>
+              </div>
             </div>
 
-            <div class="form-group-pixel">
-              <label for="emailInput" class="pixel-form-label">EMAIL TRANSMISI:</label>
-              <input type="email" id="emailInput" class="pixel-input-box" placeholder="email@kamu.com" required />
+            <div class="form-field">
+              <label for="senderSubject" class="field-label">SUBJEK / TOPIK</label>
+              <div class="field-input-wrap">
+                <i class="fa-solid fa-tag field-icon"></i>
+                <input type="text" id="senderSubject" name="subject" class="movie-input"
+                  placeholder="Contoh: Tawaran Kolaborasi Web" required />
+              </div>
             </div>
 
-            <div class="form-group-pixel">
-              <label for="subjectInput" class="pixel-form-label">SUBJEK:</label>
-              <input type="text" id="subjectInput" class="pixel-input-box" placeholder="Topik pesan" />
+            <div class="form-field">
+              <label for="senderMessage" class="field-label">ISI PESAN</label>
+              <div class="field-input-wrap textarea-wrap">
+                <textarea id="senderMessage" name="message" class="movie-textarea" rows="4"
+                  placeholder="Tuliskan pesan atau detail kebutuhan Anda di sini..." required></textarea>
+              </div>
             </div>
 
-            <div class="form-group-pixel">
-              <label for="messageInput" class="pixel-form-label">ISI PESAN:</label>
-              <textarea id="messageInput" class="pixel-input-box pixel-textarea"
-                placeholder="Tuliskan pesan atau ajakan kolaborasi..." rows="4" required></textarea>
-            </div>
-
-            <button type="submit" class="retro-submit-btn">
-              KIRIM PESAN ▶
+            <button type="submit" class="btn-send-adventure" id="btnSubmitForm">
+              <span class="btn-send-icon"><i class="fa-solid fa-paper-plane"></i></span>
+              <span class="btn-send-text">KIRIM PESAN SEKARANG</span>
             </button>
 
-            <div class="pixel-form-success" id="formSuccess">
-              <i class="fa-solid fa-square-check"></i> Pesan berhasil dikirim ke markas Galuh!
-            </div>
+            <!-- Feedback Notification Box -->
+            <div class="form-status-alert" id="formStatusAlert" aria-live="polite"></div>
+
           </form>
+
         </div>
 
       </div>
 
     </div>
-
-    <!-- Authentic Torn Paper Edge Divider (Bottom of Contact Section) -->
-    <div class="torn-paper-edge torn-edge-bottom" aria-hidden="true">
-      <svg viewBox="0 0 1200 32" preserveAspectRatio="none">
-        <path
-          d="M0,0 L0,16 Q25,8 55,22 Q85,32 115,14 Q145,26 175,16 Q205,6 235,20 Q265,30 295,14 Q325,24 355,16 Q385,8 415,22 Q445,30 475,14 Q505,25 535,17 Q565,8 595,23 Q625,32 655,15 Q685,25 715,17 Q745,7 775,22 Q805,31 835,14 Q865,24 895,17 Q925,8 955,23 Q985,32 1015,15 Q1045,26 1075,17 Q1105,7 1135,22 Q1165,30 1195,15 L1200,18 L1200,0 Z"
-          fill="#3f79c6"></path>
-      </svg>
-    </div>
   </section>
 
-  <!-- ===================== FOOTER: BLUE PAPER SECTION ===================== -->
-  <footer class="retro-footer" role="contentinfo">
-    <div class="container">
+  <!-- ===================== SMOOTH ORGANIC WAVE TRANSITION 5: SIGNPOST (WHITE) TO COLLAGE BANNER ===================== -->
+  <div class="silhouette-divider divider-signpost-to-banner" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <!-- Soft lilac accent wave -->
+      <path class="wave-layer wave-accent"
+        d="M 0,38 C 240,86 460,12 720,54 C 980,96 1220,18 1440,58 L 1440,120 L 0,120 Z"
+        fill="rgba(192, 132, 252, 0.45)" />
+      <!-- Fuchsia/purple accent wave -->
+      <path class="wave-layer wave-mid"
+        d="M 0,58 C 260,104 520,28 780,72 C 1040,114 1260,38 1440,78 L 1440,120 L 0,120 Z"
+        fill="rgba(217, 70, 239, 0.55)" />
+      <!-- Solid deep royal purple front wave merging into #site-footer (#2e1065) -->
+      <path class="wave-layer wave-front"
+        d="M 0,74 C 290,124 560,42 840,88 C 1110,130 1310,52 1440,84 L 1440,120 L 0,120 Z" fill="#2e1065" />
+    </svg>
+  </div>
 
-      <div class="footer-retro-inner reveal">
-        <!-- Retro Project Photo Stamps (Zero Emoji) -->
-        <div class="footer-photos-row reveal reveal-pop">
-          <div class="footer-photo-pill" title="Anandita Galuh Sekar Kinanti">
-            <img src="img/5. ANANDITA GALUH SEKAR KINANTI.jpg" alt="Anandita" class="footer-pill-img" />
-            <span>AGSK</span>
-          </div>
-          <div class="footer-photo-pill" title="Sistem Informasi Universitas">
-            <img src="img/univ.jpg" alt="Web Portal" class="footer-pill-img" />
-            <span>WEB</span>
-          </div>
-          <div class="footer-photo-pill" title="E-Commerce J.CO Donuts">
-            <img src="img/logo baru.png" alt="JCO Store" class="footer-pill-img" />
-            <span>E-COMMERCE</span>
-          </div>
-          <div class="footer-photo-pill" title="Python Game Development">
-            <img src="img/python.jpg" alt="Python Game" class="footer-pill-img" />
-            <span>PYTHON</span>
-          </div>
-          <div class="footer-photo-pill" title="Figma UI/UX Design">
-            <img src="img/landing.jpg" alt="Landing Page" class="footer-pill-img" />
-            <span>FIGMA</span>
+  <!-- ===================== COLORFUL BOTTOM MASCOT COLLAGE BANNER ===================== -->
+  <!-- Matching the vibrant character silhouette collage at the bottom of the Angry Birds poster! -->
+  <aside class="adventure-collage-banner" aria-label="Banner Penutup Petualangan">
+    <div class="collage-silhouette-stage">
+
+      <!-- Character Silhouette 1 (Purple Wing) -->
+      <div class="banner-silhouette sil-1" title="Semangat Koding">
+        <svg viewBox="0 0 100 100" width="85" height="85">
+          <polygon points="50,10 90,80 10,80" fill="#a21caf" />
+          <circle cx="50" cy="40" r="12" fill="#fdf4ff" />
+          <circle cx="50" cy="40" r="6" fill="#701a75" />
+        </svg>
+      </div>
+
+      <!-- Character Silhouette 2 (Cyan Speedster) -->
+      <div class="banner-silhouette sil-2" title="Kecepatan & Performa">
+        <svg viewBox="0 0 100 100" width="95" height="95">
+          <polygon points="50,5 95,90 5,90" fill="#0284c7" />
+          <circle cx="42" cy="45" r="9" fill="#ffffff" />
+          <circle cx="58" cy="45" r="9" fill="#ffffff" />
+          <circle cx="44" cy="45" r="4.5" fill="#0f172a" />
+          <circle cx="56" cy="45" r="4.5" fill="#0f172a" />
+        </svg>
+      </div>
+
+      <!-- Character Silhouette 3 (Center Golden Eagle/Star Hero) -->
+      <div class="banner-silhouette sil-3" title="Dedikasi Terbaik">
+        <svg viewBox="0 0 120 120" width="115" height="115">
+          <circle cx="60" cy="60" r="50" fill="#eab308" stroke="#854d0e" stroke-width="4" />
+          <circle cx="45" cy="50" r="10" fill="#ffffff" />
+          <circle cx="75" cy="50" r="10" fill="#ffffff" />
+          <circle cx="46" cy="50" r="5" fill="#1e1b4b" />
+          <circle cx="74" cy="50" r="5" fill="#1e1b4b" />
+          <polygon points="60,60 76,74 44,74" fill="#ea580c" />
+        </svg>
+      </div>
+
+      <!-- Character Silhouette 4 (Emerald Piglet Builder) -->
+      <div class="banner-silhouette sil-4" title="Inovasi & Struktur">
+        <svg viewBox="0 0 100 100" width="90" height="90">
+          <circle cx="50" cy="50" r="42" fill="#16a34a" />
+          <ellipse cx="50" cy="58" rx="16" ry="11" fill="#4ade80" />
+          <circle cx="44" cy="58" r="3.5" fill="#14532d" />
+          <circle cx="56" cy="58" r="3.5" fill="#14532d" />
+          <circle cx="36" cy="38" r="7" fill="#ffffff" />
+          <circle cx="64" cy="38" r="7" fill="#ffffff" />
+          <circle cx="37" cy="38" r="3.5" fill="#14532d" />
+          <circle cx="63" cy="38" r="3.5" fill="#14532d" />
+        </svg>
+      </div>
+
+      <!-- Character Silhouette 5 (Magenta Bomb Crafter) -->
+      <div class="banner-silhouette sil-5" title="Kreativitas Penuh Daya">
+        <svg viewBox="0 0 100 100" width="85" height="85">
+          <circle cx="50" cy="55" r="38" fill="#e11d48" />
+          <circle cx="50" cy="18" r="7" fill="#facc15" />
+          <line x1="50" y1="18" x2="50" y2="28" stroke="#facc15" stroke-width="4" />
+          <circle cx="40" cy="50" r="8" fill="#ffffff" />
+          <circle cx="60" cy="50" r="8" fill="#ffffff" />
+          <circle cx="41" cy="50" r="4" fill="#4c0519" />
+          <circle cx="59" cy="50" r="4" fill="#4c0519" />
+        </svg>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ===================== GRAND ADVENTURE FOOTER ===================== -->
+  <footer class="adventure-footer" id="site-footer">
+    <div class="container footer-grand-container">
+
+      <!-- 1. Footer Top Giant Brand (Matching Habib Alfino's Giant Brand Header) -->
+      <div class="footer-top-brand">
+        <div class="footer-giant-title">
+          <span class="giant-name">ANANDITA</span>
+          <span class="giant-surname">GALUH<span class="accent-period">.</span></span>
+        </div>
+        <p class="footer-grand-tagline">
+          REKAYASA PERANGKAT LUNAK &bull; SMKS BRANTAS KARANGKATES &bull; BUILDING RELIABLE DIGITAL EXPERIENCES
+        </p>
+      </div>
+
+      <!-- 2. Four-Column Grid Layout (Matching Habib Alfino's Layout, with Academic & Assets replacing Inspiration) -->
+      <div class="footer-grid-layout">
+
+        <!-- Col 1: Identity & Bio -->
+        <div class="footer-col footer-col-identity">
+          <a href="#hero" class="footer-brand-badge" aria-label="Anandita Galuh Home">
+            <span class="brand-badge-name">ANANDITA</span>
+            <span class="brand-badge-dot"></span>
+          </a>
+          <p class="footer-bio-snippet">
+            Siswi jurusan Rekayasa Perangkat Lunak (RPL) di SMKS Brantas Karangkates, Malang. Berdedikasi merancang
+            antarmuka web interaktif, sistem visual terstruktur, dan pengalaman digital modern.
+          </p>
+          <div class="footer-status-chip">
+            <span class="status-live-dot" aria-hidden="true"></span>
+            <span>SYSTEM ONLINE &bull; AVAILABLE FOR WORK (2026)</span>
           </div>
         </div>
 
-        <h3 class="footer-pixel-brand">ANANDITA GALUH SEKAR KINANTI</h3>
-        <p class="footer-pixel-sub">SMKS Brantas Karangkates Malang &bull; Rekayasa Perangkat Lunak 2026</p>
-        <p class="footer-copyright">&copy; 2026 Anandita Galuh &bull; Dibuat dengan gaya Retro 90s &amp; Torn Paper
-          &bull; Tanpa Efek Neon &amp; Tanpa Glowing.</p>
+        <!-- Col 2: Navigation -->
+        <div class="footer-col footer-col-links">
+          <h4 class="footer-col-heading">NAVIGATION</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#hero" class="footer-link"><span>00 &mdash; HOME</span><span class="link-arrow"><i
+                    class="fa-solid fa-arrow-right"></i></span></a></li>
+            <li><a href="#story" class="footer-link"><span>01 &mdash; THE STORY</span><span class="link-arrow"><i
+                    class="fa-solid fa-arrow-right"></i></span></a></li>
+            <li><a href="#cast" class="footer-link"><span>02 &mdash; THE CAST &amp; SKILLS</span><span
+                  class="link-arrow"><i class="fa-solid fa-arrow-right"></i></span></a></li>
+            <li><a href="#gallery" class="footer-link"><span>03 &mdash; SELECTED WORKS</span><span class="link-arrow"><i
+                    class="fa-solid fa-arrow-right"></i></span></a></li>
+            <li><a href="#signpost" class="footer-link"><span>04 &mdash; TRANSMISSION</span><span class="link-arrow"><i
+                    class="fa-solid fa-arrow-right"></i></span></a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Networks -->
+        <div class="footer-col footer-col-socials">
+          <h4 class="footer-col-heading">NETWORKS</h4>
+          <ul class="footer-nav-list">
+            <li>
+              <a href="https://github.com/ananditaaa2010-a11y" target="_blank" rel="noopener noreferrer"
+                class="footer-link">
+                <span>GitHub</span>
+                <span class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/anandita-galuh-sekar-kinanti-6063b2384?trk=contact-info"
+                target="_blank" rel="noopener noreferrer" class="footer-link">
+                <span>LinkedIn</span>
+                <span class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/ananditagaluh?igsh=MWJrYzZyZmdkZHZldg==" target="_blank"
+                rel="noopener noreferrer" class="footer-link">
+                <span>Instagram</span>
+                <span class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ananditaaa2010@gmail.com" class="footer-link">
+                <span>Email Protocol</span>
+                <span class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Official Academic & Assets (Replacing Inspiration!) -->
+        <div class="footer-col footer-col-assets">
+          <h4 class="footer-col-heading">OFFICIAL ASSETS</h4>
+          <p class="footer-col-subtext">Dokumen portofolio &amp; arsip rekayasa digital resmi:</p>
+          <a href="files/CV_Anandita Galuh Sekar Kinanti.pdf" download class="footer-asset-card" id="footerAssetCard"
+            title="Unduh Curriculum Vitae Lengkap">
+            <div class="asset-card-header">
+              <span class="asset-badge">RESUME / CV</span>
+              <span class="asset-arrow"><i class="fa-solid fa-download"></i></span>
+            </div>
+            <div class="asset-card-title">Curriculum Vitae</div>
+            <div class="asset-card-meta">Anandita Galuh S.K. &bull; PDF</div>
+          </a>
+          <div class="footer-academic-stamp">
+            <i class="fa-solid fa-school"></i>
+            <span>SMKS Brantas Karangkates &bull; Malang, Jatim</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3. Footer Divider Beam -->
+      <div class="footer-divider-beam" aria-hidden="true"></div>
+
+      <!-- 4. Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright-box">
+          <span class="footer-copyright">&copy; <span id="currentYear">2026</span> ANANDITA GALUH SEKAR KINANTI. ALL
+            RIGHTS RESERVED.</span>
+          <span class="footer-built-with">HANDCRAFTED WITH PURE HTML5, CSS3 &amp; VANILLA JAVASCRIPT</span>
+        </div>
+
+        <div class="footer-actions-cluster">
+          <a href="#top" class="footer-back-to-top" id="footerBackToTop" aria-label="Kembali ke Bagian Atas Halaman">
+            <span>BACK TO TOP</span>
+            <span class="top-arrow-icon" aria-hidden="true"><i class="fa-solid fa-arrow-up"></i></span>
+          </a>
+        </div>
       </div>
 
     </div>
   </footer>
 
-  <!-- ===================== SLINKY DOG DYNAMIC ELASTIC SCROLL BUDDY ===================== -->
-  <div class="slinky-scroll-companion" id="slinkyScrollBuddy" aria-label="Slinky Dog Scroll Buddy"
-    title="Slinky Dog — Tubuh pegasnya memanjang saat halaman digulir!">
-    <!-- Slinky Dog Speech Bubble -->
-    <div class="slinky-speech-bubble" id="slinkySpeechBubble">
-      Golly bob howdy! Gulir terus ke bawah, Partner!
-    </div>
+  <!-- ===================== LIGHTBOX MODAL FOR GALLERY PROJECTS ===================== -->
+  <div class="project-lightbox-modal" id="projectModal" role="dialog" aria-modal="true"
+    aria-labelledby="modalProjectTitle" hidden>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog-box">
 
-    <div class="slinky-dog-rig" id="slinkyDogRig">
-      <!-- Slinky Front Body & Head -->
-      <div class="slinky-front-half">
-        <div class="slinky-head">
-          <div class="slinky-ear ear-left"></div>
-          <div class="slinky-snout">
-            <span class="slinky-nose"></span>
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Tutup Detail Proyek" type="button">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-image-col">
+        <img src="img/landing.jpg" alt="Pratinjau Proyek" id="modalProjectImg" class="modal-thumb-img" />
+      </div>
+
+      <div class="modal-info-col">
+        <span class="modal-category-badge" id="modalProjectCategory">KATEGORI</span>
+        <h3 class="modal-title" id="modalProjectTitle">Judul Proyek</h3>
+        <p class="modal-description" id="modalProjectDesc">Deskripsi proyek yang dipilih.</p>
+
+        <div class="modal-tech-stack-wrap">
+          <span class="tech-stack-heading">ALAT &amp; TEKNOLOGI:</span>
+          <div class="modal-tech-pills" id="modalTechPills">
+            <!-- Populated dynamically via JS -->
           </div>
-          <div class="slinky-eyes">
-            <span class="slinky-pupil"></span>
-          </div>
-          <div class="slinky-collar"></div>
         </div>
-        <div class="slinky-paws-front">
-          <span class="paw paw-left"></span>
-          <span class="paw paw-right"></span>
+
+        <div class="modal-action-buttons">
+          <a href="#" class="modal-action-btn primary-action" id="modalLiveDemoBtn" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> LIHAT LIVE DEMO
+          </a>
+          <a href="#" class="modal-action-btn secondary-action" id="modalRepoBtn" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> LIHAT REPOSITORI
+          </a>
         </div>
       </div>
 
-      <!-- Dynamic Expandable Coiled Spring SVG (Stretches on Scroll!) -->
-      <div class="slinky-spring-middle" id="slinkySpringMiddle">
-        <svg class="slinky-spring-svg" id="slinkySpringSvg" viewBox="0 0 100 40" preserveAspectRatio="none">
-          <path class="slinky-coil-shadow"
-            d="M 5,20 C 5,5 15,5 15,20 C 15,35 25,35 25,20 C 25,5 35,5 35,20 C 35,35 45,35 45,20 C 45,5 55,5 55,20 C 55,35 65,35 65,20 C 65,5 75,5 75,20 C 75,35 85,35 85,20 C 85,5 95,5 95,20"
-            fill="none" stroke="#1a1a1a" stroke-width="5" stroke-linecap="round" />
-          <path class="slinky-coil-highlight"
-            d="M 5,20 C 5,5 15,5 15,20 C 15,35 25,35 25,20 C 25,5 35,5 35,20 C 35,35 45,35 45,20 C 45,5 55,5 55,20 C 55,35 65,35 65,20 C 65,5 75,5 75,20 C 75,35 85,35 85,20 C 85,5 95,5 95,20"
-            fill="none" stroke="#94a3b8" stroke-width="2.6" stroke-linecap="round" />
-        </svg>
-      </div>
-
-      <!-- Slinky Hindquarters & Coiled Spring Tail -->
-      <div class="slinky-back-half">
-        <div class="slinky-torso-rear"></div>
-        <div class="slinky-tail-spring">
-          <span class="tail-ball"></span>
-        </div>
-        <div class="slinky-paws-rear">
-          <span class="paw paw-rear-left"></span>
-          <span class="paw paw-rear-right"></span>
-        </div>
-      </div>
     </div>
-
-    <!-- Slinky Interactive Touch Tag -->
-    <button class="slinky-badge-pill" id="btnSlinkyBoing" type="button" aria-label="Tarik Pegas Slinky Dog">
-      <i class="fa-solid fa-bone"></i> <span>KLIK SLINKY!</span>
-    </button>
   </div>
 
-  <!-- Retro Pixel Back-to-Top Button -->
-  <button class="retro-back-to-top" id="backToTop" aria-label="Kembali ke atas" title="Kembali ke Atas">
-    ▲
-  </button>
 
-  <!-- Scripts -->
+  <!-- ===================== SKILL FILE VIEWER MODAL (POPUP SAAT BERKAS DIPENCET) ===================== -->
+  <div class="skill-file-modal" id="skillModal" role="dialog" aria-modal="true" aria-labelledby="skillModalTitle"
+    hidden>
+    <div class="modal-backdrop" id="skillModalBackdrop"></div>
+    <div class="skill-modal-dialog">
+      <!-- Window Titlebar with Traffic Dots -->
+      <div class="skill-window-header">
+        <div class="window-traffic-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="window-file-path">
+          <i class="fa-solid fa-folder-open"></i>
+          <span id="skillModalBreadcrumb">~/portfolio/skills/frontend/index.html</span>
+        </div>
+        <button class="modal-close-btn" id="skillModalCloseBtn" aria-label="Tutup Berkas Keahlian" type="button">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Window Body Grid -->
+      <div class="skill-window-body">
+        <div class="skill-modal-grid">
+          <!-- Left Column: File Identity & Specs -->
+          <div class="skill-modal-sidebar">
+            <div class="skill-modal-icon-stage" id="skillModalIconWrap">
+              <i class="fa-brands fa-html5" id="skillModalIcon"></i>
+            </div>
+            <div class="skill-file-specs-box">
+              <div class="spec-row">
+                <span class="spec-label">NAMA FILE</span>
+                <span class="spec-val" id="skillModalFileName">index.html</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">FORMAT</span>
+                <span class="spec-val" id="skillModalFileExt">.HTML</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">UKURAN</span>
+                <span class="spec-val" id="skillModalFileSize">4.2 KB</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">KATEGORI</span>
+                <span class="spec-val" id="skillModalCategory">Frontend</span>
+              </div>
+            </div>
+            <div class="skill-modal-verified-pill">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>VERIFIED RPL SMKS BRANTAS</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Detail Content -->
+          <div class="skill-modal-main">
+            <div class="skill-category-tag" id="skillModalCategoryTag">FRONTEND ENGINEERING</div>
+            <h3 class="skill-modal-title" id="skillModalTitle">HTML5 Semantic Architecture</h3>
+            <div class="skill-modal-role-pill" id="skillModalRole">as The Architecture</div>
+
+            <!-- Animated Proficiency Meter -->
+            <div class="skill-proficiency-block">
+              <div class="prof-header">
+                <span class="prof-label">TINGKAT PENGUASAAN</span>
+                <span class="prof-val" id="skillModalLevelVal">95% &bull; Expert</span>
+              </div>
+              <div class="prof-bar-track">
+                <div class="prof-bar-fill" id="skillModalProfFill" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <!-- Detailed Notes -->
+            <div class="skill-modal-desc-box">
+              <h4 class="box-heading"><i class="fa-solid fa-align-left"></i> Catatan Implementasi Pengembang:</h4>
+              <p class="skill-modal-desc" id="skillModalDesc">
+                Fondasi semantik web berstandar W3C, aksesibilitas modern, dan penataan dokumen yang rapi.
+              </p>
+            </div>
+
+            <!-- Superpowers Tags -->
+            <div class="skill-superpowers-box">
+              <h4 class="box-heading"><i class="fa-solid fa-bolt"></i> Kemampuan Kunci &amp; Fitur:</h4>
+              <div class="skill-tags-cluster" id="skillModalTags">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Action Link to Projects -->
+            <div class="skill-action-row">
+              <a href="#gallery" class="btn-skill-project-jump" id="skillModalProjectBtn">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span>Lihat Karya Terkait di Galeri</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Window Footer: File Navigation -->
+      <div class="skill-window-footer">
+        <button class="skill-footer-nav-btn" id="skillPrevBtn" type="button" aria-label="Berkas Sebelumnya">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Berkas Sebelumnya</span>
+        </button>
+        <span class="skill-file-counter" id="skillFileCounter">Berkas 1 dari 8</span>
+        <button class="skill-footer-nav-btn" id="skillNextBtn" type="button" aria-label="Berkas Berikutnya">
+          <span>Berkas Berikutnya</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
   <script src="js/config.js"></script>
   <script src="js/script.js"></script>
 </body>
