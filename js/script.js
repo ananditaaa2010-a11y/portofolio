@@ -649,32 +649,34 @@ document.addEventListener('DOMContentLoaded', () => {
       AdventureAudio.playSelect();
     }
 
-    // After swoosh completes (1250ms), central folder catches and bounces big
+    // After swoosh completes (1800ms), central folder catches and bounces big
     setTimeout(() => {
       skillsBurstStage.classList.add('folder-catch');
+      if (typeof AdventureAudio !== 'undefined' && AdventureAudio.playPop) {
+        AdventureAudio.playPop();
+      }
 
       setTimeout(() => {
         skillsBurstStage.classList.remove('gathering-active');
         skillsBurstStage.classList.remove('folder-catch');
         updateHintUI(false);
       }, 750);
-    }, 1250);
+    }, 1800);
   }
 
-  const castSection = document.getElementById('cast');
-  if (castSection && 'IntersectionObserver' in window) {
+  if (skillsBurstStage && 'IntersectionObserver' in window) {
     const gatherObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        // Trigger precisely when the skills stage is in clear view
         if (entry.isIntersecting && !hasTriggeredGather) {
           triggerFolderGatherAnimation();
         }
       });
     }, {
-      rootMargin: '120px 0px -15% 0px',
-      threshold: 0.12
+      threshold: 0.28
     });
 
-    gatherObserver.observe(castSection);
+    gatherObserver.observe(skillsBurstStage);
   }
 
   function updateCategoryFolderDisplay(folderId) {

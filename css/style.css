@@ -5610,62 +5610,62 @@ button {
   }
 }
 
-/* ==================== GATHERING ANIMATION (Scroll Approach: Folders converge to center) ==================== */
+/* ==================== GATHERING ANIMATION (Membesar Terus Mengecil) ==================== */
 .skills-burst-stage.gathering-active .category-branch-folder {
   opacity: 1;
   pointer-events: none;
-  animation: folderGatherIn 1.25s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: folderMembesarTerusMengecil 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="frontend"] {
-  --gather-start-x: -360px;
-  --gather-start-y: -240px;
-  --gather-rot: -14deg;
+  --gather-start-x: -320px;
+  --gather-start-y: -210px;
+  --gather-rot: -12deg;
   animation-delay: 0.04s;
 }
 
 .skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="backend"] {
-  --gather-start-x: 360px;
-  --gather-start-y: -240px;
+  --gather-start-x: 320px;
+  --gather-start-y: -210px;
   --gather-rot: 12deg;
-  animation-delay: 0.09s;
+  animation-delay: 0.1s;
 }
 
 .skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="framework"] {
-  --gather-start-x: -360px;
-  --gather-start-y: 240px;
-  --gather-rot: 14deg;
-  animation-delay: 0.14s;
+  --gather-start-x: -320px;
+  --gather-start-y: 210px;
+  --gather-rot: 12deg;
+  animation-delay: 0.16s;
 }
 
 .skills-burst-stage.gathering-active .category-branch-folder[data-folder-id="editing"] {
-  --gather-start-x: 360px;
-  --gather-start-y: 240px;
+  --gather-start-x: 320px;
+  --gather-start-y: 210px;
   --gather-rot: -12deg;
-  animation-delay: 0.19s;
+  animation-delay: 0.22s;
 }
 
-@keyframes folderGatherIn {
+@keyframes folderMembesarTerusMengecil {
   0% {
     opacity: 0;
-    transform: translate(var(--gather-start-x), var(--gather-start-y)) rotate(var(--gather-rot)) scale(0.35);
+    transform: translate(calc(var(--gather-start-x) * 0.7), calc(var(--gather-start-y) * 0.7)) rotate(var(--gather-rot)) scale(0.25);
   }
+  /* 1. MEMBESAR DULU BIAR KELIHATAN JELAS! */
   28% {
-    /* MEMBESAR DULU BIAR KELIHATAN! Pop up big with full vibrant color */
     opacity: 1;
-    transform: translate(calc(var(--gather-start-x) * 0.96), calc(var(--gather-start-y) * 0.96)) rotate(var(--gather-rot)) scale(1.42);
+    transform: translate(var(--gather-start-x), var(--gather-start-y)) rotate(var(--gather-rot)) scale(1.48);
+    filter: drop-shadow(0 18px 36px rgba(46, 16, 101, 0.45));
+  }
+  /* 2. HOVER/PREVIEW: Melayang besar dan jelas di depan mata */
+  48% {
+    opacity: 1;
+    transform: translate(calc(var(--gather-start-x) * 0.9), calc(var(--gather-start-y) * 0.9)) rotate(calc(var(--gather-rot) * 0.8)) scale(1.36);
     filter: drop-shadow(0 14px 28px rgba(46, 16, 101, 0.35));
   }
-  48% {
-    /* Hover big in view */
-    opacity: 1;
-    transform: translate(calc(var(--gather-start-x) * 0.88), calc(var(--gather-start-y) * 0.88)) rotate(calc(var(--gather-rot) * 0.8)) scale(1.28);
-    filter: drop-shadow(0 10px 20px rgba(46, 16, 101, 0.25));
-  }
-  75% {
-    /* Swooping fast towards the center */
+  /* 3. TERUS MENGEKIL: Meluncur dan mengecil mengumpul ke tengah! */
+  78% {
     opacity: 0.95;
-    transform: translate(calc(var(--gather-start-x) * 0.25), calc(var(--gather-start-y) * 0.25)) rotate(calc(var(--gather-rot) * 0.3)) scale(0.75);
+    transform: translate(calc(var(--gather-start-x) * 0.25), calc(var(--gather-start-y) * 0.25)) rotate(calc(var(--gather-rot) * 0.3)) scale(0.65);
   }
   100% {
     opacity: 0;
