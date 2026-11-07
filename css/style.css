@@ -469,6 +469,8 @@ button {
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 2;
+  -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 35%, rgba(0, 0, 0, 0.45) 70%, transparent 98%);
+  mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 35%, rgba(0, 0, 0, 0.45) 70%, transparent 98%);
 }
 
 .hero-kicker-pill {
@@ -1578,6 +1580,8 @@ button {
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 1;
+  -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 35%, rgba(0, 0, 0, 0.45) 70%, transparent 98%);
+  mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 35%, rgba(0, 0, 0, 0.45) 70%, transparent 98%);
 }
 
 .cast-content-container {
@@ -2039,13 +2043,24 @@ button {
   min-height: 100vh;
   background:
     radial-gradient(circle at 50% 20%, rgba(233, 213, 255, 0.45) 0%, transparent 65%),
-    linear-gradient(rgba(168, 85, 247, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(168, 85, 247, 0.08) 1px, transparent 1px),
     linear-gradient(180deg, #ffffff 0%, #faf5ff 45%, #f5f3ff 100%);
-  background-size: auto, 32px 32px, 32px 32px, auto;
   padding: 6.5rem 0 8.5rem 0;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+.adventure-gallery-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 35%, rgba(0, 0, 0, 0.45) 70%, transparent 98%);
+  mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 35%, rgba(0, 0, 0, 0.45) 70%, transparent 98%);
 }
 
 @media (max-width: 768px) {
@@ -5955,10 +5970,7 @@ button {
   z-index: 99999;
   background-color: #ffffff;
   background-image:
-    radial-gradient(circle at 50% 30%, rgba(243, 232, 255, 0.6) 0%, transparent 70%),
-    linear-gradient(rgba(168, 85, 247, 0.12) 1.5px, transparent 1.5px),
-    linear-gradient(90deg, rgba(168, 85, 247, 0.12) 1.5px, transparent 1.5px);
-  background-size: auto, 40px 40px, 40px 40px;
+    radial-gradient(circle at 50% 30%, rgba(243, 232, 255, 0.6) 0%, transparent 70%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5966,6 +5978,20 @@ button {
   transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
               visibility 0.65s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.math-loading-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.12) 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 35%, rgba(0, 0, 0, 0.45) 70%, transparent 98%);
+  mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 35%, rgba(0, 0, 0, 0.45) 70%, transparent 98%);
 }
 
 .math-loading-screen.is-loaded {
